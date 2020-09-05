@@ -1,0 +1,103 @@
+<p>
+    <script type="text/javascript">// <![CDATA[
+        $(function () {
+            $.ajaxSetup({
+                headers: { "X-Auth-Token": "28fcc697165249959737b7f980aeefd2" }
+            });
+            $.when(
+                $.getJSON("https://api.football-data.org/v2/competitions/PL/matches"),
+                $.getJSON('https://api.football-data.org/v2/competitions/BL1/matches'),
+                $.getJSON('https://api.football-data.org/v2/competitions/PD/matches'),
+            )
+                .done(function (data_PL, data_BL, data_PD) {
+                    PL = data_PL[0].matches;
+                    BL = data_BL[0].matches;
+                    PD = data_PD[0].matches;
+
+                    games_num = data_PL[0].count
+                        + data_BL[0].count
+                        + data_PD[0].count;
+                    
+                    PL = PL.concat(BL, PD)
+
+                    PL.sort(function(a, b){
+                        if (a.utcDate > b.utcDate) {
+                            return 1;
+                        } else {
+                            return -1;
+                        }
+                    });
+
+                    var PL_Clubs = {
+                        'Liverpool FC': 'リバプール',
+                        'Manchester City FC': 'マンチェスター・C',
+                        'Manchester United FC': 'マンチェスター・U',
+                        'Arsenal FC': 'アーセナル',
+                        'Tottenham Hotspur FC': 'トッテナム',
+                        'Chelsea FC': 'チェルシー',
+                        'FC Bayern München': 'バイエルン',
+                        'BV Borussia 09 Dortmund': 'ドルトムント',
+                        'FC Schalke 04': 'シャルケ',
+                        'FC Barcelona': 'バルセロナ',
+                        'Real Madrid CF': 'レアル・マドリー',
+                        'Club Atlético de Madrid': 'アトレティコ'
+                    }
+
+                    $(".matchresults-end").before('<h4>' + data_PL[0].competition.name + '</h4>');
+                    for (var i = 0; i < games_num; i++) {
+                        // $(".matchresults-end").before('<p>成功' + i + '</br>');
+                        var date = new Date(PL[i].utcDate);
+                        date = date.toLocaleString("ja-JP");
+
+                        if (PL_Clubs[PL[i].homeTeam.name] && PL_Clubs[PL[i].awayTeam.name])
+                            $("#matches_tbl").append(
+                                '<tr align="center">'
+                                + '<th><span style="font-size: 75%;">'
+                                + date + '</span></th>'
+                                + '<td><span style="font-size: 75%;">'
+                                + data_PL[0].competition.area.name + '󠁢󠁥󠁮󠁧󠁿<br />'
+                                + PL[i].matchday + '</span></td>'
+                                + '<td><span style="font-size: 75%;">'
+                                + PL_Clubs[PL[i].homeTeam.name] + '</span></td>'
+                                + '<td><span style="font-size: 75%;">'
+                                + PL_Clubs[PL[i].awayTeam.name] + '</span></td>'
+                                + '</tr>'
+                            );
+                    }
+
+                    // $(".matchresults-end").before('<h4>' + data_BL[0].competition.name + '</h4>');
+                    // for (var i = 0; i < data_BL[0].count; i++) {
+                    //     $(".matchresults-end").before('<p>成功' + i + '</br>');
+                    //     var date = new Date(BL[i].utcDate);
+                    //     date = date.toLocaleString("ja-JP");
+
+                    //     $(".matchresults-end").after(
+                    //         '<p>' + date + '</br>'
+                    //         + BL[i].matchday + '</br>'
+                    //         + BL[i].homeTeam.name + '</br>'
+                    //         + BL[i].awayTeam.name + '</p>'
+                    //     );
+                    // }
+
+                })
+                .fail(function () {
+                    // エラーがあった時
+                    $(".matchresults-end").before('<p>エラー</p>');
+                });
+        });
+    // ]]></script>
+</p>
+<h3>試合一覧</h3>
+<table id="pref-table" class="table table-borderd">
+    <thead>
+        <tr align="center">
+            <th width="15%"><span style="font-size: 75%;">日時<br />(日本時間)</span></th>
+            <th width="15%"><span style="font-size: 75%;">リーグ</span><br /><span style="font-size: 75%;">節</span></th>
+            <th width="35%"><span style="font-size: 75%;">ホーム</span></th>
+            <th width="35%"><span style="font-size: 75%;">アウェイ</span></th>
+        </tr>
+    </thead>
+    <tbody id=matches_tbl style="font-weight: bold;">
+    </tbody>
+</table>
+<div class="matchresults-end"> </div>
