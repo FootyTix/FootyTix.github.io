@@ -980,9 +980,11 @@ ul.foot-ul li:before {
 #matches-tbl {
   font-weight: bold;
   border: solid 1px #656565;
+  line-height: 1.0em;
 }
 
 #pref-table th,
 #matches-tbl td {
   border: solid 1px #656565;
+  line-height: 1.0em;
 }
