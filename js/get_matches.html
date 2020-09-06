@@ -10,19 +10,40 @@
                 $.getJSON("https://api.football-data.org/v2/competitions/PL/matches"),
                 $.getJSON('https://api.football-data.org/v2/competitions/BL1/matches'),
                 $.getJSON('https://api.football-data.org/v2/competitions/PD/matches'),
+                $.getJSON('https://api.football-data.org/v2/competitions/SA/matches'),
+                $.getJSON('https://api.football-data.org/v2/competitions/FL1/matches'),
             )
-                .done(function (data_PL, data_BL, data_PD) {
+                .done(function (data_PL, data_BL, data_PD, data_SA, data_FL) {
                     PL = data_PL[0].matches;
+                    PL.forEach(function (match) {
+                        match.competition = data_PL[0].competition
+                    });
                     BL = data_BL[0].matches;
+                    BL.forEach(function (match) {
+                        match.competition = data_BL[0].competition
+                    });
                     PD = data_PD[0].matches;
+                    PD.forEach(function (match) {
+                        match.competition = data_PD[0].competition
+                    });
+                    SA = data_SA[0].matches;
+                    SA.forEach(function (match) {
+                        match.competition = data_SA[0].competition
+                    });
+                    FL = data_FL[0].matches;
+                    FL.forEach(function (match) {
+                        match.competition = data_FL[0].competition
+                    });
 
                     games_num = data_PL[0].count
                         + data_BL[0].count
-                        + data_PD[0].count;
+                        + data_PD[0].count
+                        + data_SA[0].count
+                        + data_FL[0].count;
                     
-                    PL = PL.concat(BL, PD)
+                    game_list = PL.concat(BL, PD, SA, FL)
 
-                    PL.sort(function(a, b){
+                    game_list.sort(function(a, b){
                         if (a.utcDate > b.utcDate) {
                             return 1;
                         } else {
@@ -30,7 +51,7 @@
                         }
                     });
 
-                    var PL_Clubs = {
+                    var club_list = {
                         'Liverpool FC': 'リバプール',
                         'Manchester City FC': 'マンチェスター・C',
                         'Manchester United FC': 'マンチェスター・U',
@@ -39,30 +60,43 @@
                         'Chelsea FC': 'チェルシー',
                         'FC Bayern München': 'バイエルン',
                         'BV Borussia 09 Dortmund': 'ドルトムント',
+                        'RB Leipzig': 'ライプツィヒ',
                         'FC Schalke 04': 'シャルケ',
                         'FC Barcelona': 'バルセロナ',
                         'Real Madrid CF': 'レアル・マドリー',
-                        'Club Atlético de Madrid': 'アトレティコ'
+                        'Club Atlético de Madrid': 'アトレティコ',
+                        'Sevilla FC': 'セビージャ',
+                        'Villarreal CF': 'ビジャレアル',
+                        'Juventus FC': 'ユベントス',
+                        'SSC Napoli': 'ナポリ',
+                        'AS Roma': 'ローマ',
+                        'FC Internazionale Milano': 'インテル',
+                        'AC Milan': 'ACミラン',
+                        'Atalanta BC': 'アタランタ',
+                        'SS Lazio': 'ラツィオ',
+                        'Paris Saint-Germain FC': 'PSG',
+                        'Olympique de Marseille': 'マルセイユ',
+                        'Olympique Lyonnais': 'リヨン'
                     }
 
-                    $(".matchresults-end").before('<h4>' + data_PL[0].competition.name + '</h4>');
+                    $(".matchresults-end").before('<h4>' + game_list[0].competition.name + '</h4>');
                     for (var i = 0; i < games_num; i++) {
                         // $(".matchresults-end").before('<p>成功' + i + '</br>');
-                        var date = new Date(PL[i].utcDate);
+                        var date = new Date(game_list[i].utcDate);
                         date = date.toLocaleString("ja-JP");
 
-                        if (PL_Clubs[PL[i].homeTeam.name] && PL_Clubs[PL[i].awayTeam.name])
+                        if (club_list[game_list[i].homeTeam.name] && club_list[game_list[i].awayTeam.name])
                             $("#matches_tbl").append(
                                 '<tr align="center">'
+                                + '<td><span style="font-size: 75%;">'
+                                + club_list[game_list[i].homeTeam.name] + '</span></td>'
                                 + '<th><span style="font-size: 75%;">'
                                 + date + '</span></th>'
                                 + '<td><span style="font-size: 75%;">'
-                                + data_PL[0].competition.area.name + '󠁢󠁥󠁮󠁧󠁿<br />'
-                                + PL[i].matchday + '</span></td>'
+                                + game_list[i].competition.name + '󠁢󠁥󠁮󠁧󠁿<br />'
+                                + game_list[i].matchday + '</span></td>'
                                 + '<td><span style="font-size: 75%;">'
-                                + PL_Clubs[PL[i].homeTeam.name] + '</span></td>'
-                                + '<td><span style="font-size: 75%;">'
-                                + PL_Clubs[PL[i].awayTeam.name] + '</span></td>'
+                                + club_list[game_list[i].awayTeam.name] + '</span></td>'
                                 + '</tr>'
                             );
                     }
@@ -93,9 +127,9 @@
 <table id="pref-table" class="table table-borderd">
     <thead>
         <tr align="center">
+            <th width="35%"><span style="font-size: 75%;">ホーム</span></th>
             <th width="15%"><span style="font-size: 75%;">日時<br />(日本時間)</span></th>
             <th width="15%"><span style="font-size: 75%;">リーグ</span><br /><span style="font-size: 75%;">節</span></th>
-            <th width="35%"><span style="font-size: 75%;">ホーム</span></th>
             <th width="35%"><span style="font-size: 75%;">アウェイ</span></th>
         </tr>
     </thead>
