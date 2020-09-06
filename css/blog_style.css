@@ -938,4 +938,51 @@ ul.foot-ul li:before {
 .toprecommend-boxtitle a{
     font-size:70%; 
     margin:0.5em 0.5em 2em 0.5em;
-}}
+}
+}
+
+.th-pl {
+    background-color: #37003c;
+    color: #fff;
+    border: solid 1px #656565;
+}
+
+.td-pd {
+    background-color: #25282a;
+    color: #fff;
+    border: solid 1px #656565;
+}
+
+.td-bl {
+    background-color: #c80a00;
+    color: #fff;
+    border: solid 1px #656565;
+}
+
+.td-sa {
+    background-color: #1f7dd9;
+    color: #fff;
+    border: solid 1px #656565;
+}
+
+.td-fl {
+    background-color: #091c3e;
+    color: #fff;
+    border: solid 1px #656565;
+}
+
+.td-cl {
+    background-color: #012a62;
+    color: #fff;
+    border: solid 1px #656565;
+}
+
+#matches-tbl {
+  font-weight: bold;
+  border: solid 1px #656565;
+}
+
+#pref-table th,
+#matches-tbl td {
+  border: solid 1px #656565;
+}

@@ -1,139 +1,137 @@
 <!-- テストページ -->
-
 <p>
     <script type="text/javascript">// <![CDATA[
-        $(function () {
-            $.ajaxSetup({
-                headers: { "X-Auth-Token": "28fcc697165249959737b7f980aeefd2" }
-            });
-            $.when(
-                $.getJSON("https://api.football-data.org/v2/competitions/PL/matches"),
-                $.getJSON('https://api.football-data.org/v2/competitions/BL1/matches'),
-                $.getJSON('https://api.football-data.org/v2/competitions/PD/matches'),
-                $.getJSON('https://api.football-data.org/v2/competitions/SA/matches'),
-                $.getJSON('https://api.football-data.org/v2/competitions/FL1/matches'),
-            )
-                .done(function (data_PL, data_BL, data_PD, data_SA, data_FL) {
-                    PL = data_PL[0].matches;
-                    PL.forEach(function (match) {
-                        match.competition = data_PL[0].competition
-                    });
-                    BL = data_BL[0].matches;
-                    BL.forEach(function (match) {
-                        match.competition = data_BL[0].competition
-                    });
-                    PD = data_PD[0].matches;
-                    PD.forEach(function (match) {
-                        match.competition = data_PD[0].competition
-                    });
-                    SA = data_SA[0].matches;
-                    SA.forEach(function (match) {
-                        match.competition = data_SA[0].competition
-                    });
-                    FL = data_FL[0].matches;
-                    FL.forEach(function (match) {
-                        match.competition = data_FL[0].competition
-                    });
-
-                    games_num = data_PL[0].count
-                        + data_BL[0].count
-                        + data_PD[0].count
-                        + data_SA[0].count
-                        + data_FL[0].count;
-                    
-                    game_list = PL.concat(BL, PD, SA, FL)
-
-                    game_list.sort(function(a, b){
-                        if (a.utcDate > b.utcDate) {
-                            return 1;
-                        } else {
-                            return -1;
-                        }
-                    });
-
-                    var club_list = {
-                        'Liverpool FC': 'リバプール',
-                        'Manchester City FC': 'マンチェスター・C',
-                        'Manchester United FC': 'マンチェスター・U',
-                        'Arsenal FC': 'アーセナル',
-                        'Tottenham Hotspur FC': 'トッテナム',
-                        'Chelsea FC': 'チェルシー',
-                        'FC Bayern München': 'バイエルン',
-                        'BV Borussia 09 Dortmund': 'ドルトムント',
-                        'RB Leipzig': 'ライプツィヒ',
-                        'FC Schalke 04': 'シャルケ',
-                        'FC Barcelona': 'バルセロナ',
-                        'Real Madrid CF': 'レアル・マドリー',
-                        'Club Atlético de Madrid': 'アトレティコ',
-                        'Sevilla FC': 'セビージャ',
-                        'Villarreal CF': 'ビジャレアル',
-                        'Juventus FC': 'ユベントス',
-                        'SSC Napoli': 'ナポリ',
-                        'AS Roma': 'ローマ',
-                        'FC Internazionale Milano': 'インテル',
-                        'AC Milan': 'ACミラン',
-                        'Atalanta BC': 'アタランタ',
-                        'SS Lazio': 'ラツィオ',
-                        'Paris Saint-Germain FC': 'PSG',
-                        'Olympique de Marseille': 'マルセイユ',
-                        'Olympique Lyonnais': 'リヨン'
-                    }
-
-                    $(".matchresults-end").before('<h4>' + game_list[0].competition.name + '</h4>');
-                    for (var i = 0; i < games_num; i++) {
-                        // $(".matchresults-end").before('<p>成功' + i + '</br>');
-                        var date = new Date(game_list[i].utcDate);
-                        date = date.toLocaleString("ja-JP");
-
-                        if (club_list[game_list[i].homeTeam.name] && club_list[game_list[i].awayTeam.name])
-                            $("#matches_tbl").append(
-                                '<tr align="center">'
-                                + '<td><span style="font-size: 75%;">'
-                                + club_list[game_list[i].homeTeam.name] + '</span></td>'
-                                + '<th><span style="font-size: 75%;">'
-                                + date + '</span></th>'
-                                + '<td><span style="font-size: 75%;">'
-                                + game_list[i].competition.name + '󠁢󠁥󠁮󠁧󠁿<br />'
-                                + game_list[i].matchday + '</span></td>'
-                                + '<td><span style="font-size: 75%;">'
-                                + club_list[game_list[i].awayTeam.name] + '</span></td>'
-                                + '</tr>'
-                            );
-                    }
-
-                    // $(".matchresults-end").before('<h4>' + data_BL[0].competition.name + '</h4>');
-                    // for (var i = 0; i < data_BL[0].count; i++) {
-                    //     $(".matchresults-end").before('<p>成功' + i + '</br>');
-                    //     var date = new Date(BL[i].utcDate);
-                    //     date = date.toLocaleString("ja-JP");
-
-                    //     $(".matchresults-end").after(
-                    //         '<p>' + date + '</br>'
-                    //         + BL[i].matchday + '</br>'
-                    //         + BL[i].homeTeam.name + '</br>'
-                    //         + BL[i].awayTeam.name + '</p>'
-                    //     );
-                    // }
-
-                })
-                .fail(function () {
-                    // エラーがあった時
-                    $(".matchresults-end").before('<p>エラー</p>');
+    $(function () {
+                $.ajaxSetup({
+                    headers: { "X-Auth-Token": "28fcc697165249959737b7f980aeefd2" }
                 });
-        });
+                $.when(
+                    $.getJSON("https://api.football-data.org/v2/competitions/PL/matches"),
+                    $.getJSON('https://api.football-data.org/v2/competitions/BL1/matches'),
+                    $.getJSON('https://api.football-data.org/v2/competitions/PD/matches'),
+                    $.getJSON('https://api.football-data.org/v2/competitions/SA/matches'),
+                    $.getJSON('https://api.football-data.org/v2/competitions/FL1/matches'),
+                    $.getJSON('https://api.football-data.org/v2/competitions/CL/matches')
+                )
+                    .done(function (data_PL, data_BL, data_PD, data_SA, data_FL, data_CL) {
+                        PL = data_PL[0].matches;
+                        PL.forEach(function (match) {
+                            match.competition = data_PL[0].competition
+                            match.competition.img = "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+                            match.td_class = "td-pl"
+                        });
+                        BL = data_BL[0].matches;
+                        BL.forEach(function (match) {
+                            match.competition = data_BL[0].competition
+                            match.competition.img = "🇩🇪"
+                            match.td_class = "td-bl"
+                        });
+                        PD = data_PD[0].matches;
+                        PD.forEach(function (match) {
+                            match.competition = data_PD[0].competition
+                            match.competition.img = "🇪🇸"
+                            match.td_class = "td-pd"
+                        });
+                        SA = data_SA[0].matches;
+                        SA.forEach(function (match) {
+                            match.competition = data_SA[0].competition
+                            match.competition.img = "🇮🇹"
+                            match.td_class = "td-sa"
+                        });
+                        FL = data_FL[0].matches;
+                        FL.forEach(function (match) {
+                            match.competition = data_FL[0].competition
+                            match.competition.img = "🇫🇷"
+                            match.td_class = "td-fl"
+                        });
+                        CL = data_CL[0].matches;
+                        CL.forEach(function (match) {
+                            match.competition = data_CL[0].competition
+                            match.competition.img = '<img title="f:id:ktakumi11:20190618030228j:plain" src="https://cdn-ak.f.st-hatena.com/images/fotolife/k/ktakumi11/20190618/20190618030228.jpg" alt="f:id:ktakumi11:20190618030228j:plain" />'
+                            match.td_class = "td-cl"
+                        });
+    
+                        games_num = data_PL[0].count
+                            + data_BL[0].count
+                            + data_PD[0].count
+                            + data_SA[0].count
+                            + data_FL[0].count;
+                        
+                        game_list = PL.concat(BL, PD, SA, FL)
+    
+                        game_list.sort(function(a, b){
+                            if (a.utcDate > b.utcDate) {
+                                return 1;
+                            } else {
+                                return -1;
+                            }
+                        });
+    
+                        var club_list = {
+                            'Liverpool FC': 'リバプール',
+                            'Manchester City FC': 'マンチェスター・C',
+                            'Manchester United FC': 'マンチェスター・U',
+                            'Arsenal FC': 'アーセナル',
+                            'Tottenham Hotspur FC': 'トッテナム',
+                            'Chelsea FC': 'チェルシー',
+                            'FC Bayern München': 'バイエルン',
+                            'BV Borussia 09 Dortmund': 'ドルトムント',
+                            'RB Leipzig': 'ライプツィヒ',
+                            'FC Schalke 04': 'シャルケ',
+                            'FC Barcelona': 'バルセロナ',
+                            'Real Madrid CF': 'レアル・マドリー',
+                            'Club Atlético de Madrid': 'アトレティコ',
+                            'Sevilla FC': 'セビージャ',
+                            'Villarreal CF': 'ビジャレアル',
+                            'Juventus FC': 'ユベントス',
+                            'SSC Napoli': 'ナポリ',
+                            'AS Roma': 'ローマ',
+                            'FC Internazionale Milano': 'インテル',
+                            'AC Milan': 'ACミラン',
+                            'Atalanta BC': 'アタランタ',
+                            'SS Lazio': 'ラツィオ',
+                            'Paris Saint-Germain FC': 'PSG',
+                            'Olympique de Marseille': 'マルセイユ',
+                            'Olympique Lyonnais': 'リヨン'
+                        }
+    
+                        $(".matchresults-end").before('<h4>' + game_list[0].competition.name + '</h4>');
+                        for (var i = 0; i < games_num; i++) {
+                            // $(".matchresults-end").before('<p>成功' + i + '</br>');
+                            var date = new Date(game_list[i].utcDate);
+                            date = date.toLocaleString("ja-JP");
+    
+                            if (club_list[game_list[i].homeTeam.name] && club_list[game_list[i].awayTeam.name])
+                                $("#matches-tbl").append(
+                                    '<tr align="center">'
+                                    + '<td><span style="font-size: 75%;">'
+                                    + club_list[game_list[i].homeTeam.name] + '</span></td>'
+                                    + '<td class="' + game_list[i].td_class + '"><span style="font-size: 50%;">'
+                                    + date + '<br />'
+                                    + game_list[i].competition.img + '󠁢󠁥󠁮󠁧󠁿 '
+                                    + game_list[i].matchday + '</span></td>'
+                                    + '<td><span style="font-size: 75%;">'
+                                    + club_list[game_list[i].awayTeam.name] + '</span></td>'
+                                    + '</tr>'
+                                );
+                        }
+                    })
+                    .fail(function () {
+                        // エラーがあった時
+                        $(".matchresults-end").before('<p>エラー</p>');
+                    });
+            });
     // ]]></script>
-</p>
-<h3>試合一覧</h3>
-<table id="pref-table" class="table table-borderd">
+    </p>
+    <h3>試合一覧</h3>
+    <table id="pref-table" class="table-borderd">
     <thead>
-        <tr align="center">
-            <th width="35%"><span style="font-size: 75%;">ホーム</span></th>
-            <th width="15%"><span style="font-size: 75%;">日時<br />(日本時間)</span></th>
-            <th width="15%"><span style="font-size: 75%;">リーグ</span><br /><span style="font-size: 75%;">節</span></th>
-            <th width="35%"><span style="font-size: 75%;">アウェイ</span></th>
-        </tr>
+    <tr align="center">
+    <th width="40%"><span style="font-size: 75%;">ホーム</span></th>
+    <th width="20%"><span style="font-size: 50%;">日時(日本時間)<br />リーグ 節</span></th>
+    <th width="40%"><span style="font-size: 75%;">アウェイ</span></th>
+    </tr>
     </thead>
-    <tbody id=matches_tbl style="font-weight: bold;">
-    </tbody>
-</table>
-<div class="matchresults-end"> </div>
+    <tbody id="matches-tbl"></tbody>
+    </table>
+    <div class="matchresults-end"> </div>
