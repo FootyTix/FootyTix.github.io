@@ -1,0 +1,941 @@
+/* <system section="theme" selected="6653812171397613909"> */
+@import url("https://blog.hatena.ne.jp/-/theme/6653812171397613909.css");
+/* </system> */
+
+/* <system section="background" selected="fff"> */
+body{background:#fff;}
+/* </system> */
+
+/*枠線消す*/
+#main {
+  border: none;
+}
+#box2 {
+  border: none;
+}
+
+/* Responsive: yes */
+.entry-content {
+  line-height: 1.8em;
+  letter-spacing: 0.05em;
+}
+
+.entry-title {
+  font-weight: bold;
+  font-size: 25px;
+  position: relative;
+  padding: 1em 0;
+}
+.entry-title::before,
+.entry-title::after {
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 6px;
+  box-sizing: border-box;
+}
+.entry-title::before {
+  top: 0;
+  border-top: 2px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.entry-title::after {
+  bottom: 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 2px solid #ccc;
+}
+
+.entry-content h3 {
+  padding: 4px 10px;
+  color: #111;
+  background-color: #f0f0f0;
+  border-left: 8px solid #2d70a4;
+  border-bottom: solid 4px #d7d7d7;
+}
+
+.entry-content h4 {
+  background: #2d70a4; /*背景色*/
+  padding: 4px 10px;;/*文字周りの余白*/
+  color: #fff;/*文字を白に*/
+  border-radius: 0.2em;/*角の丸み*/
+}
+
+.entry-content h5 {
+  position: relative;
+  color: #111;
+  border-bottom: 4px solid #ccc;
+  padding: 4px 10px;
+}
+.entry-content h5::before {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 20%;
+  height: 4px;
+  background-color: #3498db;
+  z-index: 2;
+  content: '';
+}
+
+.entry-content h6 {
+  background: #F8823C;
+  margin-bottom: 16px;
+  margin-top: 0px;
+  padding: 4px 16px;
+  color: #eee;
+  /*border-left: 4px solid #1D3557;*/
+  font-size: 100%;
+  border-radius: 0.2em;
+  text-align:center;
+}
+
+.box {
+	background: #fff8e8;
+	border: 2px solid #ff6600;
+	width: 100%;
+    padding: 4px 0;
+	margin: 0 0 1em 0;
+}
+
+.box p {
+    padding: 0 1em 0 1.5em;
+}
+
+.box-ps {
+    position: relative;
+    margin: 3em 0 2em;
+    border: solid 2px #5d627b;
+    padding: 0.5em 0.5em 0 0.5em;
+}
+.box-ps .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: -2px;
+    padding: 0 8px;
+    height: 25px;
+    line-height: 25px;
+    vertical-align: middle;
+    background: #5d627b;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+.box-ps p {
+    padding: 0 1em 0 1.5em;
+}
+
+.box-ps2 {
+    position: relative;
+    margin: 3em 0 2em;
+    border: solid 2px #f8823c;
+    padding: 0.5em 0.5em 0 0.5em;
+}
+.box-ps2 .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: -2px;
+    padding: 0 8px;
+    height: 25px;
+    line-height: 25px;
+    vertical-align: middle;
+    background: #f8823c;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+.box-ps2 p {
+    padding: 0 1em 0 1.5em;
+}
+
+@media (max-width: 480px){
+ #blog-title-inner,#title a{
+   height:100px!important;   
+ }
+
+ #blog-title-inner {
+      background-size: contain!important;  
+ }
+}
+
+
+#copyr {
+  line-height: 1.5em;
+}
+
+.foot-body-title {
+  padding: 4px 4px;
+  color: #111;
+  border-bottom: 2px solid #2d70a4;
+}
+
+body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', "メイリオ", 'Osaka', arial, helvetica, sans-serif;
+}
+
+.entry-content strong {
+background: linear-gradient(transparent 70%,#ff99cc 70%);
+font-weight: bold;
+}
+
+.entry-content em {
+    font-style: normal;
+    font-weight: bold;
+}
+
+.entry-content a {
+  font-weight: bold;  
+}
+
+.entry-content img.hatena-fotolife {
+  border: 2px solid #e5e5e5;
+}
+
+.entry-content table th {
+  padding: 2px 2px;
+}
+
+.entry-content table td {
+  padding: 2px 2px;
+}
+
+.toggle,.close{
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .menu{
+    display: none;
+    width: 100%;
+  }
+
+  .menu a:hover{
+    background: #ccc;
+  }
+
+  .toggle{
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+  
+  .close{
+  display: block;
+  position: relative;
+  width: 100%;
+  background: #457B9D;
+  }
+  
+  .toggle a{
+    display: block;
+    padding: 12px 0 10px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background:#1D3557;
+  }
+  
+  .toggle:before{
+    position: absolute;
+    font-family: "blogicon";
+    content: "\f003";
+    top: 50%;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    color:#fff;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-entry #foot {display: none;}
+  .page-entry .hatena-module-sidebar {display: none;}
+  /* .hatena-module-sidebar_adsense {display: none;} */
+  .page-entry .hatena-module-recent-entries {display: none;}
+  .page-entry .hatena-module-archive {display: none;}
+  .page-entry .hatena-module-profile {display: none;}
+  .page-entry .hatena-module-search-box {display: none;}
+  .page-entry .hatena-module-category {display: none;}
+  .page-entry .hatena-module-sidebar_polisy {display: none;}
+  .page-entry .hatena-module-sidebar_contact {display: none;}
+  .page-entry .hatena-module {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom-width: 0px;
+  }
+  
+  .page-archive-category #foot {display: none;}
+  .page-archive-category .hatena-module-sidebar {display: none;}
+  .page-archive-category .hatena-module-recent-entries {display: none;}
+  .page-archive-category .hatena-module-archive {display: none;}
+  .page-archive-category .hatena-module-profile {display: none;}
+  .page-archive-category .hatena-module-search-box {display: none;}
+  .page-archive-category .hatena-module-category {display: none;}
+  .page-archive-category .hatena-module-sidebar_polisy {display: none;}
+  .page-archive-category .hatena-module-sidebar_contact {display: none;}
+  .page-archive-category .hatena-module {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom-width: 0px;
+  }
+  
+}
+
+@media (max-width: 767px) {
+  .box,
+  .box p {
+    margin-left: -2px;
+    margin-right: -2px;
+  }
+  
+  .relatedcontents,
+  .entry-content h4,
+  .entry-content h5,
+  .entry-content h6,
+  .entry-content p,
+  .entry-content figure,
+  .entry-content table {
+    margin-left: -18px;
+    margin-right: -18px;
+  }
+  
+  .entry-content ul,
+  .entry-content ol {
+    padding-right: 10px;
+    padding-left: 30px;
+  }
+
+  .instagram-media{
+    width:380px !important;
+    max-width: 100% !important;
+    min-width: initial !important;
+  }
+}
+
+.hatena-module-html h6 {
+  font-weight: normal;
+  margin-bottom: 16px;
+  margin-top: 0px;
+  padding: 4px 16px;
+  color: #373C38;
+  border-left: 4px solid #1D3557;
+  font-size: 100%;
+}
+
+/* 記事一覧の並列表示 */
+
+.archive-entries {
+    text-align: center;
+}
+
+.page-archive #main {
+ padding: 0 0;
+}
+
+.page-archive .pager-next a:after {
+    margin-right: 32px;
+}
+ 
+.page-archive .archive-entry-header {
+    text-align: left;
+    margin-bottom: 10px;
+}
+ 
+.page-archive .archive-entry-header .date {
+    font-size: 80%;
+    position: absolute;
+    top: -30px;
+    width: auto;
+}
+ 
+.page-archive .archive-entry-header .entry-title {
+    font-size: calc(1rem + 0.25vw);
+    margin: 0;
+    padding: 2px 0 0.5em;
+    border: none;
+}
+
+.page-archive .archive-entry-header .entry-title:before {
+    border: none;
+}
+ 
+.page-archive .archive-entry-header .entry-title a {
+    font-size: inherit;
+    position: relative;
+}
+
+.page-archive .archive-entry-header .entry-title:hover {
+    background-color: #f0f0f0;
+}
+ 
+.page-archive .archive-entries .archive-entry {
+    position: relative;
+    display: inline-block;
+    margin: 1.5rem 5px 0 5px;
+    padding: 0 0 3rem 0;
+    vertical-align: top;
+    text-align: left;
+    background-color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-top: 8px solid #1D3557;
+    border-radius: 0;
+    box-shadow: none;
+    width: 45%;
+}
+ 
+.page-archive .archive-entries .archive-entry:hover {
+    -webkit-transition: 500ms;
+    transition: 500ms;
+}
+ 
+.page-archive .archive-entries .archive-entry:before {
+    content: ' ';
+    height: 8px;
+    width: 0;
+    background-color: #E63946;
+    position: absolute;
+    top: -8px;
+    left: 0;
+    -webkit-transition: 500ms;
+    transition: 500ms;
+}
+ 
+.page-archive .archive-entries .archive-entry:hover:before {
+    width: 100%;
+}
+ 
+.page-archive .archive-entries .archive-entry .archive-entry-body {
+    margin-bottom: 1rem;
+}
+ 
+.page-archive .archive-entries .archive-entry .entry-description {
+    margin: 0;
+    line-height: 1.5em;
+    font-size: 80%;
+}
+ 
+.page-archive .archive-entry .entry-thumb-link .entry-thumb {
+    margin: 0 10px 0 0;
+}
+
+.page-archive .archive-entry .entry-thumb-link .entry-thumb a{
+    position: relative;
+}
+ 
+.page-archive .archive-entry .categories {
+    text-align: left;
+    margin: 0;
+    padding: 0 5px;
+    position: absolute;
+    top: calc(100% - 3rem);
+    left: 0;
+    width: calc(100% - 10px);
+    border: none;
+    background-color: inherit;
+    font-size: 80%;
+}
+ 
+.page-archive .archive-entry .categories a {
+    font-size: inherit;
+    position: relative;
+}
+
+.archive-entry-body .social-buttons {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .page-archive .archive-entries .archive-entry {
+    width: 95%;
+  }
+}
+
+
+/* スマートフォン1列 */
+@media only screen and (max-width:767px){
+.related-entries-item {
+width: 100%;
+height: auto;
+}
+}
+
+/* 記事下プロフィールカード */
+.profile {
+    border: 1px solid #1D3557;/* 枠線 */
+    border-top: 5px solid #1D3557;/* トップのライン線 */
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.profile-title {
+    color: #fff;/* プロフィールタイトル文字色 */
+    font-size: 110%;
+    font-weight: bold;
+    padding: .5em 0 .5em .75em;
+    /* プロフィールタイトル背景 */
+    background: #2d70a4;
+}
+
+.profile-body {
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-flex-wrap: nowrap; 
+    flex-wrap: wrap;
+}
+
+.profile-left {
+     width: 100%;
+     padding: 20px 20px 0 20px;
+}
+
+.profile-right {
+     width: 100%;
+     padding: 0 20px 20px 20px;
+}
+
+.profile-icon {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.profile-id {
+    font-weight: bold;
+    font-size: 90%;
+    text-align: center;
+}
+.profile-id a{
+    color: #666666;
+    text-decoration: none;
+}
+.profile-description {
+    line-height: 1.6em;
+    margin-bottom: 10px;
+}
+
+/*--------------------------------------
+  フォローボタンの見た目をカスタマイズ(PC)
+--------------------------------------*/
+.follow-btn{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.follow-btn a {
+    display: inline-block;
+    height: 45px;
+    line-height: 22px;
+    width: 20%;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+}
+.follow-btn .hatena {
+    color: #ffffff;
+    border: 2px solid #3D3F44;
+    background: #3D3F44;
+    border-radius: 0.2em;
+}
+.follow-btn .twitter {
+    color: #ffffff;
+    border: 2px solid #00ACEE;
+    background: #00ACEE; 
+    border-radius: 0.2em;
+}
+.follow-btn .instagram { 
+    color: #ffffff;
+    border: 2px solid #c6529a;
+    background: #c6529a; 
+    border-radius: 0.2em;
+}
+.follow-btn .mail { 
+    color: #ffffff;
+    border: 2px solid #f3981d;
+    background: #f3981d; 
+    border-radius: 0.2em;
+}
+
+.follow-btn .hatena:hover {
+    color: #3D3F44;
+    background: #eeeeee; 
+    transition: all .3s;
+}
+.follow-btn .twitter:hover {
+    color: #00ACEE;
+    background: #eeeeee;
+    transition: all .3s;
+}
+.follow-btn .instagram:hover {
+    color: #c6529a;
+    background: #eeeeee;;
+    transition: all .3s;
+}
+.follow-btn .mail:hover {
+    color: #f3981d;
+    background: #eeeeee;;
+    transition: all .3s;
+}
+.text-small{
+    font-size: 8px;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+
+/* アプリーチ */
+.appreach {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #7C7C7C;
+  overflow: hidden;
+}
+.appreach:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.appreach p {
+  margin: 0;
+}
+.appreach a:after {
+  display: none;
+}
+.appreach__icon {
+  float: left;
+  border-radius: 10%;
+  overflow: hidden;
+  margin: 0 3% 0 0 !important;
+  width: 25% !important;
+  height: auto !important;
+  max-width: 120px !important;
+}
+.appreach__detail {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 1.5;
+  width: 72%;
+  max-width: 72%;
+}
+.appreach__detail:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.appreach__name {
+  font-size: 16px;
+  line-height: 1.5em !important;
+  max-height: 3em;
+  overflow: hidden;
+}
+.appreach__info {
+  font-size: 12px !important;
+}
+.appreach__developper, .appreach__price {
+  margin-right: 0.5em;
+}
+.appreach__posted a {
+  margin-left: 0.5em;
+}
+.appreach__links {
+  float: left;
+  height: 40px;
+  margin-top: 8px;
+  white-space: nowrap;
+}
+.appreach__aslink img {
+  margin-right: 10px;
+  height: 40px;
+  width: 135px;
+}
+.appreach__gplink img {
+  height: 40px;
+  width: 134.5px;
+}
+
+
+
+
+.lastmod {
+color: #f0f0f0;
+background-color: #555;
+padding: 5px 6px;
+text-decoration: none;
+font-size: 80%;
+display: inline;
+margin-left: 10px;
+}
+.lastmod::before {
+margin-right: 5px;
+padding-left: 3px;
+font-family: FontAwesome;
+content: '\f021';
+}
+.entry-date a {
+color: #f0f0f0;
+background-color: #555;
+padding: 5px 6px !important;
+font-size: 80%;
+}
+.entry-date a::before {
+margin-right: 5px;
+padding-left: 3px;
+font-family: FontAwesome;
+content: '\f017';
+}
+
+.table-of-contents{
+    display: none;
+}
+.show-area{
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 0;
+    color: #1487bd;
+}
+
+/* amazon */
+.hatena-asin-detail p a {
+    color: #e47911;
+}
+
+.hatena-asin-detail ul li a {
+    display: none;
+}
+
+.hatena-asin-detail p a:hover {
+    color: #ff9900;
+}
+
+.hatena-asin-detail {
+    position: relative;
+    border: 1px solid #1D3557;
+}
+
+.hatena-asin-detail > a,
+.hatena-asin-detail > div {
+    position: relative;
+    z-index: 2;
+}
+
+.hatena-asin-detail::before {
+    color: #ddd;
+    content: "\f034";
+    cursor: default;
+    display: inline-block;
+    font: 36px/1 blogicon;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+/* ボタン */
+.btn {
+    background-color: #ffa724; /* ボタン背景色 */
+    color: #1D3557; /* ボタン文字色 */
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+    font-weight: bold;
+    border-radius: 4px;
+    width: 100%;
+    margin: 0 0 1em 0;
+    padding: 0;
+    text-align: center;
+    transition: all .2s ease;
+    position: relative;
+}
+
+.btn a::after{
+    content: '\f054'; /* 矢印の種類 */
+    font-family: FontAwesome;
+    font-weight: normal;
+    position: absolute;
+    right:  1em;
+}
+
+.btn:hover {
+    box-shadow: none;
+    transform: translateY(2px);
+    opacity: 1.0;
+    background-color: #FFF799;
+}
+
+.btn a {
+    text-decoration: none !important;
+    color: #1D3557 !important;
+    display: block;
+    margin: 0;
+    padding: 0.5em;
+    padding-right: 2em;
+}
+
+.btn > img { float: left; }
+.btn::after{ content: ''; clear: left; }
+
+.pc-dsp { display:block; }
+.sp-dsp { display:none; }
+
+@media only screen and (max-width : 767px){
+.pc-dsp { display:none; }
+.sp-dsp { display:block; }
+}
+
+.entry-date.first a {
+display:none; 
+}
+
+ul.foot-ul {
+  padding: 0;
+  position: relative;
+}
+ul.foot-ul li {
+  line-height: 2.5;
+  padding: 0em 0em 0em 1.8em;
+  list-style-type: none!important;
+  background: #2d70a4;
+  border-bottom: 2px solid #f6f6f6;
+  color: #000;
+}
+
+ul.foot-ul li a{
+  color: #fcfcfc;
+  text-decoration: none;
+  display: block;
+  transition: .4s;
+  font-weight: bold;
+}
+
+ul.foot-ul li a:hover {
+  display: block;
+  background: #f6f6f6;
+  color: #2d70a4;
+}
+
+ul.foot-ul li:before {
+  font-family: "FontAwesome";
+  content: "\f138";
+  position: absolute;
+  left : 0.5em;
+  color: #f6f6f6;
+}
+
+/* ヘッダー下おすすめ記事 */
+.toprecommend-toptitle{/*おすすめ記事のタイトル*/
+    background: #e5e5e5;/*お好きな色*/
+    text-align: center;
+    color: #373C38;/*お好きな色*/
+    margin-bottom:-1em;
+    padding-top:1em;
+    font-weight: bold;/*太文字*/
+}
+
+.toprecommend {
+    background: #e5e5e5;/*お好きな色*/
+    width: 100%;/* コンテンツ幅と合わせる */
+    display: -webkit-flex;
+    display: flex;
+    box-sizing: border-box;
+    margin: 0em auto;
+    text-align:center;
+    margin-bottom:1em;
+}
+
+
+.toprecommend-box {/*おすすめ記事1つの枠*/
+    width: 24%;/*カードの幅*/
+    height: 260px; /*カードの高さ*/
+    padding: 8px;
+    margin-left: 1em;
+	background: #fff;
+    box-sizing: border-box;
+    margin: 2em 0.5em;
+    border-radius: 3px;
+}
+
+.toprecommend-box:hover{/*触れた時*/
+    background: #f0f0f0;/*お好きな色*/ 
+    transition: 1s ease;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+
+.last-box {
+   margin-right:1em;
+}
+.toprecommend-image img {
+  width: 100%;
+  height: 180px;/*画像の高さをいじるところ*/
+  object-fit: cover;    
+}
+
+.toprecommend-boxtitle a{
+    display:block;
+    font-size:85%; 
+    font-weight: bold;/*文字*/
+    color:#555; /*お好きな色*/
+    line-height: 1.5!important; 
+}
+
+
+.page-entry .toprecommend-container,.page-entry .toprecommend-toptitle, .page-archive-category .toprecommend-container,.page-archive-category .toprecommend-toptitle
+{
+    display:none;/*記事ページなどには表示しない*/
+}
+
+/* パソコン */
+@media screen and (max-width: 1100px) {
+    .toprecommend-image img {
+  width: 100%;
+  height: 150px;/*画像の高さをいじるところ*/
+  object-fit: cover;    
+}
+}
+
+/* タブレット・スマートフォン向け */
+@media screen and (max-width: 768px) {
+.toprecommend {
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding:0.5em;
+	display:block;
+
+}
+
+.toprecommend-box {
+    width: 90%;
+    height: 75px;/*カードの高さ*/
+    margin:0.5em auto;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.toprecommend-image img {
+    width: 80px;
+    height: 60px;/*画像の高さをいじるところ*/
+    padding:0;
+    object-fit: cover; 
+    border-radius: 3px;
+}
+
+
+.toprecommend-boxtitle a{
+    font-size:70%; 
+    margin:0.5em 0.5em 2em 0.5em;
+}}
