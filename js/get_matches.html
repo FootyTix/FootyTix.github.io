@@ -93,19 +93,19 @@
                             'Paris Saint-Germain FC': 'PSG',
                             'Olympique de Marseille': 'マルセイユ',
                             'Olympique Lyonnais': 'リヨン'
-                        }
+                        };
 
-                        var youbi = ["日", "月", "火", "水", "木", "金", "土"]
+                        var youbi = ["日", "月", "火", "水", "木", "金", "土"];
+                        var date, jdate;
+                        var jtime = "";
     
                         $(".matchresults-end").before('<h4>' + game_list[0].competition.name + '</h4>');
                         for (var i = 0; i < games_num; i++) {
-                            // $(".matchresults-end").before('<p>成功' + i + '</br>');
-                            var date = new Date(game_list[i].utcDate);
-                            date = date.toLocaleString("ja-JP");
-                            var jdate = new Date(date)
-                            var jtime = jdate.getHours() == 9 ? '未定' : (jdate.getHours() + ':' + ("0" + jdate.getMinutes()).slice(-2))
-    
-                            if (club_list[game_list[i].homeTeam.name] && club_list[game_list[i].awayTeam.name])
+                            if (club_list[game_list[i].homeTeam.name] && club_list[game_list[i].awayTeam.name]) {
+                                date = new Date(game_list[i].utcDate);
+                                date = date.toLocaleString("ja-JP");
+                                jdate = new Date(date);
+                                jtime = jdate.getHours() == 9 ? '未定' : (jdate.getHours() + ':' + ("0" + jdate.getMinutes()).slice(-2));
                                 $("#matches-tbl").append(
                                     '<tr align="center">'
                                     + '<td><span style="font-size: 80%;">'
@@ -119,6 +119,7 @@
                                     + club_list[game_list[i].awayTeam.name] + '</span></td>'
                                     + '</tr>'
                                 );
+                            }
                         }
                     })
                     .fail(function () {
