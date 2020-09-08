@@ -942,13 +942,13 @@ ul.foot-ul li:before {
 }
 
 .td-pl {
-    background-color: #37003c;
+    background-color: #3F1052;
     color: #fff;
     border: solid 1px #656565;
 }
 
 .td-pd {
-    background-color: #25282a;
+    background-color: #ff6a39;
     color: #fff;
     border: solid 1px #656565;
 }
@@ -972,8 +972,8 @@ ul.foot-ul li:before {
 }
 
 .td-cl {
-    background-color: #012a62;
-    color: #fff;
+    background-color: #fff;
+    color: #012a62;
     border: solid 1px #656565;
 }
 
