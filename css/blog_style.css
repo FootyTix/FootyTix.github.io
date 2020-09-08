@@ -94,7 +94,7 @@ body{background:#fff;}
 	background: #fff8e8;
 	border: 2px solid #ff6600;
 	width: 100%;
-    padding: 4px 0;
+  padding: 4px 0;
 	margin: 0 0 1em 0;
 }
 
@@ -285,6 +285,7 @@ font-weight: bold;
 }
 
 @media (max-width: 767px) {
+  #pref-table,
   .box,
   .box p {
     margin-left: -2px;
@@ -987,4 +988,8 @@ ul.foot-ul li:before {
 #matches-tbl td {
   border: solid 1px #656565;
   line-height: 1.0em;
+}
+
+#pref-table {
+  width: 100%;
 }
