@@ -990,8 +990,6 @@ ul.foot-ul li:before {
   line-height: 1.0em;
 }
 
-@media (mim-width: 767px) {
-  #pref-table {
-    width: 100%;
-  }
+#pref-table {
+  width: 100%;
 }
