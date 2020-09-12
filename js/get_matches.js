@@ -140,6 +140,7 @@ $(function () {
       })
       .fail(function () {
           // エラーがあった時
-          $(".matchresults-end").before('<p>エラー</p>');
+          $('#loading-gif').children().remove();
+          $('#loading-gif').append('ページを更新してください');
       });
 });
