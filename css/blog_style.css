@@ -993,3 +993,8 @@ ul.foot-ul li:before {
 #pref-table {
   width: 100%;
 }
+
+pre.code {
+  background: #222222;
+  color: #fff;
+}
