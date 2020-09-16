@@ -1,8 +1,10 @@
+<!-- <script src="//footytix.github.io/js/get_matches.js"></script> -->
+<p> </p>
 <!-- テストページ -->
 <script type="text/javascript">// <![CDATA[
     $(function ($) {
         $('#pref-select').change(function () {
-            var select_val = $('#pref-select option:selected').val();
+            var select_val = $('#pref-select input:checked').val();
             $.each($("#pref-table tbody tr"), function (index, element) {
                 if (select_val == "") {
                     $(element).css("display", "table-row");
@@ -18,16 +20,31 @@
         });
     });
     $(function () {
-        $.ajaxSetup({
-            headers: { "X-Auth-Token": "28fcc697165249959737b7f980aeefd2" }
-        });
         $.when(
-            $.getJSON("https://api.football-data.org/v2/competitions/PL/matches"),
-            $.getJSON('https://api.football-data.org/v2/competitions/BL1/matches'),
-            $.getJSON('https://api.football-data.org/v2/competitions/PD/matches'),
-            $.getJSON('https://api.football-data.org/v2/competitions/SA/matches'),
-            $.getJSON('https://api.football-data.org/v2/competitions/FL1/matches'),
-            $.getJSON('https://api.football-data.org/v2/competitions/CL/matches')
+            $.getJSON({
+                url: "https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED",
+                headers: { "X-Auth-Token": "28fcc697165249959737b7f980aeefd2" },
+            }),
+            $.getJSON({
+                url: "https://api.football-data.org/v2/competitions/BL1/matches?status=SCHEDULED",
+                headers: { "X-Auth-Token": "f70cd1be97664d618660f91a5d736505" }
+            }),
+            $.getJSON({
+                url: "https://api.football-data.org/v2/competitions/PD/matches?status=SCHEDULED",
+                headers: { "X-Auth-Token": "d7027a3a37224b918d5af11421c478a9" }
+            }),
+            $.getJSON({
+                url: "https://api.football-data.org/v2/competitions/SA/matches?status=SCHEDULED",
+                headers: { "X-Auth-Token": "061bce2b0738476f94d97e516179852d" }
+            }),
+            $.getJSON({
+                url: "https://api.football-data.org/v2/competitions/FL1/matches?status=SCHEDULED",
+                headers: { "X-Auth-Token": "3752f505d947465d8b1c5b03430890eb" }
+            }),
+            $.getJSON({
+                url: "https://api.football-data.org/v2/competitions/CL/matches?status=SCHEDULED",
+                headers: { "X-Auth-Token": "28d539fc326e418e930ef4221a051b1d" }
+            })
         )
             .done(function (data_PL, data_BL, data_PD, data_SA, data_FL, data_CL) {
                 PL = data_PL[0].matches;
@@ -117,8 +134,7 @@
                 var jtime = "";
 
                 for (var i = 0; i < games_num; i++) {
-                    if (club_list[game_list[i].homeTeam.name] && club_list[game_list[i].awayTeam.name]
-                        && game_list[i].status == 'SCHEDULED') {
+                    if (club_list[game_list[i].homeTeam.name] && club_list[game_list[i].awayTeam.name]) {
                         date = new Date(game_list[i].utcDate);
                         date = date.toLocaleString("ja-JP");
                         jdate = new Date(date);
@@ -127,9 +143,9 @@
                             '<tr align="center">'
                             + '<td><span style="font-size: 80%;">'
                             + club_list[game_list[i].homeTeam.name] + '</span></td>'
-                            + '<td class="' + game_list[i].td_class + '"><span style="font-size: 60%;">'
-                            + (jdate.getMonth() + 1) + '/' + jdate.getDate() + '(' + youbi[jdate.getDay()] + ') '
-                            + '<br />' + jtime + '<br />'
+                            + '<td class="' + game_list[i].td_class + '"><span style="font-size: 65%;">'
+                            + (jdate.getMonth() + 1) + '/' + jdate.getDate() + '(' + youbi[jdate.getDay()] + ')'
+                            + '<br />' + jtime + '</span><br /><span style="font-size: 55%;">'
                             + game_list[i].competition.img + '󠁢󠁥󠁮󠁧󠁿 第' +
                             + game_list[i].matchday + '節</span></td>'
                             + '<td><span style="font-size: 80%;">'
@@ -142,57 +158,35 @@
             })
             .fail(function () {
                 // エラーがあった時
-                $(".matchresults-end").before('<p>エラー</p>');
+                $('#loading-gif').children().remove();
+                $('#loading-gif').append('ページを更新してください');
             });
     });
-    // ]]></script>
-</p>
+// ]]></script>
 <h3>試合一覧</h3>
-<div id="pref-search"><select id="pref-select" class="form-control">
-        <option value="">クラブ別で絞り込み</option>
-        <optgroup label="プレミアリーグ">
-            <option value="マンチェスター・U">マンチェスター・U</option>
-            <option value="マンチェスター・C">マンチェスター・C</option>
-            <option value="リバプール">リバプール</option>
-            <option value="チェルシー">チェルシー</option>
-            <option value="アーセナル">アーセナル</option>
-            <option value="トッテナム">トッテナム</option>
-            <option value="エバートン">エバートン</option>
-        </optgroup>
-        <optgroup label="セリエA">
-            <option value="ユベントス">ユベントス</option>
-            <option value="ナポリ">ナポリ</option>
-            <option value="インテル">インテル</option>
-            <option value="ACミラン">ACミラン</option>
-            <option value="ローマ">ローマ</option>
-            <option value="ラツィオ">ラツィオ</option>
-            <option value="アタランタ">アタランタ</option>
-        </optgroup>
-        <optgroup label="ラ・リーガ">
-            <option value="レアル・マドリー">レアル・マドリー</option>
-            <option value="バルセロナ">バルセロナ</option>
-            <option value="アトレティコ">アトレティコ</option>
-            <option value="セビージャ">セビージャ</option>
-            <option value="ビジャレアル">ビジャレアル</option>
-        </optgroup>
-        <optgroup label="ブンデスリーガ">
-            <option value="バイエルン">バイエルン</option>
-            <option value="ドルトムント">ドルトムント</option>
-            <option value="ライプツィヒ">ライプツィヒ</option>
-            <option value="シャルケ">シャルケ</option>
-        </optgroup>
-        <optgroup label="リーグ・アン">
-            <option value="PSG">PSG</option>
-            <option value="マルセイユ">マルセイユ</option>
-            <option value="リヨン">リヨン</option>
-        </optgroup>
-    </select></div>
+<div id="pref-select"><input type="checkbox" value="" />クラブ別で絞り込み
+    <div><input type="checkbox" value="マンチェスター・U" />マンチェスター・U <input type="checkbox" value="マンチェスター・C" />マンチェスター・C
+        <input type="checkbox" value="リバプール" />リバプール <input type="checkbox" value="チェルシー" />チェルシー <input type="checkbox"
+            value="アーセナル" />アーセナル <input type="checkbox" value="トッテナム" />トッテナム <input type="checkbox"
+            value="エバートン" />エバートン</div>
+    <div><input type="checkbox" value="ユベントス" />ユベントス <input type="checkbox" value="ナポリ" />ナポリ <input type="checkbox"
+            value="インテル" />インテル <input type="checkbox" value="ACミラン" />ACミラン <input type="checkbox" value="ローマ" />ローマ
+        <input type="checkbox" value="ラツィオ" />ラツィオ <input type="checkbox" value="アタランタ" />アタランタ</div>
+    <div><input type="checkbox" value="レアル・マドリー" />レアル・マドリー <input type="checkbox" value="バルセロナ" />バルセロナ <input
+            type="checkbox" value="アトレティコ" />アトレティコ <input type="checkbox" value="セビージャ" />セビージャ <input type="checkbox"
+            value="ビジャレアル" />ビジャレアル</div>
+    <div><input type="checkbox" value="バイエルン" />バイエルン <input type="checkbox" value="ドルトムント" />ドルトムント <input
+            type="checkbox" value="ライプツィヒ" />ライプツィヒ <input type="checkbox" value="シャルケ" />シャルケ</div>
+    <div><input type="checkbox" value="PSG" />PSG <input type="checkbox" value="マルセイユ" />マルセイユ <input type="checkbox"
+            value="リヨン" />リヨン</div>
+</div>
 <p> </p>
 <table id="pref-table" class="table-borderd">
     <thead>
         <tr align="center">
             <th width="40%"><span style="font-size: 80%;">ホーム</span></th>
-            <th width="20%"><span style="font-size: 60%;">日時<br />(日本時間)<br />リーグ 節</span></th>
+            <th width="20%"><span style="font-size: 65%;">日時<br />(日本時間)</span><br /><span style="font-size: 55%;">リーグ
+                    節</span></th>
             <th width="40%"><span style="font-size: 80%;">アウェイ</span></th>
         </tr>
     </thead>
@@ -205,4 +199,4 @@
         </tr>
     </tbody>
 </table>
-<div class="matchresults-end"></div>
+<div class="matches-end"> </div>
