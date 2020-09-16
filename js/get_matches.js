@@ -16,9 +16,9 @@ $(function ($) {
     });
 });
 $(function () {
-    $.ajaxSetup({
-        headers: { "X-Auth-Token": "28fcc697165249959737b7f980aeefd2" }
-    });
+    // $.ajaxSetup({
+    //     headers: { "X-Auth-Token": "28fcc697165249959737b7f980aeefd2" }
+    // });
     $.when(
         $.getJSON({
             url: "https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED",
