@@ -2,22 +2,47 @@
 <p> </p>
 <!-- テストページ -->
 <script type="text/javascript">// <![CDATA[
-    $(function ($) {
-        $('#pref-select').change(function () {
-            var select_val = $('#pref-select input:checked').val();
+$(function ($) {
+        $("#btn1").on("click", function(){
+            /// チェックされたvalue値を配列として取得
+            var select_vals = $('input[name=clubs]:checked').map(function () {
+                return $(this).val();
+            }).get();
             $.each($("#pref-table tbody tr"), function (index, element) {
-                if (select_val == "") {
+                if (select_vals == "") {
                     $(element).css("display", "table-row");
                     return true;
                 }
                 var row_text = $(element).text();
-                if (row_text.indexOf(select_val) != -1) {
+                var flag = 0;
+                $.each(select_vals, function (index, select_val) {
+                    if (row_text.indexOf(select_val) != -1) {
+                        flag = 1;
+                        return false;
+                    }
+                });
+                if (flag == 1) {
                     $(element).css("display", "table-row");
                 } else {
                     $(element).css("display", "none");
                 }
-            });
+            })
         });
+        // $('#pref-select').change(function () {
+        //     var select_val = $('#pref-select input:checked').val();
+        //     $.each($("#pref-table tbody tr"), function (index, element) {
+        //         if (select_val == "") {
+        //             $(element).css("display", "table-row");
+        //             return true;
+        //         }
+        //         var row_text = $(element).text();
+        //         if (row_text.indexOf(select_val) != -1) {
+        //             $(element).css("display", "table-row");
+        //         } else {
+        //             $(element).css("display", "none");
+        //         }
+        //     });
+        // });
     });
     $(function () {
         $.when(
@@ -141,14 +166,16 @@
                         jtime = jdate.getHours() == 9 ? '未定' : (jdate.getHours() + ':' + ("0" + jdate.getMinutes()).slice(-2));
                         $("#matches-tbl").append(
                             '<tr align="center">'
-                            + '<td><span style="font-size: 80%;">'
+                            + '<td><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg" width="24" height="24">'
+                            + '<br /><span style="font-size: 80%;">'
                             + club_list[game_list[i].homeTeam.name] + '</span></td>'
                             + '<td class="' + game_list[i].td_class + '"><span style="font-size: 65%;">'
                             + (jdate.getMonth() + 1) + '/' + jdate.getDate() + '(' + youbi[jdate.getDay()] + ')'
                             + '<br />' + jtime + '</span><br /><span style="font-size: 55%;">'
                             + game_list[i].competition.img + '󠁢󠁥󠁮󠁧󠁿 第' +
                             + game_list[i].matchday + '節</span></td>'
-                            + '<td><span style="font-size: 80%;">'
+                            + '<td><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg" width="24" height="24">'
+                            + '<br /><span style="font-size: 80%;">'
                             + club_list[game_list[i].awayTeam.name] + '</span></td>'
                             + '</tr>'
                         );
@@ -164,39 +191,27 @@
     });
 // ]]></script>
 <h3>試合一覧</h3>
-<div id="pref-select"><input type="checkbox" value="" />クラブ別で絞り込み
-    <div><input type="checkbox" value="マンチェスター・U" />マンチェスター・U <input type="checkbox" value="マンチェスター・C" />マンチェスター・C
-        <input type="checkbox" value="リバプール" />リバプール <input type="checkbox" value="チェルシー" />チェルシー <input type="checkbox"
-            value="アーセナル" />アーセナル <input type="checkbox" value="トッテナム" />トッテナム <input type="checkbox"
-            value="エバートン" />エバートン</div>
-    <div><input type="checkbox" value="ユベントス" />ユベントス <input type="checkbox" value="ナポリ" />ナポリ <input type="checkbox"
-            value="インテル" />インテル <input type="checkbox" value="ACミラン" />ACミラン <input type="checkbox" value="ローマ" />ローマ
-        <input type="checkbox" value="ラツィオ" />ラツィオ <input type="checkbox" value="アタランタ" />アタランタ</div>
-    <div><input type="checkbox" value="レアル・マドリー" />レアル・マドリー <input type="checkbox" value="バルセロナ" />バルセロナ <input
-            type="checkbox" value="アトレティコ" />アトレティコ <input type="checkbox" value="セビージャ" />セビージャ <input type="checkbox"
-            value="ビジャレアル" />ビジャレアル</div>
-    <div><input type="checkbox" value="バイエルン" />バイエルン <input type="checkbox" value="ドルトムント" />ドルトムント <input
-            type="checkbox" value="ライプツィヒ" />ライプツィヒ <input type="checkbox" value="シャルケ" />シャルケ</div>
-    <div><input type="checkbox" value="PSG" />PSG <input type="checkbox" value="マルセイユ" />マルセイユ <input type="checkbox"
-            value="リヨン" />リヨン</div>
+<div id="pref-select"><input name="clubs" type="checkbox" value="" />クラブ別で絞り込み
+<div><input name="clubs" type="checkbox" value="マンチェスター・U" />マンチェスター・U <input name="clubs" type="checkbox" value="マンチェスター・C" />マンチェスター・C <input name="clubs" type="checkbox" value="リバプール" />リバプール <input name="clubs" type="checkbox" value="チェルシー" />チェルシー <input type="checkbox" value="アーセナル" />アーセナル <input name="clubs" type="checkbox" value="トッテナム" />トッテナム <input type="checkbox" value="エバートン" />エバートン</div>
+<div><input name="clubs" type="checkbox" value="ユベントス" />ユベントス <input name="clubs" type="checkbox" value="ナポリ" />ナポリ <input type="checkbox" value="インテル" />インテル <input name="clubs" type="checkbox" value="ACミラン" />ACミラン <input name="clubs" type="checkbox" value="ローマ" />ローマ <input name="clubs" type="checkbox" value="ラツィオ" />ラツィオ <input name="clubs" type="checkbox" value="アタランタ" />アタランタ</div>
+<div><input name="clubs" type="checkbox" value="レアル・マドリー" />レアル・マドリー <input name="clubs" type="checkbox" value="バルセロナ" />バルセロナ <input name="clubs" type="checkbox" value="アトレティコ" />アトレティコ <input name="clubs" type="checkbox" value="セビージャ" />セビージャ <input type="checkbox" value="ビジャレアル" />ビジャレアル</div>
+<div><input name="clubs" type="checkbox" value="バイエルン" />バイエルン <input name="clubs" type="checkbox" value="ドルトムント" />ドルトムント <input name="clubs" type="checkbox" value="ライプツィヒ" />ライプツィヒ <input name="clubs" type="checkbox" value="シャルケ" />シャルケ</div>
+<div><input name="clubs" type="checkbox" value="PSG" />PSG <input name="clubs" type="checkbox" value="マルセイユ" />マルセイユ <input type="checkbox" value="リヨン" />リヨン</div>
 </div>
+<p><button id="btn1" class="btn-square" type="button">map</button></p>
 <p> </p>
 <table id="pref-table" class="table-borderd">
-    <thead>
-        <tr align="center">
-            <th width="40%"><span style="font-size: 80%;">ホーム</span></th>
-            <th width="20%"><span style="font-size: 65%;">日時<br />(日本時間)</span><br /><span style="font-size: 55%;">リーグ
-                    節</span></th>
-            <th width="40%"><span style="font-size: 80%;">アウェイ</span></th>
-        </tr>
-    </thead>
-    <tbody id="matches-tbl">
-        <tr>
-            <td id="loading-gif" colspan="3" align="center"><img
-                    src="https://cdn-ak.f.st-hatena.com/images/fotolife/k/ktakumi11/20200908/20200908215938.gif"
-                    alt="f:id:ktakumi11:20200908215938g:plain" title="f:id:ktakumi11:20200908215938g:plain"
-                    itemprop="image" /></td>
-        </tr>
-    </tbody>
+<thead>
+<tr align="center">
+<th width="40%"><span style="font-size: 80%;">ホーム</span></th>
+<th width="20%"><span style="font-size: 65%;">日時<br />(日本時間)</span><br /><span style="font-size: 55%;">リーグ 節</span></th>
+<th width="40%"><span style="font-size: 80%;">アウェイ</span></th>
+</tr>
+</thead>
+<tbody id="matches-tbl">
+<tr>
+<td id="loading-gif" colspan="3" align="center"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/k/ktakumi11/20200908/20200908215938.gif" alt="f:id:ktakumi11:20200908215938g:plain" title="f:id:ktakumi11:20200908215938g:plain" itemprop="image" /></td>
+</tr>
+</tbody>
 </table>
 <div class="matches-end"> </div>
