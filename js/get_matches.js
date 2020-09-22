@@ -1,18 +1,35 @@
 $(function ($) {
-    $('#pref-select').change(function () {
-        var select_val = $('#pref-select option:selected').val();
+    $("#btn1").on("click", function () {
+        /// チェックされたvalue値を配列として取得
+        var select_vals = $('input[name=clubs]:checked').map(function () {
+            return $(this).val();
+        }).get();
         $.each($("#pref-table tbody tr"), function (index, element) {
-            if (select_val == "") {
+            if (select_vals == "") {
                 $(element).css("display", "table-row");
                 return true;
             }
             var row_text = $(element).text();
-            if (row_text.indexOf(select_val) != -1) {
+            var flag = 0;
+            $.each(select_vals, function (index, select_val) {
+                if (row_text.indexOf(select_val) != -1) {
+                    flag = 1;
+                    return false;
+                }
+            });
+            if (flag == 1) {
                 $(element).css("display", "table-row");
             } else {
                 $(element).css("display", "none");
             }
-        });
+        })
+    });
+    $('#all_check').change(function () {
+        if ($(this).prop('checked')) {
+            $('input:checkbox[name="clubs"]').prop('checked', true);
+        } else {
+            $('input:checkbox[name="clubs"]').prop('checked', false);
+        }
     });
 });
 $(function () {
