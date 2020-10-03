@@ -104,9 +104,10 @@ $(function () {
                 + data_BL[0].count
                 + data_PD[0].count
                 + data_SA[0].count
-                + data_FL[0].count;
+                + data_FL[0].count
+                + data_CL[0].count;;
 
-            game_list = PL.concat(BL, PD, SA, FL)
+            game_list = PL.concat(BL, PD, SA, FL, CL)
 
             game_list.sort(function (a, b) {
                 if (a.utcDate > b.utcDate) {
