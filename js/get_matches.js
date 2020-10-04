@@ -96,7 +96,7 @@ $(function () {
             CL = data_CL[0].matches;
             CL.forEach(function (match) {
                 match.competition = data_CL[0].competition
-                match.competition.img = '<img title="f:id:ktakumi11:20190618030228j:plain" src="https://cdn-ak.f.st-hatena.com/images/fotolife/k/ktakumi11/20190618/20190618030228.jpg" alt="f:id:ktakumi11:20190618030228j:plain" />'
+                match.competition.img = '<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/k/ktakumi11/20201004/20201004184003.png" alt="20201004184003">'
                 match.td_class = "td-cl"
             });
 
@@ -159,7 +159,7 @@ $(function () {
                     jtime = jdate.getHours() == 9 ? '未定' : (jdate.getHours() + ':' + ("0" + jdate.getMinutes()).slice(-2));
                     $("#matches-tbl").append(
                         '<tr align="center">'
-                        + '<td><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg" width="24" height="24">'
+                        + '<td><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg" height="24">'
                         + '<br /><span style="font-size: 80%;">'
                         + club_list[game_list[i].homeTeam.name] + '</span></td>'
                         + '<td class="' + game_list[i].td_class + '"><span style="font-size: 65%;">'
@@ -167,7 +167,7 @@ $(function () {
                         + '<br />' + jtime + '</span><br /><span style="font-size: 55%;">'
                         + game_list[i].competition.img + '󠁢󠁥󠁮󠁧󠁿 第' +
                         + game_list[i].matchday + '節</span></td>'
-                        + '<td><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg" width="24" height="24">'
+                        + '<td><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg" height="24">'
                         + '<br /><span style="font-size: 80%;">'
                         + club_list[game_list[i].awayTeam.name] + '</span></td>'
                         + '</tr>'
