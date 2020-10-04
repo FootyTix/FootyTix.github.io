@@ -1041,3 +1041,14 @@ pre.code {
   border: solid 1.5px black;
   background: #efefef;
 }
+
+.selectbox_list {
+  font-size: 80%;
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.selectbox_list .check_club{
+  width: 50%;
+  display: inline-box;
+}
