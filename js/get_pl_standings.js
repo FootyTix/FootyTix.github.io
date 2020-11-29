@@ -10,7 +10,7 @@ $(function () {
             $("#standings-tbl").append(
                 '<tr align="center">'
                 + '<td><span style="font-size: 80%;">' + standing.position + '</span></td>'
-                + '<td class="td-pl"><span style="font-size: 80%;">' + '<div style = "text-align: left"><div style="padding: 4px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
+                + '<td><span style="font-size: 80%;">' + '<div style = "text-align: left"><div style="padding: 4px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
                 + standing.team.crestUrl + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
                 + standing.team.name + '</div></div></span></td>'
                 + '<td><span style="font-size: 80%;">' + standing.playedGames + '</span></td>'
