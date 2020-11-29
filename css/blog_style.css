@@ -895,7 +895,12 @@ ul.foot-ul li:before {
 }
 
 
-.page-entry .toprecommend-container,.page-entry .toprecommend-toptitle, .page-archive-category .toprecommend-container,.page-archive-category .toprecommend-toptitle
+.page-entry .toprecommend-container,
+.page-entry .toprecommend-toptitle,
+.page-archive-category .toprecommend-container,
+.page-archive-category .toprecommend-toptitle,
+.page-static_page .toprecommend-container,
+.page-static_page .toprecommend-toptitle
 {
     display:none;/*記事ページなどには表示しない*/
 }

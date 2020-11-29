@@ -39,7 +39,7 @@ $(function () {
     $.when(
         $.getJSON({
             url: "https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED",
-            headers: { "X-Auth-Token": "28fcc697165249959737b7f980aeefd2" },
+            headers: { "X-Auth-Token": "28fcc697165249959737b7f980aeefd2" }
         }),
         $.getJSON({
             url: "https://api.football-data.org/v2/competitions/BL1/matches?status=SCHEDULED",
