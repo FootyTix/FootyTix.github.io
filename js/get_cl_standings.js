@@ -25,7 +25,7 @@ $(function () {
             'SS Lazio': 'ラツィオ',
             'Paris Saint-Germain FC': 'PSG',
             'Olympique de Marseille': 'マルセイユ',
-            'Stade Rennais FC 1901': 'レンヌ'
+            'Stade Rennais FC 1901': 'レンヌ',
             'FC Red Bull Salzburg': 'ザルツブルク',
             'FK Lokomotiv Moskva': 'ロコモティフ・モスクワ',
             'FK Shakhtar Donetsk': 'シャフタール・ドネツク',
