@@ -5,6 +5,29 @@ $(function () {
     $.getJSON('https://api.football-data.org/v2/competitions/PL/standings?standingType=TOTAL', function (data_PL) {
         //JSON取得後の処理
         standings = data_PL.standings[0].table;
+
+        var club_list = {
+            'Liverpool FC': 'リバプール',
+            'Manchester City FC': 'マンチェスター・C',
+            'Manchester United FC': 'マンチェスター・U',
+            'Arsenal FC': 'アーセナル',
+            'Tottenham Hotspur FC': 'トッテナム',
+            'Chelsea FC': 'チェルシー',
+            'Everton FC': 'エバートン',
+            'Leicester City FC': 'レスター',
+            'West Ham United FC': 'ウェストハム',
+            'Southampton FC': 'サウサンプトン',
+            'Wolverhampton Wanderers FC': 'ウォルヴァーハンプトン',
+            'Aston Villa FC': 'アストン・ヴィラ',
+            'Newcastle United FC': 'ニューカッスル',
+            'Leeds United FC': 'リーズ ',
+            'Crystal Palace FC': 'クリスタル・パレス',
+            'Brighton & Hove Albion FC': 'ブライトン',
+            'Fulham FC': 'フラム',
+            'West Bromwich Albion FC': 'WBA',
+            'Burnley FC': 'バーンリー',
+            'Sheffield United FC': 'シェフィールド'
+        };
         // 順位表作成
         standings.forEach(function (standing) {
             $("#standings-tbl").append(
@@ -12,11 +35,12 @@ $(function () {
                 + '<td><span style="font-size: 80%;">' + standing.position + '</span></td>'
                 + '<td><span style="font-size: 80%;">' + '<div style = "text-align: left"><div style="padding: 4px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
                 + standing.team.crestUrl + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
-                + standing.team.name + '</div></div></span></td>'
+                + club_list[standing.team.name] + '</div></div></span></td>'
                 + '<td><span style="font-size: 80%;">' + standing.playedGames + '</span></td>'
                 + '<td><span style="font-size: 80%;">' + standing.won + '</span></td>'
                 + '<td><span style="font-size: 80%;">' + standing.draw + '</span></td>'
                 + '<td><span style="font-size: 80%;">' + standing.lost + '</span></td>'
+                + '<td><span style="font-size: 80%;">' + ['','+'][+(standing.goalDifference > 0)] + standing.goalDifference + '</span></td>'
                 + '<td><span style="font-size: 80%;">' + standing.points + '</span></td>'
                 + '</tr>'
             )
