@@ -984,8 +984,7 @@ ul.foot-ul li:before {
 }
 
 #matches-tbl,
-#standings-tbl,
-.table-body {
+#standings-tbl {
   font-weight: bold;
   border: solid 1px #656565;
   line-height: 1.0em;
@@ -993,7 +992,17 @@ ul.foot-ul li:before {
 
 #pref-table th,
 #matches-tbl td,
-#standings-tbl td,
+#standings-tbl td {
+  border: solid 1px #656565;
+  line-height: 1.0em;
+}
+
+.table-body {
+  font-weight: bold;
+  border: solid 1px #656565;
+  line-height: 1.0em;
+}
+
 .table-body td {
   border: solid 1px #656565;
   line-height: 1.0em;
