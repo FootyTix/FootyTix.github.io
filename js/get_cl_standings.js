@@ -10,23 +10,35 @@ $(function () {
             'Liverpool FC': 'リバプール',
             'Manchester City FC': 'マンチェスター・C',
             'Manchester United FC': 'マンチェスター・U',
-            'Arsenal FC': 'アーセナル',
-            'Tottenham Hotspur FC': 'トッテナム',
             'Chelsea FC': 'チェルシー',
-            'Everton FC': 'エバートン',
-            'Leicester City FC': 'レスター',
-            'West Ham United FC': 'ウェストハム',
-            'Southampton FC': 'サウサンプトン',
-            'Wolverhampton Wanderers FC': 'ウォルヴァーハンプトン',
-            'Aston Villa FC': 'アストン・ヴィラ',
-            'Newcastle United FC': 'ニューカッスル',
-            'Leeds United FC': 'リーズ ',
-            'Crystal Palace FC': 'クリスタル・パレス',
-            'Brighton & Hove Albion FC': 'ブライトン',
-            'Fulham FC': 'フラム',
-            'West Bromwich Albion FC': 'WBA',
-            'Burnley FC': 'バーンリー',
-            'Sheffield United FC': 'シェフィールド'
+            'FC Bayern München': 'バイエルン',
+            'BV Borussia 09 Dortmund': 'ドルトムント',
+            'RB Leipzig': 'ライプツィヒ',
+            'Borussia Mönchengladbach': 'ボルシアMG',
+            'FC Barcelona': 'バルセロナ',
+            'Real Madrid CF': 'レアル・マドリー',
+            'Club Atlético de Madrid': 'アトレティコ',
+            'Sevilla FC': 'セビージャ',
+            'Juventus FC': 'ユベントス',
+            'FC Internazionale Milano': 'インテル',
+            'Atalanta BC': 'アタランタ',
+            'SS Lazio': 'ラツィオ',
+            'Paris Saint-Germain FC': 'PSG',
+            'Olympique de Marseille': 'マルセイユ',
+            'Stade Rennais FC 1901': 'レンヌ'
+            'FC Red Bull Salzburg': 'ザルツブルク',
+            'FK Lokomotiv Moskva': 'ロコモティフ・モスクワ',
+            'FK Shakhtar Donetsk': 'シャフタール・ドネツク',
+            'FC Porto': 'ポルト',
+            'PAE Olympiakos SFP': 'オリンピアコス',
+            'AFC Ajax': 'アヤックス',
+            'FC Midtjylland': 'ミッティラン',
+            'FK Krasnodar': 'クラスノダール',
+            'Club Brugge KV': 'クラブ・ブルッヘ',
+            'FK Zenit Sankt-Petersburg': 'ゼニト',
+            'FK Dynamo Kyiv': 'ディナモ・キエフ',
+            'Ferencvárosi TC': 'フェレンツヴァーロシュ',
+            'Medipol Başakşehir FK': 'イスタンブール・バシャクシェヒル',
         };
         
         var clone_tbl = document.getElementById("standings-tbl");
@@ -53,12 +65,12 @@ $(function () {
             })
             i++;
         });
-        $('#loading-gif').remove();
+        $('.loading-gif').remove();
     })
     .error(function () {
         // エラーがあった時
-        $('#loading-gif').children().remove();
-        $('#loading-gif').append('ページを更新してください');
+        $('.loading-gif').children().remove();
+        $('.loading-gif').append('ページを更新してください');
     });
 });
 
