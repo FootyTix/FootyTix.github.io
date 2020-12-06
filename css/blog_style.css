@@ -285,7 +285,7 @@ font-weight: bold;
 }
 
 @media (max-width: 767px) {
-  #table-borderd,
+  .table-borderd,
   .box,
   .box p {
     margin-left: -2px;
@@ -991,7 +991,7 @@ ul.foot-ul li:before {
   line-height: 1.0em;
 }
 
-#table-borderd th,
+.table-borderd th,
 #matches-tbl td,
 #standings-tbl td,
 .table-body td {
@@ -999,7 +999,7 @@ ul.foot-ul li:before {
   line-height: 1.0em;
 }
 
-#table-borderd {
+.table-borderd {
   width: 100%;
 }
 
