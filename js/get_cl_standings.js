@@ -4,7 +4,7 @@ $(function () {
     });
     $.getJSON('https://api.football-data.org/v2/competitions/CL/standings?standingType=TOTAL', function (data) {
         //JSON取得後の処理
-        standings = data.standings[0].table;
+        standings_list = data.standings;
 
         var club_list = {
             'Liverpool FC': 'リバプール',
@@ -28,22 +28,30 @@ $(function () {
             'Burnley FC': 'バーンリー',
             'Sheffield United FC': 'シェフィールド'
         };
+        
+        var clone_tbl = document.getElementById("standings-tbl");
+        var i = 1;
         // 順位表作成
-        standings.forEach(function (standing) {
-            $("#standings-tbl").append(
-                '<tr align="center">'
-                + '<td><span style="font-size: 60%;">' + standing.position + '</span></td>'
-                + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left"><div style="padding: 4px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
-                + standing.team.crestUrl + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
-                + standing.team.name + '</div></div></span></td>'
-                + '<td><span style="font-size: 60%;">' + standing.playedGames + '</span></td>'
-                + '<td><span style="font-size: 60%;">' + standing.won + '</span></td>'
-                + '<td><span style="font-size: 60%;">' + standing.draw + '</span></td>'
-                + '<td><span style="font-size: 60%;">' + standing.lost + '</span></td>'
-                + '<td><span style="font-size: 60%;">' + ['','+'][+(standing.goalDifference > 0)] + standing.goalDifference + '</span></td>'
-                + '<td><span style="font-size: 60%;">' + standing.points + '</span></td>'
-                + '</tr>'
-            )
+        standings_list.forEach(function (group) {
+            var standings = group.table;
+            var tbl_id = "#standings-tbl" + i;
+            standings.forEach(function (standing) {
+                $(tbl_id).append(
+                    '<tr align="center">'
+                    + '<td><span style="font-size: 60%;">' + standing.position + '</span></td>'
+                    + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left"><div style="padding: 4px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
+                    + standing.team.crestUrl + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
+                    + standing.team.name + '</div></div></span></td>'
+                    + '<td><span style="font-size: 60%;">' + standing.playedGames + '</span></td>'
+                    + '<td><span style="font-size: 60%;">' + standing.won + '</span></td>'
+                    + '<td><span style="font-size: 60%;">' + standing.draw + '</span></td>'
+                    + '<td><span style="font-size: 60%;">' + standing.lost + '</span></td>'
+                    + '<td><span style="font-size: 60%;">' + ['','+'][+(standing.goalDifference > 0)] + standing.goalDifference + '</span></td>'
+                    + '<td><span style="font-size: 60%;">' + standing.points + '</span></td>'
+                    + '</tr>'
+                )
+            })
+            i++;
         });
         $('#loading-gif').remove();
     })
