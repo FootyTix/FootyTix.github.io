@@ -7,26 +7,26 @@ $(function () {
         standings = data.standings[0].table;
 
         var club_list = {
-            'Liverpool FC': 'リバプール',
-            'Manchester City FC': 'マンチェスター・C',
-            'Manchester United FC': 'マンチェスター・U',
-            'Arsenal FC': 'アーセナル',
-            'Tottenham Hotspur FC': 'トッテナム',
-            'Chelsea FC': 'チェルシー',
-            'Everton FC': 'エバートン',
-            'Leicester City FC': 'レスター',
-            'West Ham United FC': 'ウェストハム',
-            'Southampton FC': 'サウサンプトン',
-            'Wolverhampton Wanderers FC': 'ウォルヴァーハンプトン',
-            'Aston Villa FC': 'アストン・ヴィラ',
-            'Newcastle United FC': 'ニューカッスル',
-            'Leeds United FC': 'リーズ ',
-            'Crystal Palace FC': 'クリスタル・パレス',
-            'Brighton & Hove Albion FC': 'ブライトン',
-            'Fulham FC': 'フラム',
-            'West Bromwich Albion FC': 'WBA',
-            'Burnley FC': 'バーンリー',
-            'Sheffield United FC': 'シェフィールド'
+            'Club Atlético de Madrid': 'アトレティコ',
+            'Real Madrid CF': 'レアル・マドリー',
+            'FC Barcelona': 'バルセロナ',
+            'Real Sociedad de Fútbol': 'レアル・ソシエダ',
+            'Villarreal CF': 'ビジャレアル',
+            'Cádiz CF': 'カディス',
+            'Sevilla FC': 'セビージャ',
+            'Granada CF': 'グラナダ',
+            'Athletic Club': 'アスレティック・ビルバオ',
+            'Elche CF': 'エルチェ',
+            'SD Eibar': 'エイバル',
+            'Deportivo Alavés': 'アラベス',
+            'Getafe CF': 'ヘタフェ',
+            'RC Celta de Vigo': 'セルタ',
+            'Valencia CF': 'バレンシア',
+            'Real Betis Balompié': 'ベティス',
+            'Levante UD': 'レバンテ',
+            'CA Osasuna': 'オサスナ',
+            'Real Valladolid CF': 'バジャドリード',
+            'SD Huesca': 'ウエスカ'
         };
         // 順位表作成
         standings.forEach(function (standing) {
@@ -53,4 +53,3 @@ $(function () {
         $('#loading-gif').append('ページを更新してください');
     });
 });
-

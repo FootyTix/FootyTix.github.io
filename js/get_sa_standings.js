@@ -7,26 +7,26 @@ $(function () {
         standings = data.standings[0].table;
 
         var club_list = {
-            'Liverpool FC': 'リバプール',
-            'Manchester City FC': 'マンチェスター・C',
-            'Manchester United FC': 'マンチェスター・U',
-            'Arsenal FC': 'アーセナル',
-            'Tottenham Hotspur FC': 'トッテナム',
-            'Chelsea FC': 'チェルシー',
-            'Everton FC': 'エバートン',
-            'Leicester City FC': 'レスター',
-            'West Ham United FC': 'ウェストハム',
-            'Southampton FC': 'サウサンプトン',
-            'Wolverhampton Wanderers FC': 'ウォルヴァーハンプトン',
-            'Aston Villa FC': 'アストン・ヴィラ',
-            'Newcastle United FC': 'ニューカッスル',
-            'Leeds United FC': 'リーズ ',
-            'Crystal Palace FC': 'クリスタル・パレス',
-            'Brighton & Hove Albion FC': 'ブライトン',
-            'Fulham FC': 'フラム',
-            'West Bromwich Albion FC': 'WBA',
-            'Burnley FC': 'バーンリー',
-            'Sheffield United FC': 'シェフィールド'
+            'AC Milan': 'ACミラン',
+            'FC Internazionale Milano': 'インテル',
+            'Juventus FC': 'ユベントス',
+            'US Sassuolo Calcio': 'サッスオーロ',
+            'SSC Napoli': 'ナポリ',
+            'SS Lazio': 'ラツィオ',
+            'AS Roma': 'ローマ',
+            'Hellas Verona FC': 'ヴェローナ',
+            'Atalanta BC': 'アタランタ',
+            'Bologna FC 1909': 'ボローニャ',
+            'Cagliari Calcio': 'カリアリ',
+            'UC Sampdoria': 'サンプドリア',
+            'Spezia Calcio': 'スペツィア',
+            'Udinese Calcio': 'ウディネーゼ',
+            'Benevento Calcio': 'ベネヴェント',
+            'Parma Calcio 1913': 'パルマ',
+            'ACF Fiorentina': 'フィオレンティーナ',
+            'Torino FC': 'トリノ',
+            'Genoa CFC': 'ジェノア',
+            'FC Crotone': 'クロトーネ'
         };
         // 順位表作成
         standings.forEach(function (standing) {
@@ -53,4 +53,3 @@ $(function () {
         $('#loading-gif').append('ページを更新してください');
     });
 });
-

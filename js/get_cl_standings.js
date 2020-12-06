@@ -2,7 +2,7 @@ $(function () {
     $.ajaxSetup({
         headers: { "X-Auth-Token": "87623518926c49a6aaed4d2f79bfd1a1" }
     });
-    $.getJSON('https://api.football-data.org/v2/competitions/PL/standings?standingType=TOTAL', function (data) {
+    $.getJSON('https://api.football-data.org/v2/competitions/CL/standings?standingType=TOTAL', function (data) {
         //JSON取得後の処理
         standings = data.standings[0].table;
 
