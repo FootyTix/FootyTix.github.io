@@ -1000,14 +1000,14 @@ ul.foot-ul li:before {
 }
 
 .table-body {
-  font-weight: bold;
-  border: solid 1px #656565;
-  line-height: 1.0em;
+  font-weight: bold!important;
+  border: solid 1px #656565!important;
+  line-height: 1.0em!important;
 }
 
 .table-body td {
-  border: solid 1px #656565;
-  line-height: 1.0em;
+  border: solid 1px #656565!important;
+  line-height: 1.0em!important;
 }
 
 #pref-table,
