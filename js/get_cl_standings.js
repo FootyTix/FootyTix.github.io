@@ -12,7 +12,7 @@ $(function () {
             'Manchester United FC': 'マンチェスター・U',
             'Chelsea FC': 'チェルシー',
             'FC Bayern München': 'バイエルン',
-            'BV Borussia 09 Dortmund': 'ドルトムント',
+            'Borussia Dortmund': 'ドルトムント',
             'RB Leipzig': 'ライプツィヒ',
             'Borussia Mönchengladbach': 'ボルシアMG',
             'FC Barcelona': 'バルセロナ',

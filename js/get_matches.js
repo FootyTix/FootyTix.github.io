@@ -127,7 +127,7 @@ $(function () {
                 'Everton FC': 'エバートン',
                 'Leicester City FC': 'レスター',
                 'FC Bayern München': 'バイエルン',
-                'BV Borussia 09 Dortmund': 'ドルトムント',
+                'Borussia Dortmund': 'ドルトムント',
                 'RB Leipzig': 'ライプツィヒ',
                 'FC Schalke 04': 'シャルケ',
                 'FC Barcelona': 'バルセロナ',

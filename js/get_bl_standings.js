@@ -9,7 +9,7 @@ $(function () {
         var club_list = {
             'FC Bayern München': 'バイエルン',
             'RB Leipzig': 'ライプツィヒ',
-            'BV Borussia 09 Dortmund': 'ドルトムント',
+            'Borussia Dortmund': 'ドルトムント',
             'Bayer 04 Leverkusen': 'レヴァークーゼン',
             'VfL Wolfsburg': 'ヴォルフスブルク',
             '1. FC Union Berlin': 'ウニオン・ベルリン',
