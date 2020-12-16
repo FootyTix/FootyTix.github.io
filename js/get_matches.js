@@ -135,6 +135,7 @@ $(function () {
                 'Club Atlético de Madrid': 'アトレティコ',
                 'Sevilla FC': 'セビージャ',
                 'Villarreal CF': 'ビジャレアル',
+                'Real Sociedad de Fútbol': 'レアル・ソシエダ',
                 'Juventus FC': 'ユベントス',
                 'SSC Napoli': 'ナポリ',
                 'AS Roma': 'ローマ',
