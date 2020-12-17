@@ -154,6 +154,21 @@ $(function () {
             var date, jdate;
             var jtime = "";
 
+            function getMatchdayOrRound(game){
+                var round_name = {
+                    'ROUND_OF_16': 'ラウンド16',
+                    'QUARTER_FINALS': '準々決勝',
+                    'SEMI_FINALS': '準決勝',
+                    'FINAL': '決勝'
+                }
+
+                if (game.season.id == 642) {
+                    return round_name[game.stage]
+                } else {
+                    return '󠁢󠁥󠁮󠁧󠁿第' + game.matchday + '節';
+                }
+            }
+
             for (var i = 0; i < games_num; i++) {
                 if (club_list[game_list[i].homeTeam.name] && club_list[game_list[i].awayTeam.name]) {
                     date = new Date(game_list[i].utcDate);
@@ -168,8 +183,8 @@ $(function () {
                         + '<td class="' + game_list[i].td_class + '"><span style="font-size: 65%;">'
                         + (jdate.getMonth() + 1) + '/' + jdate.getDate() + '(' + youbi[jdate.getDay()] + ')'
                         + '<br />' + jtime + '</span><br /><span style="font-size: 55%;">'
-                        + game_list[i].competition.img + '󠁢󠁥󠁮󠁧󠁿 第' +
-                        + game_list[i].matchday + '節</span></td>'
+                        + game_list[i].competition.img + '󠁢󠁥󠁮󠁧󠁿 '
+                        + getMatchdayOrRound(game_list[i]) + '</span></td>'
                         + '<td><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg" height="24">'
                         + '<br /><span style="font-size: 80%;">'
                         + club_list[game_list[i].awayTeam.name] + '</span></td>'
