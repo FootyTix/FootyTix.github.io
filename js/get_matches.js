@@ -129,7 +129,8 @@ $(function () {
                 'FC Bayern München': 'バイエルン',
                 'Borussia Dortmund': 'ドルトムント',
                 'RB Leipzig': 'ライプツィヒ',
-                'FC Schalke 04': 'シャルケ',
+                'Borussia Mönchengladbach': 'ボルシアMG',
+                'Bayer 04 Leverkusen': 'レヴァークーゼン',
                 'FC Barcelona': 'バルセロナ',
                 'Real Madrid CF': 'レアル・マドリー',
                 'Club Atlético de Madrid': 'アトレティコ',
@@ -145,7 +146,8 @@ $(function () {
                 'SS Lazio': 'ラツィオ',
                 'Paris Saint-Germain FC': 'PSG',
                 'Olympique de Marseille': 'マルセイユ',
-                'Olympique Lyonnais': 'リヨン'
+                'Olympique Lyonnais': 'リヨン',
+                'FC Porto': 'ポルト'
             };
 
             var youbi = ["日", "月", "火", "水", "木", "金", "土"];
