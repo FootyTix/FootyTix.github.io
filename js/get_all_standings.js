@@ -28,12 +28,12 @@ $(function () {
     .done(function (data_PL, data_BL, data_PD, data_SA, data_FL, data_CL) {
         //JSON取得後の処理
         //上位4クラブを抽出
-        standings_pl = data_PL[0].standings[0].table.slice(0,4);
-        standings_bl = data_BL[0].standings[0].table.slice(0,4);
-        standings_pd = data_PD[0].standings[0].table.slice(0,4);
-        standings_sa = data_SA[0].standings[0].table.slice(0,4);
-        standings_fl = data_FL[0].standings[0].table.slice(0,4);
-        standings_cl = data_CL[0].standings[0].table.slice(0,4);
+        standings_pl = data_PL[0].standings[0].table.slice(0,5);
+        standings_bl = data_BL[0].standings[0].table.slice(0,5);
+        standings_pd = data_PD[0].standings[0].table.slice(0,5);
+        standings_sa = data_SA[0].standings[0].table.slice(0,5);
+        standings_fl = data_FL[0].standings[0].table.slice(0,5);
+        standings_cl = data_CL[0].standings[0].table.slice(0,5);
         var club_list_pl = {
             'Liverpool FC': 'リバプール',
             'Manchester City FC': 'マンチェスター・C',
@@ -185,7 +185,7 @@ $(function () {
         $('#loading-gif-pd').remove();
 
         standings_bl.forEach(function (standing) {
-            $("#standings-tbl-pd").append(
+            $("#standings-tbl-bl").append(
                 '<tr align="center">'
                 + '<td><span style="font-size: 60%;">' + standing.position + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left"><div style="padding: 4px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
