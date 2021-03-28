@@ -991,7 +991,12 @@ ul.foot-ul li:before {
 }
 
 #matches-tbl,
-#standings-tbl {
+#standings-tbl,
+#standings-tbl-pl,
+#standings-tbl-pd,
+#standings-tbl-bl,
+#standings-tbl-sa,
+#standings-tbl-fl {
   font-weight: bold;
   border: solid 1px #656565;
   line-height: 1.0em;
@@ -1000,7 +1005,12 @@ ul.foot-ul li:before {
 #pref-table th,
 .table-borderd th,
 #matches-tbl td,
-#standings-tbl td {
+#standings-tbl td,
+#standings-tbl-pl td,
+#standings-tbl-pd td,
+#standings-tbl-bl td,
+#standings-tbl-sa td,
+#standings-tbl-fl td {
   border: solid 1px #656565!important;
   line-height: 1.0em!important;
 }
