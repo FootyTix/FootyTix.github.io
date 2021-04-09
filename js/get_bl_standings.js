@@ -22,7 +22,7 @@ $(function () {
             'TSG 1899 Hoffenheim': 'ホッフェンハイム',
             'SC Freiburg': 'フライブルク',
             '1. FC Köln': 'ケルン',
-            'DSC Arminia Bielefeld': 'ビーレフェルト',
+            'Arminia Bielefeld': 'ビーレフェルト',
             '1. FSV Mainz 05': 'マインツ',
             'FC Schalke 04': 'シャルケ'
         };
