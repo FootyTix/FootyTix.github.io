@@ -126,11 +126,14 @@ $(function () {
                 'Chelsea FC': 'チェルシー',
                 'Everton FC': 'エバートン',
                 'Leicester City FC': 'レスター',
+                'West Ham United FC': 'ウェストハム',
                 'FC Bayern München': 'バイエルン',
                 'Borussia Dortmund': 'ドルトムント',
                 'RB Leipzig': 'ライプツィヒ',
                 'Borussia Mönchengladbach': 'ボルシアMG',
                 'Bayer 04 Leverkusen': 'レヴァークーゼン',
+                'VfL Wolfsburg': 'ヴォルフスブルク',
+                'Eintracht Frankfurt': 'フランクフルト',
                 'FC Barcelona': 'バルセロナ',
                 'Real Madrid CF': 'レアル・マドリー',
                 'Club Atlético de Madrid': 'アトレティコ',
@@ -146,7 +149,9 @@ $(function () {
                 'SS Lazio': 'ラツィオ',
                 'Paris Saint-Germain FC': 'PSG',
                 'Olympique de Marseille': 'マルセイユ',
+                'Lille OSC': 'リール',
                 'Olympique Lyonnais': 'リヨン',
+                'AS Monaco FC': 'モナコ',
                 'FC Porto': 'ポルト'
             };
 
