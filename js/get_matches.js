@@ -180,6 +180,7 @@ $(function () {
                     date = date.toLocaleString("ja-JP");
                     jdate = new Date(date);
                     jtime = jdate.getHours() == 9 ? '未定' : (jdate.getHours() + ':' + ("0" + jdate.getMinutes()).slice(-2));
+                    
                     $("#matches-tbl").append(
                         '<tr align="center">'
                         + '<td><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg" height="24">'

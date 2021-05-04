@@ -26,7 +26,7 @@ $(function () {
             'Fulham FC': 'フラム',
             'West Bromwich Albion FC': 'WBA',
             'Burnley FC': 'バーンリー',
-            'Sheffield United FC': 'シェフィールド'
+            'Sheffield United FC': 'シェフィールド・U'
         };
         // 順位表作成
         standings.forEach(function (standing) {

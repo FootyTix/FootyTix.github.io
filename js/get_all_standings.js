@@ -19,13 +19,14 @@ $(function () {
         $.getJSON({
             url: "https://api.football-data.org/v2/competitions/FL1/standings?standingType=TOTAL",
             headers: { "X-Auth-Token": "3752f505d947465d8b1c5b03430890eb" }
-        }),
-        $.getJSON({
-            url: "https://api.football-data.org/v2/competitions/CL/standings?standingType=TOTAL",
-            headers: { "X-Auth-Token": "28d539fc326e418e930ef4221a051b1d" }
         })
+        // ,
+        // $.getJSON({
+        //     url: "https://api.football-data.org/v2/competitions/CL/standings?standingType=TOTAL",
+        //     headers: { "X-Auth-Token": "28d539fc326e418e930ef4221a051b1d" }
+        // })
     )
-    .done(function (data_PL, data_BL, data_PD, data_SA, data_FL, data_CL) {
+    .done(function (data_PL, data_BL, data_PD, data_SA, data_FL/*, data_CL*/) {
         //JSON取得後の処理
         //上位4クラブを抽出
         standings_pl = data_PL[0].standings[0].table.slice(0,5);
@@ -33,7 +34,7 @@ $(function () {
         standings_pd = data_PD[0].standings[0].table.slice(0,5);
         standings_sa = data_SA[0].standings[0].table.slice(0,5);
         standings_fl = data_FL[0].standings[0].table.slice(0,5);
-        standings_cl = data_CL[0].standings[0].table.slice(0,5);
+        // standings_cl = data_CL[0].standings[0].table.slice(0,5);
         var club_list_pl = {
             'Liverpool FC': 'リバプール',
             'Manchester City FC': 'マンチェスター・C',
