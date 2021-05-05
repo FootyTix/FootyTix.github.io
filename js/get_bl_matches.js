@@ -1,8 +1,8 @@
 $(function () {
     $.ajaxSetup({
-        headers: { "X-Auth-Token": "988f0be1f26f481fae9b8b19d0327312" }
+        headers: { "X-Auth-Token": "8fb8468fc6e64570b668b0b8e629c620" }
     });
-    $.getJSON('https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED', function (data) {
+    $.getJSON('https://api.football-data.org/v2/competitions/BL1/matches?status=SCHEDULED', function (data) {
 
         //JSON取得後の処理
         matches = data.matches;
@@ -15,26 +15,24 @@ $(function () {
         game_list = matches;
 
         var club_list = {
-            'Liverpool FC': 'リバプール',
-            'Manchester City FC': 'マンチェスター・C',
-            'Manchester United FC': 'マンチェスター・U',
-            'Arsenal FC': 'アーセナル',
-            'Tottenham Hotspur FC': 'トッテナム',
-            'Chelsea FC': 'チェルシー',
-            'Everton FC': 'エバートン',
-            'Leicester City FC': 'レスター',
-            'West Ham United FC': 'ウェストハム',
-            'Southampton FC': 'サウサンプトン',
-            'Wolverhampton Wanderers FC': 'ウォルヴァーハンプトン',
-            'Aston Villa FC': 'アストン・ヴィラ',
-            'Newcastle United FC': 'ニューカッスル',
-            'Leeds United FC': 'リーズ ',
-            'Crystal Palace FC': 'クリスタル・パレス',
-            'Brighton & Hove Albion FC': 'ブライトン',
-            'Fulham FC': 'フラム',
-            'West Bromwich Albion FC': 'WBA',
-            'Burnley FC': 'バーンリー',
-            'Sheffield United FC': 'シェフィールド・U'
+            'FC Bayern München': 'バイエルン',
+            'RB Leipzig': 'ライプツィヒ',
+            'Borussia Dortmund': 'ドルトムント',
+            'Bayer 04 Leverkusen': 'レヴァークーゼン',
+            'VfL Wolfsburg': 'ヴォルフスブルク',
+            '1. FC Union Berlin': 'ウニオン・ベルリン',
+            'Borussia Mönchengladbach': 'ボルシアMG',
+            'Eintracht Frankfurt': 'フランクフルト',
+            'FC Augsburg': 'アウクスブルク',
+            'VfB Stuttgart': 'シュトゥットガルト',
+            'Hertha BSC': 'ヘルタ・ベルリン',
+            'SV Werder Bremen': 'ブレーメン',
+            'TSG 1899 Hoffenheim': 'ホッフェンハイム',
+            'SC Freiburg': 'フライブルク',
+            '1. FC Köln': 'ケルン',
+            'Arminia Bielefeld': 'ビーレフェルト',
+            '1. FSV Mainz 05': 'マインツ',
+            'FC Schalke 04': 'シャルケ'
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];

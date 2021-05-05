@@ -1,8 +1,8 @@
 $(function () {
     $.ajaxSetup({
-        headers: { "X-Auth-Token": "988f0be1f26f481fae9b8b19d0327312" }
+        headers: { "X-Auth-Token": "ffa3eafb266c4274ab4491428e516b49" }
     });
-    $.getJSON('https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED', function (data) {
+    $.getJSON('https://api.football-data.org/v2/competitions/SA/matches?status=SCHEDULED', function (data) {
 
         //JSON取得後の処理
         matches = data.matches;
@@ -15,26 +15,26 @@ $(function () {
         game_list = matches;
 
         var club_list = {
-            'Liverpool FC': 'リバプール',
-            'Manchester City FC': 'マンチェスター・C',
-            'Manchester United FC': 'マンチェスター・U',
-            'Arsenal FC': 'アーセナル',
-            'Tottenham Hotspur FC': 'トッテナム',
-            'Chelsea FC': 'チェルシー',
-            'Everton FC': 'エバートン',
-            'Leicester City FC': 'レスター',
-            'West Ham United FC': 'ウェストハム',
-            'Southampton FC': 'サウサンプトン',
-            'Wolverhampton Wanderers FC': 'ウォルヴァーハンプトン',
-            'Aston Villa FC': 'アストン・ヴィラ',
-            'Newcastle United FC': 'ニューカッスル',
-            'Leeds United FC': 'リーズ ',
-            'Crystal Palace FC': 'クリスタル・パレス',
-            'Brighton & Hove Albion FC': 'ブライトン',
-            'Fulham FC': 'フラム',
-            'West Bromwich Albion FC': 'WBA',
-            'Burnley FC': 'バーンリー',
-            'Sheffield United FC': 'シェフィールド・U'
+            'AC Milan': 'ACミラン',
+            'FC Internazionale Milano': 'インテル',
+            'Juventus FC': 'ユベントス',
+            'US Sassuolo Calcio': 'サッスオーロ',
+            'SSC Napoli': 'ナポリ',
+            'SS Lazio': 'ラツィオ',
+            'AS Roma': 'ローマ',
+            'Hellas Verona FC': 'ヴェローナ',
+            'Atalanta BC': 'アタランタ',
+            'Bologna FC 1909': 'ボローニャ',
+            'Cagliari Calcio': 'カリアリ',
+            'UC Sampdoria': 'サンプドリア',
+            'Spezia Calcio': 'スペツィア',
+            'Udinese Calcio': 'ウディネーゼ',
+            'Benevento Calcio': 'ベネヴェント',
+            'Parma Calcio 1913': 'パルマ',
+            'ACF Fiorentina': 'フィオレンティーナ',
+            'Torino FC': 'トリノ',
+            'Genoa CFC': 'ジェノア',
+            'FC Crotone': 'クロトーネ'
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];

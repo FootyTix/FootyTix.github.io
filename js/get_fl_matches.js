@@ -1,8 +1,8 @@
 $(function () {
     $.ajaxSetup({
-        headers: { "X-Auth-Token": "988f0be1f26f481fae9b8b19d0327312" }
+        headers: { "X-Auth-Token": "eef183d61edc4fa8b63108971f91fabf" }
     });
-    $.getJSON('https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED', function (data) {
+    $.getJSON('https://api.football-data.org/v2/competitions/FL1/matches?status=SCHEDULED', function (data) {
 
         //JSON取得後の処理
         matches = data.matches;
@@ -15,26 +15,26 @@ $(function () {
         game_list = matches;
 
         var club_list = {
-            'Liverpool FC': 'リバプール',
-            'Manchester City FC': 'マンチェスター・C',
-            'Manchester United FC': 'マンチェスター・U',
-            'Arsenal FC': 'アーセナル',
-            'Tottenham Hotspur FC': 'トッテナム',
-            'Chelsea FC': 'チェルシー',
-            'Everton FC': 'エバートン',
-            'Leicester City FC': 'レスター',
-            'West Ham United FC': 'ウェストハム',
-            'Southampton FC': 'サウサンプトン',
-            'Wolverhampton Wanderers FC': 'ウォルヴァーハンプトン',
-            'Aston Villa FC': 'アストン・ヴィラ',
-            'Newcastle United FC': 'ニューカッスル',
-            'Leeds United FC': 'リーズ ',
-            'Crystal Palace FC': 'クリスタル・パレス',
-            'Brighton & Hove Albion FC': 'ブライトン',
-            'Fulham FC': 'フラム',
-            'West Bromwich Albion FC': 'WBA',
-            'Burnley FC': 'バーンリー',
-            'Sheffield United FC': 'シェフィールド・U'
+            'Paris Saint-Germain FC': 'PSG',
+            'Olympique de Marseille': 'マルセイユ',
+            'Lille OSC': 'リール',
+            'Olympique Lyonnais': 'リヨン',
+            'AS Monaco FC': 'モナコ',
+            'Montpellier HSC': 'モンペリエ',
+            'Racing Club de Lens': 'RCランス',
+            'Stade Rennais FC 1901': 'レンヌ',
+            'Angers SCO': 'アンジェ',
+            'Stade Brestois 29': 'ブレスト',
+            'OGC Nice': 'ニース',
+            'FC Metz': 'メス',
+            'FC Girondins de Bordeaux': 'ボルドー',
+            'FC Nantes': 'ナント',
+            'AS Saint-Étienne': 'サンテティエンヌ',
+            'Nîmes Olympique': 'ニーム',
+            'Stade de Reims': 'スタッド・ランス',
+            'FC Lorient': 'ロリアン',
+            'RC Strasbourg Alsace': 'ストラスブール',
+            "Dijon Football Côte d'Or": 'ディジョン'
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];
