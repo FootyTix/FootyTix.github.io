@@ -1,19 +1,18 @@
 $(function () {
     $.ajaxSetup({
-        headers: { "X-Auth-Token": "8d515051437f466083d82551328ba830" }
+        headers: { "X-Auth-Token": "988f0be1f26f481fae9b8b19d0327312" }
     });
-    $.getJSON('https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED', function (data_PL) {
+    $.getJSON('https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED', function (data) {
 
         //JSON取得後の処理
-        PL = data_PL.matches;
-        PL.forEach(function (match) {
-            match.competition = data_PL.competition
-            match.competition.img = "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+        matches = data.matches;
+        matches.forEach(function (match) {
+            match.competition = data.competition
             match.td_class = "td-cl"
         });
-        games_num = data_PL.count;
+        games_num = data.count;
 
-        game_list = PL
+        game_list = matches;
 
         var club_list = {
             'Liverpool FC': 'リバプール',
