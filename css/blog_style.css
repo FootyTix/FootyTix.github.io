@@ -258,6 +258,7 @@ font-weight: bold;
   .page-entry .hatena-module-archive {display: none;}
   .page-entry .hatena-module-profile {display: none;}
   .page-entry .hatena-module-search-box {display: none;}
+  .page-entry .hatena-module-sidebar_search_by_google {display: none;}
   .page-entry .hatena-module-category {display: none;}
   .page-entry .hatena-module-sidebar_polisy {display: none;}
   .page-entry .hatena-module-sidebar_contact {display: none;}
@@ -275,6 +276,7 @@ font-weight: bold;
   .page-archive-category .hatena-module-archive {display: none;}
   .page-archive-category .hatena-module-profile {display: none;}
   .page-archive-category .hatena-module-search-box {display: none;}
+  .page-archive-category .hatena-module-sidebar_search_by_google {display: none;}
   .page-archive-category .hatena-module-category {display: none;}
   .page-archive-category .hatena-module-sidebar_polisy {display: none;}
   .page-archive-category .hatena-module-sidebar_contact {display: none;}
