@@ -48,7 +48,7 @@ $(function () {
             jtime = jdate.getHours() == 9 ? '未定' : (jdate.getHours() + ':' + ("0" + jdate.getMinutes()).slice(-2));
             
             //節を挿入
-            if (game_list[i].matchday > matchday_count) {
+            if (game_list[i].matchday != matchday_count) {
                 matchday_count = game_list[i].matchday;
                 $("#matches-tbl").append(
                     '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
