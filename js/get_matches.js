@@ -167,10 +167,10 @@ $(function () {
                     'FINAL': '決勝'
                 }
 
-                if (game.season.id == 642) {
-                    return round_name[game.stage]
-                } else {
+                if (game.stage == 'GROUP_STAGE') {
                     return '󠁢󠁥󠁮󠁧󠁿第' + game.matchday + '節';
+                } else {
+                    return round_name[game.stage]
                 }
             }
 
