@@ -29,7 +29,7 @@ $(function () {
             "Wales": "ウェールズ",
             "Finland": "フィンランド",
             "North Macedonia": "北マケドニア",
-            "Netherlands": "北アイルランド",
+            "Netherlands": "オランダ",
             "Scotland": "スコットランド",
         };
         
