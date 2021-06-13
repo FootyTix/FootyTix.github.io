@@ -77,23 +77,23 @@ $(function () {
 
         // ホームチーム名
         function getHomeTeam (game) {
-            if (game.homeTeam.id == null) {
+            if (game.homeTeam == null) {
                 return '<td><span style="font-size: 70%;">' + 未定 + '</span></td>';
             } else {
-                return '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg" height="15">'
+                return '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game.homeTeam.id + '.svg" height="15">'
                 + '<br /><span style="font-size: 70%;">'
-                + club_list[game_list[i].homeTeam.name] + '</span></td>';
+                + club_list[game.homeTeam.name] + '</span></td>';
             }
         }
 
         // アウェイチーム名
         function getAwayTeam (game) {
-            if (game.awayTeam.id == null) {
+            if (game.awayTeam == null) {
                 return '<td><span style="font-size: 70%;">' + 未定 + '</span></td>';
             } else {
-                return '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg" height="15">'
+                return '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game.awayTeam.id + '.svg" height="15">'
                 + '<br /><span style="font-size: 70%;">'
-                + club_list[game_list[i].awayTeam.name] + '</span></td>';
+                + club_list[game.awayTeam.name] + '</span></td>';
             }
         }
 
