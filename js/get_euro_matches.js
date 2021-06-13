@@ -64,7 +64,7 @@ $(function () {
         function getScoreOrDate(game, game_jdate, game_jtime) {
             if (game.status == 'FINISHED') {
                 return '<td class="' + game.td_class + '"><span style="font-size: 65%; color: #454545;">'
-                + game.score.fulltim.homeTeam + ' - ' + game.score.fulltim.awayTeam
+                + game.score.fulltime.homeTeam + ' - ' + game.score.fulltime.awayTeam
                 + '</span></td>';
             } else {
                 return '<td class="' + game.td_class + '"><span style="font-size: 65%;">'
