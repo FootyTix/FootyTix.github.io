@@ -61,6 +61,18 @@ $(function () {
             }
         }
 
+        function getScoreOrDate(game, game_jdate, game_jtime) {
+            if (game.status == 'FINISHED') {
+                return '<td class="' + game.td_class + '"><span style="font-size: 65%; color: #454545;">'
+                + game.score.fulltim.homeTeam + ' - ' + game.score.fulltim.awayTeam
+                + '</span></td>';
+            } else {
+                return '<td class="' + game.td_class + '"><span style="font-size: 65%;">'
+                + (game_jdate.getMonth() + 1) + '/' + game_jdate.getDate() + '(' + youbi[game_jdate.getDay()] + ')'
+                + '<br />' + game_jtime + '</span></td>';
+            }
+        }
+
         for (var i = 0; i < games_num; i++) {
             // 日時を日本時間に変換
             date = new Date(game_list[i].utcDate);
@@ -84,9 +96,7 @@ $(function () {
                 + '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg" height="15">'
                 + '<br /><span style="font-size: 70%;">'
                 + club_list[game_list[i].homeTeam.name] + '</span></td>'
-                + '<td class="' + game_list[i].td_class + '"><span style="font-size: 65%;">'
-                + (jdate.getMonth() + 1) + '/' + jdate.getDate() + '(' + youbi[jdate.getDay()] + ')'
-                + '<br />' + jtime + '</span><br /><span style="font-size: 65%;"></span></td>'
+                + getScoreOrDate(game_list[i], jdate, jtime)
                 + '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg" height="15">'
                 + '<br /><span style="font-size: 70%;">'
                 + club_list[game_list[i].awayTeam.name] + '</span></td>'
