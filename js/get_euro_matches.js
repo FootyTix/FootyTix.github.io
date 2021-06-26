@@ -65,9 +65,19 @@ $(function () {
         // スコアとキックオフ時間
         function getScoreOrDate(game, game_jdate, game_jtime) {
             if (game.status == 'FINISHED') {
-                return '<td class="' + game.td_class + '"><span style="font-size: 65%; color: #454545;">'
-                + game.score.fullTime.homeTeam + ' - ' + game.score.fullTime.awayTeam
-                + '</span></td>';
+                if (game.score.fullTime.homeTeam > game.score.fullTime.awayTeam) {
+                    return '<td class="' + game.td_class + '"><span style="font-size: 65%; color: #ff0000;">'
+                    + game.score.fullTime.homeTeam + '</span><span style="font-size: 65%; color: #454545;"> - ' + game.score.fullTime.awayTeam
+                    + '</span></td>';
+                } else if (game.score.fullTime.homeTeam < game.score.fullTime.awayTeam) {
+                    return '<td class="' + game.td_class + '"><span style="font-size: 65%; color: #454545;">'
+                    + game.score.fullTime.homeTeam + ' - </span><span style="font-size: 65%; color: #ff0000;">' + game.score.fullTime.awayTeam
+                    + '</span></td>';
+                } else {
+                    return '<td class="' + game.td_class + '"><span style="font-size: 65%; color: #454545;">'
+                    + game.score.fullTime.homeTeam + ' - ' + game.score.fullTime.awayTeam
+                    + '</span></td>';
+                }
             } else {
                 return '<td class="' + game.td_class + '"><span style="font-size: 65%;">'
                 + (game_jdate.getMonth() + 1) + '/' + game_jdate.getDate() + '(' + youbi[game_jdate.getDay()] + ')'
