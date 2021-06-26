@@ -117,9 +117,9 @@ $(function () {
             //テーブルに挿入
             $("#matches-tbl").append(
                 '<tr align="center">'
-                + getHomeTeam
+                + getHomeTeam(game_list[i])
                 + getScoreOrDate(game_list[i], jdate, jtime)
-                + getAwayTeam
+                + getAwayTeam(game_list[i])
                 + '</tr>'
             );
         }
