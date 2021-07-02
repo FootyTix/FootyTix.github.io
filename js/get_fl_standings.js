@@ -22,11 +22,11 @@ $(function () {
             'FC Girondins de Bordeaux': 'ボルドー',
             'FC Nantes': 'ナント',
             'AS Saint-Étienne': 'サンテティエンヌ',
-            'Nîmes Olympique': 'ニーム',
+            'Clermont Foot 63': 'クレルモン',
             'Stade de Reims': 'スタッド・ランス',
             'FC Lorient': 'ロリアン',
             'RC Strasbourg Alsace': 'ストラスブール',
-            "Dijon Football Côte d'Or": 'ディジョン'
+            'ES Troyes AC': 'トロワ'
         };
         // 順位表作成
         standings.forEach(function (standing) {
