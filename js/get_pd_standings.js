@@ -17,7 +17,7 @@ $(function () {
             'Granada CF': 'グラナダ',
             'Athletic Club': 'アスレティック・ビルバオ',
             'Elche CF': 'エルチェ',
-            'SD Eibar': 'エイバル',
+            'Rayo Vallecano de Madrid': 'ラージョ・バジェカーノ',
             'Deportivo Alavés': 'アラベス',
             'Getafe CF': 'ヘタフェ',
             'RC Celta de Vigo': 'セルタ',
@@ -25,8 +25,8 @@ $(function () {
             'Real Betis Balompié': 'ベティス',
             'Levante UD': 'レバンテ',
             'CA Osasuna': 'オサスナ',
-            'Real Valladolid CF': 'バジャドリード',
-            'SD Huesca': 'ウエスカ'
+            'RCD Mallorca': 'マジョルカ',
+            'SD Huesca': 'エスパニョール'
         };
         // 順位表作成
         standings.forEach(function (standing) {

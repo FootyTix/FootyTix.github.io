@@ -23,9 +23,9 @@ $(function () {
             'Cádiz CF': 'カディス',
             'Sevilla FC': 'セビージャ',
             'Granada CF': 'グラナダ',
-            'Athletic Club': 'アスレティック・ビルバオ',
+            'Athletic Club': 'A・ビルバオ',
             'Elche CF': 'エルチェ',
-            'SD Eibar': 'エイバル',
+            'Rayo Vallecano de Madrid': 'ラージョ',
             'Deportivo Alavés': 'アラベス',
             'Getafe CF': 'ヘタフェ',
             'RC Celta de Vigo': 'セルタ',
@@ -33,8 +33,8 @@ $(function () {
             'Real Betis Balompié': 'ベティス',
             'Levante UD': 'レバンテ',
             'CA Osasuna': 'オサスナ',
-            'Real Valladolid CF': 'バジャドリード',
-            'SD Huesca': 'ウエスカ'
+            'RCD Mallorca': 'マジョルカ',
+            'SD Huesca': 'エスパニョール'
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];
@@ -62,14 +62,14 @@ $(function () {
             //テーブルに挿入
             $("#matches-tbl").append(
                 '<tr align="center">'
-                + '<td><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg" height="24">'
-                + '<br /><span style="font-size: 80%;">'
+                + '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg" height="24">'
+                + '<br /><span style="font-size: 70%;">'
                 + club_list[game_list[i].homeTeam.name] + '</span></td>'
-                + '<td class="' + game_list[i].td_class + '"><span style="font-size: 65%;">'
+                + '<td class="' + game_list[i].td_class + '"><span style="font-size: 65%; color: #454545;">'
                 + (jdate.getMonth() + 1) + '/' + jdate.getDate() + '(' + youbi[jdate.getDay()] + ')'
-                + '<br />' + jtime + '</span><br /><span style="font-size: 65%;"></span></td>'
-                + '<td><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg" height="24">'
-                + '<br /><span style="font-size: 80%;">'
+                + '<br />' + jtime + '</span></td>'
+                + '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg" height="24">'
+                + '<br /><span style="font-size: 70%;">'
                 + club_list[game_list[i].awayTeam.name] + '</span></td>'
                 + '</tr>'
             );
