@@ -18,13 +18,13 @@ $(function () {
             'FC Augsburg': 'アウクスブルク',
             'VfB Stuttgart': 'シュトゥットガルト',
             'Hertha BSC': 'ヘルタ・ベルリン',
-            'SV Werder Bremen': 'ブレーメン',
+            'VfL Bochum 1848': 'ボーフム',
             'TSG 1899 Hoffenheim': 'ホッフェンハイム',
             'SC Freiburg': 'フライブルク',
             '1. FC Köln': 'ケルン',
             'Arminia Bielefeld': 'ビーレフェルト',
             '1. FSV Mainz 05': 'マインツ',
-            'FC Schalke 04': 'シャルケ'
+            'SpVgg Greuther Fürth 1903': 'グロイター・フュルト'
         };
         // 順位表作成
         standings.forEach(function (standing) {

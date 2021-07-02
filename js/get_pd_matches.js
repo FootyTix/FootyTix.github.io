@@ -34,7 +34,7 @@ $(function () {
             'Levante UD': 'レバンテ',
             'CA Osasuna': 'オサスナ',
             'RCD Mallorca': 'マジョルカ',
-            'SD Huesca': 'エスパニョール'
+            'RCD Espanyol de Barcelona': 'エスパニョール'
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];

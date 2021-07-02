@@ -62,14 +62,14 @@ $(function () {
             //テーブルに挿入
             $("#matches-tbl").append(
                 '<tr align="center">'
-                + '<td><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg" height="24">'
-                + '<br /><span style="font-size: 80%;">'
+                + '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg" height="24">'
+                + '<br /><span style="font-size: 70%;">'
                 + club_list[game_list[i].homeTeam.name] + '</span></td>'
-                + '<td class="' + game_list[i].td_class + '"><span style="font-size: 65%;">'
+                + '<td class="' + game_list[i].td_class + '"><span style="font-size: 65%; color: #454545;">'
                 + (jdate.getMonth() + 1) + '/' + jdate.getDate() + '(' + youbi[jdate.getDay()] + ')'
-                + '<br />' + jtime + '</span><br /><span style="font-size: 65%;"></span></td>'
-                + '<td><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg" height="24">'
-                + '<br /><span style="font-size: 80%;">'
+                + '<br />' + jtime + '</span></td>'
+                + '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg" height="24">'
+                + '<br /><span style="font-size: 70%;">'
                 + club_list[game_list[i].awayTeam.name] + '</span></td>'
                 + '</tr>'
             );

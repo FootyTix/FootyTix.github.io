@@ -26,7 +26,7 @@ $(function () {
             'Levante UD': 'レバンテ',
             'CA Osasuna': 'オサスナ',
             'RCD Mallorca': 'マジョルカ',
-            'SD Huesca': 'エスパニョール'
+            'RCD Espanyol de Barcelona': 'エスパニョール'
         };
         // 順位表作成
         standings.forEach(function (standing) {
