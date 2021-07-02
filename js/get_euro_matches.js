@@ -75,15 +75,15 @@ $(function () {
             if (game.status == 'FINISHED') {
                 if (game.score.fullTime.homeTeam > game.score.fullTime.awayTeam) {
                     return '<td class="' + game.td_class + '"><span style="font-size: 65%; color: #ff0000;">'
-                    + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + '</span><span style="font-size: 65%; color: #454545;"> - ' + game.score.fullTime.awayTeam
+                    + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + '</span><span style="font-size: 65%; color: #454545;"> - ' + getScore(game.score, game.score.fullTime.awayTeam, game.score.penalties.awayTeam) 
                     + '</span></td>';
                 } else if (game.score.fullTime.homeTeam < game.score.fullTime.awayTeam) {
                     return '<td class="' + game.td_class + '"><span style="font-size: 65%; color: #454545;">'
-                    + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + ' - </span><span style="font-size: 65%; color: #ff0000;">' + game.score.fullTime.awayTeam
+                    + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + ' - </span><span style="font-size: 65%; color: #ff0000;">' + getScore(game.score, game.score.fullTime.awayTeam, game.score.penalties.awayTeam) 
                     + '</span></td>';
                 } else {
                     return '<td class="' + game.td_class + '"><span style="font-size: 65%; color: #454545;">'
-                    + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + ' - ' + game.score.fullTime.awayTeam
+                    + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + ' - ' + getScore(game.score, game.score.fullTime.awayTeam, game.score.penalties.awayTeam) 
                     + '</span></td>';
                 }
             } else {
