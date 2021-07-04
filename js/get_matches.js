@@ -124,22 +124,17 @@ $(function () {
                 'Arsenal FC': 'アーセナル',
                 'Tottenham Hotspur FC': 'トッテナム',
                 'Chelsea FC': 'チェルシー',
-                'Everton FC': 'エバートン',
                 'Leicester City FC': 'レスター',
-                'West Ham United FC': 'ウェストハム',
                 'FC Bayern München': 'バイエルン',
                 'Borussia Dortmund': 'ドルトムント',
                 'RB Leipzig': 'ライプツィヒ',
-                'Borussia Mönchengladbach': 'ボルシアMG',
                 'Bayer 04 Leverkusen': 'レヴァークーゼン',
                 'VfL Wolfsburg': 'ヴォルフスブルク',
-                'Eintracht Frankfurt': 'フランクフルト',
                 'FC Barcelona': 'バルセロナ',
                 'Real Madrid CF': 'レアル・マドリー',
                 'Club Atlético de Madrid': 'アトレティコ',
                 'Sevilla FC': 'セビージャ',
                 'Villarreal CF': 'ビジャレアル',
-                'Real Sociedad de Fútbol': 'レアル・ソシエダ',
                 'Juventus FC': 'ユベントス',
                 'SSC Napoli': 'ナポリ',
                 'AS Roma': 'ローマ',
@@ -152,7 +147,6 @@ $(function () {
                 'Lille OSC': 'リール',
                 'Olympique Lyonnais': 'リヨン',
                 'AS Monaco FC': 'モナコ',
-                'FC Porto': 'ポルト'
             };
 
             var youbi = ["日", "月", "火", "水", "木", "金", "土"];
@@ -187,16 +181,16 @@ $(function () {
                     
                     $("#matches-tbl").append(
                         '<tr align="center">'
-                        + '<td><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg" height="24">'
-                        + '<br /><span style="font-size: 80%;">'
+                        + '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg" height="24">'
+                        + '<br /><span style="font-size: 70%;">'
                         + club_list[game_list[i].homeTeam.name] + '</span></td>'
                         + '<td class="' + game_list[i].td_class + '"><span style="font-size: 65%;">'
                         + (jdate.getMonth() + 1) + '/' + jdate.getDate() + '(' + youbi[jdate.getDay()] + ')'
                         + '<br />' + jtime + '</span><br /><span style="font-size: 55%;">'
                         + game_list[i].competition.img + '󠁢󠁥󠁮󠁧󠁿 '
                         + getMatchdayOrRound(game_list[i]) + '</span></td>'
-                        + '<td><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg" height="24">'
-                        + '<br /><span style="font-size: 80%;">'
+                        + '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg" height="24">'
+                        + '<br /><span style="font-size: 70%;">'
                         + club_list[game_list[i].awayTeam.name] + '</span></td>'
                         + '</tr>'
                     );
