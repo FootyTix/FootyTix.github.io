@@ -181,7 +181,7 @@ $(function () {
                     
                     $("#matches-tbl").append(
                         '<tr align="center">'
-                        + '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg" height="24">'
+                        + '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg"  height="24" width="24">'
                         + '<br /><span style="font-size: 70%;">'
                         + club_list[game_list[i].homeTeam.name] + '</span></td>'
                         + '<td class="' + game_list[i].td_class + '"><span style="font-size: 65%;">'
@@ -189,7 +189,7 @@ $(function () {
                         + '<br />' + jtime + '</span><br /><span style="font-size: 55%;">'
                         + game_list[i].competition.img + '󠁢󠁥󠁮󠁧󠁿 '
                         + getMatchdayOrRound(game_list[i]) + '</span></td>'
-                        + '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg" height="24">'
+                        + '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg"  height="24" width="24">'
                         + '<br /><span style="font-size: 70%;">'
                         + club_list[game_list[i].awayTeam.name] + '</span></td>'
                         + '</tr>'
