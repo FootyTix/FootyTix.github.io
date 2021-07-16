@@ -1148,7 +1148,7 @@ pre.code {
   grid-auto-rows: 1fr;
   grid-gap: 0.5em;
   padding: 0;
-  margin: 0 0 1em;
+  margin: 0 0 0.5em;
   grid-template-columns: 1fr;
 }
 
