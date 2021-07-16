@@ -1142,3 +1142,48 @@ pre.code {
 .cssgrid > div:hover {
   background-image: linear-gradient(#424345 0%, #232526 70%);
 }
+
+.cssgrid-head {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-gap: 0.5em;
+  padding: 0;
+  margin: 0 0 1em;
+  grid-template-columns: 1fr;
+}
+
+@media screen and  (max-width: 767px) {
+  .cssgrid-head {
+    margin-left: -18px;
+    margin-right: -18px;
+  }
+}
+
+/* 順位表css */
+.cssgrid-head > div a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+    text-decoration: none;
+    color: #1D3557;
+}
+
+.cssgrid-head > div {
+  position: relative;
+  background: #ddd;
+  overflow: auto;
+  min-width: 0;
+  text-align: center;
+  padding: 16px;
+  line-height: 32px;
+  font-size: 12px;
+  background-color: #fcfcfc;
+  transition: .4s;
+  border: solid 3px #1D3557;
+}
+
+.cssgrid-head > div:hover {
+  background-image: linear-gradient(#fdfdfd 0%, #ededed 70%);
+}
