@@ -21,12 +21,12 @@ $(function () {
             'UC Sampdoria': 'サンプドリア',
             'Spezia Calcio': 'スペツィア',
             'Udinese Calcio': 'ウディネーゼ',
-            'Benevento Calcio': 'ベネヴェント',
-            'Parma Calcio 1913': 'パルマ',
+            'Venezia FC': 'ヴェネツィア',
+            'US Salernitana 1919': 'サレルニターナ',
             'ACF Fiorentina': 'フィオレンティーナ',
             'Torino FC': 'トリノ',
             'Genoa CFC': 'ジェノア',
-            'FC Crotone': 'クロトーネ'
+            'Empoli FC': 'エンポリ'
         };
         // 順位表作成
         standings.forEach(function (standing) {
