@@ -2,7 +2,7 @@ $(function () {
     $.ajaxSetup({
         headers: { "X-Auth-Token": "988f0be1f26f481fae9b8b19d0327312" }
     });
-    $.getJSON('https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED', function (data) {
+    $.getJSON('https://api.football-data.org/v2/competitions/CL/matches?status=SCHEDULED', function (data) {
 
         //JSON取得後の処理
         matches = data.matches;
@@ -18,23 +18,35 @@ $(function () {
             'Liverpool FC': 'リバプール',
             'Manchester City FC': 'マンチェスター・C',
             'Manchester United FC': 'マンチェスター・U',
-            'Arsenal FC': 'アーセナル',
-            'Tottenham Hotspur FC': 'トッテナム',
             'Chelsea FC': 'チェルシー',
-            'Everton FC': 'エバートン',
-            'Leicester City FC': 'レスター',
-            'West Ham United FC': 'ウェストハム',
-            'Southampton FC': 'サウサンプトン',
-            'Wolverhampton Wanderers FC': 'ウォルヴァーハンプトン',
-            'Aston Villa FC': 'アストン・ヴィラ',
-            'Newcastle United FC': 'ニューカッスル',
-            'Leeds United FC': 'リーズ ',
-            'Crystal Palace FC': 'クリスタル・パレス',
-            'Brighton & Hove Albion FC': 'ブライトン',
-            'Fulham FC': 'フラム',
-            'West Bromwich Albion FC': 'WBA',
-            'Burnley FC': 'バーンリー',
-            'Sheffield United FC': 'シェフィールド・U'
+            'FC Bayern München': 'バイエルン',
+            'Borussia Dortmund': 'ドルトムント',
+            'RB Leipzig': 'ライプツィヒ',
+            'VfL Wolfsburg': 'ヴォルフスブルク',
+            'FC Barcelona': 'バルセロナ',
+            'Real Madrid CF': 'レアル・マドリー',
+            'Club Atlético de Madrid': 'アトレティコ',
+            'Sevilla FC': 'セビージャ',
+            'Juventus FC': 'ユベントス',
+            'FC Internazionale Milano': 'インテル',
+            'Atalanta BC': 'アタランタ',
+            'AC Milan': 'ACミラン',
+            'Paris Saint-Germain FC': 'PSG',
+            'Malmö FF': 'マルメ',
+            'Lille OSC': 'リール',
+            'FC Red Bull Salzburg': 'ザルツブルク',
+            'BSC Young Boys': 'ヤングボーイズ',
+            'FK Shakhtar Donetsk': 'シャフタール・ドネツク',
+            'FC Porto': 'ポルト',
+            'Villarreal CF': 'ビジャレアル',
+            'AFC Ajax': 'アヤックス',
+            'Sport Lisboa e Benfica': 'ベンフィカ',
+            'FC Sheriff Tiraspol': 'シェリフ・ティラスポリ',
+            'Club Brugge KV': 'クラブ・ブルッヘ',
+            'FK Zenit Sankt-Petersburg': 'ゼニト',
+            'FK Dynamo Kyiv': 'ディナモ・キエフ',
+            'Sporting Clube de Portugal': 'スポルティングCP',
+            'Beşiktaş JK': 'ベシクタシュ',
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];
