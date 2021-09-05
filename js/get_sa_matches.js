@@ -43,6 +43,14 @@ $(function () {
         var future_matchday_count = 0;
         var past_matchday_count = 0;
 
+        // スコア計算
+        function getScore(score, fullScore, pkScore) {
+            if (score.duration == 'PENALTY_SHOOTOUT') {
+                return (fullScore - pkScore) + '(' + pkScore + ')';
+            } else {
+                return fullScore;
+            }
+        }
         // スコアとキックオフ時間
         function getScoreOrDate(game, game_jdate, game_jtime) {
             if (game.score.fullTime.homeTeam > game.score.fullTime.awayTeam) {
