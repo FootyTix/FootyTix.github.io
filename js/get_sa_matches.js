@@ -132,10 +132,10 @@ $(function () {
         $('#loading-gif').remove();
         $('#results-loading-gif').remove();
     })
-        .error(function () {
-            // エラーがあった時
-            $('#loading-gif').children().remove();
-            $('#loading-gif').append('ページを更新してください');
-        });
+    .error(function () {
+        // エラーがあった時
+        $('#loading-gif').children().remove();
+        $('#loading-gif').append('ページを更新してください');
+    });
 });
 
