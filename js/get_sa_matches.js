@@ -79,14 +79,14 @@ $(function () {
                 //節を挿入
                 if (game_list[i].matchday != past_matchday_count) {
                     past_matchday_count = game_list[i].matchday;
-                    $("#matches-tbl").append(
+                    $("#results-tbl").preppend(
                         '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
                         + '󠁢󠁥󠁮󠁧󠁿第' + past_matchday_count + '節'
                         + '</span></td></tr>'
                     );
                 }
                 //テーブルに挿入
-                $("#results-tbl").append(
+                $("#results-tbl").preppend(
                     '<tr align="center">'
                     + '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg" height="24" width="24">'
                     + '<br /><span style="font-size: 70%;">'
