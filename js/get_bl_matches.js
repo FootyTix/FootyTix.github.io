@@ -2,7 +2,7 @@ $(function () {
     $.ajaxSetup({
         headers: { "X-Auth-Token": "8fb8468fc6e64570b668b0b8e629c620" }
     });
-    $.getJSON('https://api.football-data.org/v2/competitions/BL1/matches?status=SCHEDULED', function (data) {
+    $.getJSON('https://api.football-data.org/v2/competitions/BL1/matches', function (data) {
 
         //JSON取得後の処理
         matches = data.matches;

@@ -2,7 +2,7 @@ $(function () {
     $.ajaxSetup({
         headers: { "X-Auth-Token": "eef183d61edc4fa8b63108971f91fabf" }
     });
-    $.getJSON('https://api.football-data.org/v2/competitions/FL1/matches?status=SCHEDULED', function (data) {
+    $.getJSON('https://api.football-data.org/v2/competitions/FL1/matches', function (data) {
 
         //JSON取得後の処理
         matches = data.matches;
