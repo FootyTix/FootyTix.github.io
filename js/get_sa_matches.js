@@ -41,7 +41,7 @@ $(function () {
         var date, jdate;
         var jtime = "";
         var future_matchday_count = 0;
-        var past_matchday_count = 0;
+        var past_matchday_count = 1;
 
         // スコア計算
         function getScore(score, fullScore, pkScore) {
@@ -78,12 +78,12 @@ $(function () {
             if (game_list[i].status == 'FINISHED') {
                 //節を挿入
                 if (game_list[i].matchday != past_matchday_count) {
-                    past_matchday_count = game_list[i].matchday;
                     $("#results-tbl").prepend(
                         '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
                         + '󠁢󠁥󠁮󠁧󠁿第' + past_matchday_count + '節'
                         + '</span></td></tr>'
                     );
+                    past_matchday_count = game_list[i].matchday;
                 }
                 //テーブルに挿入
                 $("#results-tbl").prepend(
@@ -123,6 +123,14 @@ $(function () {
                     + '</tr>'
                 );
             }
+        }
+        //結果の直近節を挿入
+        if (game_list[i].matchday != past_matchday_count) {
+            $("#results-tbl").prepend(
+                '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
+                + '󠁢󠁥󠁮󠁧󠁿第' + past_matchday_count + '節'
+                + '</span></td></tr>'
+            );
         }
         $('#loading-gif').remove();
         $('#results-loading-gif').remove();
