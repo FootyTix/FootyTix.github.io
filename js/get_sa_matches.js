@@ -69,7 +69,7 @@ $(function () {
 
             if (game_list[i].status == 'FINISHED') {
                 //節を挿入
-                if (game_list[i].matchday != post_matchday_count) {
+                if (game_list[i].matchday != past_matchday_count) {
                     past_matchday_count = game_list[i].matchday;
                     $("#matches-tbl").append(
                         '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
