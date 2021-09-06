@@ -52,15 +52,15 @@ $(function () {
         // スコアとキックオフ時間
         function getScoreOrDate(game, game_jdate, game_jtime) {
             if (game.score.fullTime.homeTeam > game.score.fullTime.awayTeam) {
-                return '<td class="' + game.td_class + '"><span style="font-size: 65%; color: #ff0000;">'
-                + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + '</span><span style="font-size: 65%; color: #454545;"> - ' + getScore(game.score, game.score.fullTime.awayTeam, game.score.penalties.awayTeam) 
+                return '<td class="' + game.td_class + '"><span style="font-size: 80%; color: #ff0000;">'
+                + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + '</span><span style="font-size: 80%; color: #454545;"> - ' + getScore(game.score, game.score.fullTime.awayTeam, game.score.penalties.awayTeam) 
                 + '</span></td>';
             } else if (game.score.fullTime.homeTeam < game.score.fullTime.awayTeam) {
-                return '<td class="' + game.td_class + '"><span style="font-size: 65%; color: #454545;">'
-                + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + ' - </span><span style="font-size: 65%; color: #ff0000;">' + getScore(game.score, game.score.fullTime.awayTeam, game.score.penalties.awayTeam) 
+                return '<td class="' + game.td_class + '"><span style="font-size: 80%; color: #454545;">'
+                + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + ' - </span><span style="font-size: 80%; color: #ff0000;">' + getScore(game.score, game.score.fullTime.awayTeam, game.score.penalties.awayTeam) 
                 + '</span></td>';
             } else {
-                return '<td class="' + game.td_class + '"><span style="font-size: 65%; color: #454545;">'
+                return '<td class="' + game.td_class + '"><span style="font-size: 80%; color: #454545;">'
                 + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + ' - ' + getScore(game.score, game.score.fullTime.awayTeam, game.score.penalties.awayTeam) 
                 + '</span></td>';
             }
