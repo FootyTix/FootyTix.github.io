@@ -69,7 +69,7 @@ $(function () {
             } else if (round_name[game.stage]) {
                 return round_name[game.stage]
             } else {
-                continue;
+                return -1;
             }
         }
 
@@ -104,13 +104,16 @@ $(function () {
             date = date.toLocaleString("ja-JP");
             jdate = new Date(date);
             jtime = jdate.getHours() == 9 ? '未定' : (jdate.getHours() + ':' + ("0" + jdate.getMinutes()).slice(-2));
+            if (round_name = getMatchdayOrRound(game_list[i]) == -1) {
+                continue;
+            }
 
             if (game_list[i].status == 'FINISHED') {
                 //節を挿入
                 if (game_list[i].matchday != past_matchday_count) {
                     $("#results-tbl").prepend(
                         '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
-                        + getMatchdayOrRound(game_list[i])
+                        + round_name
                         + '</span></td></tr>'
                     );
                     past_matchday_count = game_list[i].matchday;
@@ -134,7 +137,7 @@ $(function () {
                     future_matchday_count = game_list[i].matchday;
                     $("#matches-tbl").append(
                         '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
-                        + getMatchdayOrRound(game_list[i])
+                        + round_name
                         + '</span></td></tr>'
                     );
                 }
