@@ -55,6 +55,24 @@ $(function () {
         var future_matchday_count = 0;
         var past_matchday_count = 1;
 
+        // ラウンド名
+        function getMatchdayOrRound(game){
+            var round_name = {
+                'LAST_16': 'ラウンド16',
+                'QUARTER_FINAL': '準々決勝',
+                'SEMI_FINAL': '準決勝',
+                'FINAL': '決勝'
+            }
+
+            if (game.stage == 'GROUP_STAGE') {
+                return '󠁢󠁥󠁮󠁧󠁿第' + game.matchday + '節';
+            } else if (round_name[game.stage]) {
+                return round_name[game.stage]
+            } else {
+                continue;
+            }
+        }
+
         // スコア計算
         function getScore(score, fullScore, pkScore) {
             if (score.duration == 'PENALTY_SHOOTOUT') {
@@ -92,7 +110,7 @@ $(function () {
                 if (game_list[i].matchday != past_matchday_count) {
                     $("#results-tbl").prepend(
                         '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
-                        + '󠁢󠁥󠁮󠁧󠁿第' + past_matchday_count + '節'
+                        + getMatchdayOrRound(game_list[i])
                         + '</span></td></tr>'
                     );
                     past_matchday_count = game_list[i].matchday;
@@ -116,7 +134,7 @@ $(function () {
                     future_matchday_count = game_list[i].matchday;
                     $("#matches-tbl").append(
                         '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
-                        + '󠁢󠁥󠁮󠁧󠁿第' + future_matchday_count + '節'
+                        + getMatchdayOrRound(game_list[i])
                         + '</span></td></tr>'
                     );
                 }
