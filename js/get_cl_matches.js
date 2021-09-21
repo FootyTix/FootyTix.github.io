@@ -113,7 +113,7 @@ $(function () {
                 if (game_list[i].matchday != past_matchday_count) {
                     $("#results-tbl").prepend(
                         '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
-                        + round_name
+                        + '󠁢󠁥󠁮󠁧󠁿第' + past_matchday_count + '節'
                         + '</span></td></tr>'
                     );
                     past_matchday_count = game_list[i].matchday;
@@ -137,7 +137,7 @@ $(function () {
                     future_matchday_count = game_list[i].matchday;
                     $("#matches-tbl").append(
                         '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
-                        + round_name
+                        + '󠁢󠁥󠁮󠁧󠁿第' + future_matchday_count + '節'
                         + '</span></td></tr>'
                     );
                 }
