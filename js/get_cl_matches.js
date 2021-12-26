@@ -106,14 +106,14 @@ $(function () {
             date = date.toLocaleString("ja-JP");
             jdate = new Date(date);
             jtime = jdate.getHours() == 9 ? '未定' : (jdate.getHours() + ':' + ("0" + jdate.getMinutes()).slice(-2));
-            if (round_name = getMatchdayOrRound(game_list[i]) == -1) {
+            if (round = getMatchdayOrRound(game_list[i]) == -1) {
                 continue;
             }
 
             if (game_list[i].status == 'FINISHED') {
                 //節を挿入
                 if (game_list[i].matchday != past_matchday_count) {
-                    past_round = round_name;
+                    past_round = round;
                     $("#results-tbl").prepend(
                         '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
                         + past_round
@@ -138,7 +138,7 @@ $(function () {
                 //節を挿入
                 if (game_list[i].matchday != future_matchday_count) {
                     future_matchday_count = game_list[i].matchday;
-                    future_round = round_name;
+                    future_round = round;
                     $("#matches-tbl").append(
                         '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
                         + future_round
