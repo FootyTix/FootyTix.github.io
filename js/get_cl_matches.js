@@ -54,6 +54,8 @@ $(function () {
         var jtime = "";
         var future_matchday_count = 0;
         var past_matchday_count = 1;
+        var future_round;
+        var past_round;
 
         // ラウンド名
         function getMatchdayOrRound(game){
@@ -111,9 +113,10 @@ $(function () {
             if (game_list[i].status == 'FINISHED') {
                 //節を挿入
                 if (game_list[i].matchday != past_matchday_count) {
+                    past_round = round_name;
                     $("#results-tbl").prepend(
                         '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
-                        + '󠁢󠁥󠁮󠁧󠁿第' + past_matchday_count + '節'
+                        + past_round
                         + '</span></td></tr>'
                     );
                     past_matchday_count = game_list[i].matchday;
@@ -135,9 +138,10 @@ $(function () {
                 //節を挿入
                 if (game_list[i].matchday != future_matchday_count) {
                     future_matchday_count = game_list[i].matchday;
+                    future_round = round_name;
                     $("#matches-tbl").append(
                         '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
-                        + '󠁢󠁥󠁮󠁧󠁿第' + future_matchday_count + '節'
+                        + future_round
                         + '</span></td></tr>'
                     );
                 }
@@ -159,7 +163,7 @@ $(function () {
         }
         $("#results-tbl").prepend(
             '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
-            + '󠁢󠁥󠁮󠁧󠁿第' + past_matchday_count + '節'
+            + past_round
             + '</span></td></tr>'
         );
         $('#loading-gif').remove();
