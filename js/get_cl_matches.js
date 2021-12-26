@@ -106,7 +106,8 @@ $(function () {
             date = date.toLocaleString("ja-JP");
             jdate = new Date(date);
             jtime = jdate.getHours() == 9 ? '未定' : (jdate.getHours() + ':' + ("0" + jdate.getMinutes()).slice(-2));
-            if (round = getMatchdayOrRound(game_list[i]) == -1) {
+            round = getMatchdayOrRound(game_list[i]);
+            if (round == -1) {
                 continue;
             }
 
