@@ -146,7 +146,7 @@ $(function () {
                 'Olympique de Marseille': 'マルセイユ',
                 'Lille OSC': 'リール',
                 'Olympique Lyonnais': 'リヨン',
-                'AS Monaco FC': 'モナコ',
+                'AS Monaco FC': 'モナコ'
             };
 
             var youbi = ["日", "月", "火", "水", "木", "金", "土"];
