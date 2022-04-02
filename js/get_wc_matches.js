@@ -52,13 +52,15 @@ $(function () {
         var date, jdate;
         var jtime = "";
         var matchday_count = 0;
+        var tmp_stage = 'LAST_16';
 
         // ラウンド名
         function getMatchdayOrRound(game){
             var round_name = {
                 'LAST_16': 'ラウンド16',
-                'QUARTER_FINAL': '準々決勝',
-                'SEMI_FINAL': '準決勝',
+                'QUARTER_FINALS': '準々決勝',
+                'SEMI_FINALS': '準決勝',
+                'THIRD_PLACE': '3位決定戦'
                 'FINAL': '決勝'
             }
 
@@ -130,8 +132,10 @@ $(function () {
             jtime = jdate.getHours() == 9 ? '未定' : (jdate.getHours() + ':' + ("0" + jdate.getMinutes()).slice(-2));
             
             //節を挿入
-            if (game_list[i].matchday != matchday_count) {
+            if (game_list[i].matchday != matchday_count
+                || game_list[i].stage != tmp_stage) {
                 matchday_count = game_list[i].matchday;
+                tmp_stage = game_list[i].stage;
                 $("#matches-tbl").append(
                     '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
                     + getMatchdayOrRound(game_list[i])
