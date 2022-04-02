@@ -69,9 +69,9 @@ $(function () {
         // グループ名
         function getGroup(game){
             if (game.stage == 'GROUP_STAGE') {
-                return '<br />' + group_list[game.group]
+                return '<br />' + group_list[game.group] + '</span></td>'
             } else {
-                return '';
+                return '</span></td>';
             }
         }
 
@@ -120,8 +120,7 @@ $(function () {
                 return '<td class="' + game.td_class + '"><span style="font-size: 65%;">'
                 + (game_jdate.getMonth() + 1) + '/' + game_jdate.getDate() + '(' + youbi[game_jdate.getDay()] + ')'
                 + '<br />' + game_jtime
-                + getGroup(game)
-                + '</span></td>';
+                + getGroup(game);
             }
         }
 
