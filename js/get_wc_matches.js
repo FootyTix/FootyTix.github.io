@@ -30,6 +30,7 @@ $(function () {
             "Belgium": "ベルギー",
             "Wales": "ウェールズ",
             "Netherlands": "オランダ",
+            "Serbia": "セルビア",
             "Scotland": "スコットランド",
             "Brazil": "ブラジル",
             "Argentina": "アルゼンチン",
