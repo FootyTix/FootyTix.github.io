@@ -15,6 +15,7 @@ $(function () {
         game_list = matches;
 
         var club_list = {
+            "Qatar": "カタール",
             "Germany": "ドイツ",
             "Spain": "スペイン",
             "Portugal": "ポルトガル",
@@ -32,7 +33,7 @@ $(function () {
             "Scotland": "スコットランド",
             "Brazil": "ブラジル",
             "Argentina": "アルゼンチン",
-            "Urguay": "ウルグアイ",
+            "Uruguay": "ウルグアイ",
             "Ecuador": "エクアドル",
             "Japan": "日本",
             "Saudi Arabia": "サウジアラビア",
@@ -48,11 +49,31 @@ $(function () {
             "Canada": "カナダ",
         };
 
+        var group_list = {
+            "GROUP_A": "A組",
+            "GROUP_B": "B組",
+            "GROUP_C": "C組",
+            "GROUP_D": "D組",
+            "GROUP_E": "E組",
+            "GROUP_F": "F組",
+            "GROUP_G": "G組",
+            "GROUP_H": "H組",
+        };
+
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];
         var date, jdate;
         var jtime = "";
         var matchday_count = 0;
         var tmp_stage = 'LAST_16';
+
+        // グループ名
+        function getGroup(game){
+            if (game.stage == 'GROUP_STAGE') {
+                return '<br />' + group_list[game.group]
+            } else {
+                return;
+            }
+        }
 
         // ラウンド名
         function getMatchdayOrRound(game){
@@ -98,7 +119,9 @@ $(function () {
             } else {
                 return '<td class="' + game.td_class + '"><span style="font-size: 65%;">'
                 + (game_jdate.getMonth() + 1) + '/' + game_jdate.getDate() + '(' + youbi[game_jdate.getDay()] + ')'
-                + '<br />' + game_jtime + '</span></td>';
+                + '<br />' + game_jtime
+                + getGroup(game)
+                + '</span></td>';
             }
         }
 
