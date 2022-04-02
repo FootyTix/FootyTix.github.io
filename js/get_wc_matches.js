@@ -60,7 +60,7 @@ $(function () {
                 'LAST_16': 'ラウンド16',
                 'QUARTER_FINALS': '準々決勝',
                 'SEMI_FINALS': '準決勝',
-                'THIRD_PLACE': '3位決定戦'
+                'THIRD_PLACE': '3位決定戦',
                 'FINAL': '決勝'
             }
 
