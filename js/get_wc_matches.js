@@ -71,7 +71,7 @@ $(function () {
             if (game.stage == 'GROUP_STAGE') {
                 return '<br />' + group_list[game.group]
             } else {
-                return;
+                return '';
             }
         }
 
