@@ -30,9 +30,9 @@ $(function () {
             'TSG 1899 Hoffenheim': 'ホッフェンハイム',
             'SC Freiburg': 'フライブルク',
             '1. FC Köln': 'ケルン',
-            'Arminia Bielefeld': 'ビーレフェルト',
             '1. FSV Mainz 05': 'マインツ',
-            'SpVgg Greuther Fürth 1903': 'グロイター・フュルト'
+            'SV Werder Bremen': 'ブレーメン',
+            'FC Schalke 04': 'シャルケ'
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];

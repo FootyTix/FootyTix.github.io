@@ -22,9 +22,9 @@ $(function () {
             'TSG 1899 Hoffenheim': 'ホッフェンハイム',
             'SC Freiburg': 'フライブルク',
             '1. FC Köln': 'ケルン',
-            'Arminia Bielefeld': 'ビーレフェルト',
             '1. FSV Mainz 05': 'マインツ',
-            'SpVgg Greuther Fürth 1903': 'グロイター・フュルト'
+            'SV Werder Bremen': 'ブレーメン',
+            'FC Schalke 04': 'シャルケ'
         };
         // 順位表作成
         standings.forEach(function (standing) {
