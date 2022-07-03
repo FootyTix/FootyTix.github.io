@@ -124,6 +124,9 @@ $(function () {
                 );
             }
         }
+        document.getElementById('matches-table').innerHTML.replace('522.svg','522.png');
+        document.getElementById('matches-table').innerHTML.replace('548.svg','548.png');
+
         $("#results-tbl").prepend(
             '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
             + '󠁢󠁥󠁮󠁧󠁿第' + past_matchday_count + '節'
