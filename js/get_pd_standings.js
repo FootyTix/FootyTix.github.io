@@ -14,18 +14,18 @@ $(function () {
             'Villarreal CF': 'ビジャレアル',
             'Cádiz CF': 'カディス',
             'Sevilla FC': 'セビージャ',
-            'Granada CF': 'グラナダ',
             'Athletic Club': 'アスレティック・ビルバオ',
             'Elche CF': 'エルチェ',
             'Rayo Vallecano de Madrid': 'ラージョ・バジェカーノ',
-            'Deportivo Alavés': 'アラベス',
             'Getafe CF': 'ヘタフェ',
             'RC Celta de Vigo': 'セルタ',
             'Valencia CF': 'バレンシア',
             'Real Betis Balompié': 'ベティス',
-            'Levante UD': 'レバンテ',
             'CA Osasuna': 'オサスナ',
             'RCD Mallorca': 'マジョルカ',
+            'Girona FC': 'ジローナ',
+            'UD Almería': 'アルメリア',
+            'Real Valladolid CF': 'バジャドリード',
             'RCD Espanyol de Barcelona': 'エスパニョール'
         };
         // 順位表作成
