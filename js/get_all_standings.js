@@ -53,9 +53,9 @@ $(function () {
             'Crystal Palace FC': 'クリスタル・パレス',
             'Brighton & Hove Albion FC': 'ブライトン',
             'Brentford FC': 'ブレントフォード',
-            'Norwich City FC': 'ノリッジ',
-            'Burnley FC': 'バーンリー',
-            'Watford FC': 'ワトフォード'
+            'Nottingham Forest FC': 'ノッティンガム・フォレスト',
+            'Fulham FC': 'フラム',
+            'AFC Bournemouth': 'ボーンマス'
         };
 
         var club_list_pd = {
@@ -66,18 +66,18 @@ $(function () {
             'Villarreal CF': 'ビジャレアル',
             'Cádiz CF': 'カディス',
             'Sevilla FC': 'セビージャ',
-            'Granada CF': 'グラナダ',
             'Athletic Club': 'アスレティック・ビルバオ',
             'Elche CF': 'エルチェ',
             'Rayo Vallecano de Madrid': 'ラージョ・バジェカーノ',
-            'Deportivo Alavés': 'アラベス',
             'Getafe CF': 'ヘタフェ',
             'RC Celta de Vigo': 'セルタ',
             'Valencia CF': 'バレンシア',
             'Real Betis Balompié': 'ベティス',
-            'Levante UD': 'レバンテ',
             'CA Osasuna': 'オサスナ',
             'RCD Mallorca': 'マジョルカ',
+            'Girona FC': 'ジローナ',
+            'UD Almería': 'アルメリア',
+            'Real Valladolid CF': 'バジャドリード',
             'RCD Espanyol de Barcelona': 'エスパニョール'
         };
         
@@ -97,9 +97,9 @@ $(function () {
             'TSG 1899 Hoffenheim': 'ホッフェンハイム',
             'SC Freiburg': 'フライブルク',
             '1. FC Köln': 'ケルン',
-            'Arminia Bielefeld': 'ビーレフェルト',
             '1. FSV Mainz 05': 'マインツ',
-            'SpVgg Greuther Fürth 1903': 'グロイター・フュルト'
+            'SV Werder Bremen': 'ブレーメン',
+            'FC Schalke 04': 'シャルケ'
         };
 
         var club_list_sa = {
@@ -113,15 +113,15 @@ $(function () {
             'Hellas Verona FC': 'ヴェローナ',
             'Atalanta BC': 'アタランタ',
             'Bologna FC 1909': 'ボローニャ',
-            'Cagliari Calcio': 'カリアリ',
             'UC Sampdoria': 'サンプドリア',
             'Spezia Calcio': 'スペツィア',
             'Udinese Calcio': 'ウディネーゼ',
-            'Venezia FC': 'ヴェネツィア',
             'US Salernitana 1919': 'サレルニターナ',
             'ACF Fiorentina': 'フィオレンティーナ',
             'Torino FC': 'トリノ',
-            'Genoa CFC': 'ジェノア',
+            'US Cremonese': 'クレモネーゼ',
+            'US Lecce': 'レッチェ',
+            'AC Monza': 'モンツァ',
             'Empoli FC': 'エンポリ'
         };
 
@@ -137,10 +137,10 @@ $(function () {
             'Angers SCO': 'アンジェ',
             'Stade Brestois 29': 'ブレスト',
             'OGC Nice': 'ニース',
-            'FC Metz': 'メス',
-            'FC Girondins de Bordeaux': 'ボルドー',
+            'AC Ajaccio': 'ACアジャクシオ',
+            'AJ Auxerre': 'オセール',
             'FC Nantes': 'ナント',
-            'AS Saint-Étienne': 'サンテティエンヌ',
+            'Toulouse FC': 'トゥールーズ',
             'Clermont Foot 63': 'クレルモン',
             'Stade de Reims': 'スタッド・ランス',
             'FC Lorient': 'ロリアン',
