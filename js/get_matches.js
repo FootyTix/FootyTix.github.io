@@ -124,12 +124,10 @@ $(function () {
                 'Arsenal FC': 'アーセナル',
                 'Tottenham Hotspur FC': 'トッテナム',
                 'Chelsea FC': 'チェルシー',
-                'Leicester City FC': 'レスター',
                 'FC Bayern München': 'バイエルン',
                 'Borussia Dortmund': 'ドルトムント',
                 'RB Leipzig': 'ライプツィヒ',
                 'Bayer 04 Leverkusen': 'レヴァークーゼン',
-                'VfL Wolfsburg': 'ヴォルフスブルク',
                 'FC Barcelona': 'バルセロナ',
                 'Real Madrid CF': 'レアル・マドリー',
                 'Club Atlético de Madrid': 'アトレティコ',
@@ -140,12 +138,9 @@ $(function () {
                 'AS Roma': 'ローマ',
                 'FC Internazionale Milano': 'インテル',
                 'AC Milan': 'ACミラン',
-                'Atalanta BC': 'アタランタ',
-                'SS Lazio': 'ラツィオ',
                 'Paris Saint-Germain FC': 'PSG',
                 'Olympique de Marseille': 'マルセイユ',
-                'Lille OSC': 'リール',
-                'Olympique Lyonnais': 'リヨン'
+                'AS Monaco FC': 'モナコ'
             };
 
             var youbi = ["日", "月", "火", "水", "木", "金", "土"];
