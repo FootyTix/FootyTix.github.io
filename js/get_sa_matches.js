@@ -25,15 +25,15 @@ $(function () {
             'Hellas Verona FC': 'ヴェローナ',
             'Atalanta BC': 'アタランタ',
             'Bologna FC 1909': 'ボローニャ',
-            'Cagliari Calcio': 'カリアリ',
             'UC Sampdoria': 'サンプドリア',
             'Spezia Calcio': 'スペツィア',
             'Udinese Calcio': 'ウディネーゼ',
-            'Venezia FC': 'ヴェネツィア',
             'US Salernitana 1919': 'サレルニターナ',
             'ACF Fiorentina': 'フィオレンティーナ',
             'Torino FC': 'トリノ',
-            'Genoa CFC': 'ジェノア',
+            'US Cremonese': 'クレモネーゼ',
+            'US Lecce': 'レッチェ',
+            'AC Monza': 'モンツァ',
             'Empoli FC': 'エンポリ'
         };
 
