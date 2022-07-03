@@ -24,9 +24,9 @@ $(function () {
             'Crystal Palace FC': 'クリスタル・パレス',
             'Brighton & Hove Albion FC': 'ブライトン',
             'Brentford FC': 'ブレントフォード',
-            'Norwich City FC': 'ノリッジ',
-            'Burnley FC': 'バーンリー',
-            'Watford FC': 'ワトフォード'
+            'Nottingham Forest FC': 'ノッティンガム・フォレスト',
+            'Fulham FC': 'フラム',
+            'AFC Bournemouth': 'ボーンマス'
         };
         // 順位表作成
         standings.forEach(function (standing) {

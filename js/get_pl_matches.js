@@ -32,9 +32,9 @@ $(function () {
             'Crystal Palace FC': 'クリスタル・パレス',
             'Brighton & Hove Albion FC': 'ブライトン',
             'Brentford FC': 'ブレントフォード',
-            'Norwich City FC': 'ノリッジ',
-            'Burnley FC': 'バーンリー',
-            'Watford FC': 'ワトフォード'
+            'Nottingham Forest FC': 'ノッティンガム・フォレスト',
+            'Fulham FC': 'フラム',
+            'AFC Bournemouth': 'ボーンマス'
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];
