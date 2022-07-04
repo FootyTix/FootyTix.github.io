@@ -50,8 +50,8 @@ $(function () {
         function getMatchdayOrRound(game){
             var round_name = {
                 'LAST_16': 'ラウンド16',
-                'QUARTER_FINAL': '準々決勝',
-                'SEMI_FINAL': '準決勝',
+                'QUARTER_FINALS': '準々決勝',
+                'SEMI_FINALS': '準決勝',
                 'FINAL': '決勝'
             }
 
