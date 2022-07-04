@@ -63,7 +63,8 @@ $(function () {
             "Canada": "https://crests.football-data.org/canada.svg",
             "Morocco": "https://crests.football-data.org/morocco.svg",
             "Cameroon": "https://crests.football-data.org/cameroon.svg",
-            "Ghana": "https://crests.football-data.org/ghana.svg"
+            "Ghana": "https://crests.football-data.org/ghana.svg",
+            "South Korea": "https://crests.football-data.org/772.png"
         };
 
         var group_list = {
