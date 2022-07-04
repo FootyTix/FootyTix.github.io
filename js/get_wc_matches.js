@@ -48,6 +48,22 @@ $(function () {
             "United States": "アメリカ",
             "Mexico": "メキシコ",
             "Canada": "カナダ",
+            "Australia": "オーストラリア",
+            "Costa Rica": "コスタリカ",
+            "Wales": "ウェールズ"
+        };
+
+        var image_list = {
+            "Senegal": "https://crests.football-data.org/senegal.svg",
+            "Iran": "https://crests.football-data.org/iran.svg",
+            "United States": "https://crests.football-data.org/usa.svg",
+            "Saudi Arabia": "https://crests.football-data.org/saudi_arabia.svg",
+            "Tunisia": "https://crests.football-data.org/tunisia.svg",
+            "Costa Rica": "https://crests.football-data.org/costa_rica.svg",
+            "Canada": "https://crests.football-data.org/canada.svg",
+            "Morocco": "https://crests.football-data.org/morocco.svg",
+            "Cameroon": "https://crests.football-data.org/cameroon.svg",
+            "Ghana": "https://crests.football-data.org/ghana.svg"
         };
 
         var group_list = {
@@ -130,7 +146,8 @@ $(function () {
             if (game.homeTeam.id == null) {
                 return '<td><span style="font-size: 70%;">' + '未定' + '</span></td>';
             } else {
-                return '<td><img src="https://crests.football-data.org/' + game.homeTeam.id + '.svg" height="20" width="20" style="box-shadow: 0 0 1px grey;">'
+                return '<td><img src="https://crests.football-data.org/' + game.homeTeam.id + '.svg"'
+                + 'onerror="this.src=' + image_list[game.homeTeam.name] + ' height="20" width="20" style="box-shadow: 0 0 1px grey;">'
                 + '<br /><span style="font-size: 70%;">'
                 + club_list[game.homeTeam.name] + '</span></td>';
             }
@@ -141,7 +158,8 @@ $(function () {
             if (game.awayTeam.id == null) {
                 return '<td><span style="font-size: 70%;">' + '未定' + '</span></td>';
             } else {
-                return '<td><img src="https://crests.football-data.org/' + game.awayTeam.id + '.svg" height="20" width="20" style="box-shadow: 0 0 1px grey;">'
+                return '<td><img src="https://crests.football-data.org/' + game.awayTeam.id + '.svg"'
+                + 'onerror="this.src=' + image_list[game.homeTeam.name] + ' height="20" width="20" style="box-shadow: 0 0 1px grey;">'
                 + '<br /><span style="font-size: 70%;">'
                 + club_list[game.awayTeam.name] + '</span></td>';
             }
