@@ -24,7 +24,7 @@ $(function () {
             'Crystal Palace FC': 'クリスタル・パレス',
             'Brighton & Hove Albion FC': 'ブライトン',
             'Brentford FC': 'ブレントフォード',
-            'Nottingham Forest FC': 'ノッティンガム・フォレスト',
+            'Nottingham Forest FC': 'N・フォレスト',
             'Fulham FC': 'フラム',
             'AFC Bournemouth': 'ボーンマス'
         };
