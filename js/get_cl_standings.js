@@ -42,7 +42,7 @@ $(function () {
         };
         
         var clone_tbl = document.getElementById("standings-tbl");
-        var i = -1;
+        var i = 1;
         // 順位表作成
         standings_list.forEach(function (group) {
             var standings = group.table;
