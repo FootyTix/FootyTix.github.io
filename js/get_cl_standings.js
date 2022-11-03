@@ -33,7 +33,7 @@ $(function () {
             'Eintracht Frankfurt': 'フランクフルト',
             'AFC Ajax': 'アヤックス',
             'Sport Lisboa e Benfica': 'ベンフィカ',
-            'FC Sheriff Tiraspol': 'シェリフ・ティラスポリ',
+            'FK Shakhtar Donetsk': 'シャフタール・ドネツク',
             'Club Brugge KV': 'クラブ・ブルッヘ',
             'FC Viktoria Plzeň': 'ヴィクトリア・プルゼニ',
             'GNK Dinamo Zagreb': 'ディナモ・ザグレブ',
