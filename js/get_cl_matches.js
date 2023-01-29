@@ -175,5 +175,5 @@ $(function () {
         $('#loading-gif').children().remove();
         $('#loading-gif').append('ページを更新してください');
     });
-});
+}); //
 
