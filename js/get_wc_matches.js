@@ -2,6 +2,7 @@ $(function () {
     $.ajaxSetup({
         headers: { "X-Auth-Token": "988f0be1f26f481fae9b8b19d0327312" }
     });
+    $.ajaxSetup({xhrFields:{withCredentials:true}});
     $.getJSON('https://api.football-data.org/v2/competitions/WC/matches', function (data) {
 
         //JSON取得後の処理
