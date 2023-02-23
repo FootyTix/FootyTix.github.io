@@ -1,11 +1,11 @@
 $(function () {
-    $.ajaxSetup({
-        headers: { "X-Auth-Token": "988f0be1f26f481fae9b8b19d0327312" }
-    });
-    $.ajaxSetup({xhrFields:{withCredentials:true}});
-    $.getJSON('https://api.football-data.org/v2/competitions/WC/matches', function (data) {
-
+    $.ajax({
+        type: 'get',
+        url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+        dataType: 'json'
+        }).done (function(data){
         //JSON取得後の処理
+        console.log(data)
         matches = data.matches;
         matches.forEach(function (match) {
             match.competition = data.competition
@@ -197,10 +197,12 @@ $(function () {
         }
         $('#loading-gif').remove();
     })
-        .error(function () {
+        .fail(function (jqXHR, textStatus, errorThrown) {
             // エラーがあった時
             $('#loading-gif').children().remove();
             $('#loading-gif').append('ページを更新してください');
+            console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
+            console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー
+            console.log("errorThrown    : " + errorThrown); // 例外情報
         });
 });
-
