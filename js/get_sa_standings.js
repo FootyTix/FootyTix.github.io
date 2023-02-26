@@ -49,9 +49,12 @@ $(function () {
         });
         $('#loading-gif').remove();
     })
-    .error(function () {
+    .fail(function (jqXHR, textStatus, errorThrown) {
         // エラーがあった時
         $('#loading-gif').children().remove();
         $('#loading-gif').append('ページを更新してください');
+        console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
+        console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー
+        console.log("errorThrown    : " + errorThrown); // 例外情報
     });
 });

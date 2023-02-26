@@ -49,7 +49,7 @@ $(function () {
         });
         $('#loading-gif').remove();
     })
-    .fail(function () {
+    .fail(function (jqXHR, textStatus, errorThrown) {
         // エラーがあった時
         $('#loading-gif').children().remove();
         $('#loading-gif').append('ページを更新してください');
