@@ -6,7 +6,7 @@ $(function () {
         dataType: 'json'
         }).done (function(data){
         //JSON取得後の処理
-        standings = data_PL.standings[0].table;
+        standings = data.standings[0].table;
 
         var club_list = {
             'Liverpool FC': 'リバプール',
@@ -49,10 +49,13 @@ $(function () {
         });
         $('#loading-gif').remove();
     })
-    .error(function () {
+    .fail(function () {
         // エラーがあった時
         $('#loading-gif').children().remove();
         $('#loading-gif').append('ページを更新してください');
+        console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
+        console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー
+        console.log("errorThrown    : " + errorThrown); // 例外情報
     });
 });
 
