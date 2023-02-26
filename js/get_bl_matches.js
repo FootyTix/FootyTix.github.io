@@ -1,9 +1,10 @@
 $(function () {
-    $.ajaxSetup({
-        headers: { "X-Auth-Token": "8fb8468fc6e64570b668b0b8e629c620" }
-    });
-    $.getJSON('https://api.football-data.org/v2/competitions/BL1/matches', function (data) {
-
+    $.ajax({
+        type: 'post',
+        url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+        data: {arg: 12},
+        dataType: 'json'
+        }).done (function(data){
         //JSON取得後の処理
         matches = data.matches;
         matches.forEach(function (match) {

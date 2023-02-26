@@ -1,8 +1,10 @@
 $(function () {
-    $.ajaxSetup({
-        headers: { "X-Auth-Token": "416acc23dedc47be95d55f1ecea4bd22" }
-    });
-    $.getJSON('https://api.football-data.org/v2/competitions/SA/standings?standingType=TOTAL', function (data) {
+    $.ajax({
+        type: 'post',
+        url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+        data: {arg: 3},
+        dataType: 'json'
+        }).done (function(data){
         //JSON取得後の処理
         standings = data.standings[0].table;
 
