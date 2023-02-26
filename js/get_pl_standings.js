@@ -2,7 +2,7 @@ $(function () {
     $.ajax({
         type: 'post',
         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-        data: {arg: 5},
+        data: {arg: 4},
         dataType: 'json'
         }).done (function(data){
         //JSON取得後の処理
