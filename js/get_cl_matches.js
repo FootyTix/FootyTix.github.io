@@ -56,7 +56,7 @@ $(function () {
         var future_matchday_count = 0;
         var past_matchday_count = 1;
         var future_round;
-        var past_round;
+        var past_round = '第1節';
 
         // ラウンド名
         function getMatchdayOrRound(game){
