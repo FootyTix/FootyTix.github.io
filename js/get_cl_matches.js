@@ -115,13 +115,13 @@ $(function () {
             if (game_list[i].status == 'FINISHED') {
                 //節を挿入
                 if (game_list[i].matchday != past_matchday_count) {
-                    past_round = round;
                     $("#results-tbl").prepend(
                         '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
                         + past_round
                         + '</span></td></tr>'
                     );
                     past_matchday_count = game_list[i].matchday;
+                    past_round = round;
                 }
                 //テーブルに挿入
                 $("#results-tbl").prepend(
