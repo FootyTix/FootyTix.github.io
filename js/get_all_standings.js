@@ -1,30 +1,35 @@
 $(function () {
     $.when(
-        $.getJSON({
-            url: "https://api.football-data.org/v2/competitions/PL/standings?standingType=TOTAL",
-            headers: { "X-Auth-Token": "28fcc697165249959737b7f980aeefd2" }
+        $.ajax({
+            type: 'post',
+            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+            data: {arg: 20},
+            dataType: 'json'
         }),
-        $.getJSON({
-            url: "https://api.football-data.org/v2/competitions/BL1/standings?standingType=TOTAL",
-            headers: { "X-Auth-Token": "f70cd1be97664d618660f91a5d736505" }
+        $.ajax({
+            type: 'post',
+            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+            data: {arg: 21},
+            dataType: 'json'
         }),
-        $.getJSON({
-            url: "https://api.football-data.org/v2/competitions/PD/standings?standingType=TOTAL",
-            headers: { "X-Auth-Token": "d7027a3a37224b918d5af11421c478a9" }
+        $.ajax({
+            type: 'post',
+            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+            data: {arg: 22},
+            dataType: 'json'
         }),
-        $.getJSON({
-            url: "https://api.football-data.org/v2/competitions/SA/standings?standingType=TOTAL",
-            headers: { "X-Auth-Token": "061bce2b0738476f94d97e516179852d" }
+        $.ajax({
+            type: 'post',
+            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+            data: {arg: 23},
+            dataType: 'json'
         }),
-        $.getJSON({
-            url: "https://api.football-data.org/v2/competitions/FL1/standings?standingType=TOTAL",
-            headers: { "X-Auth-Token": "3752f505d947465d8b1c5b03430890eb" }
+        $.ajax({
+            type: 'post',
+            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+            data: {arg: 24},
+            dataType: 'json'
         })
-        // ,
-        // $.getJSON({
-        //     url: "https://api.football-data.org/v2/competitions/CL/standings?standingType=TOTAL",
-        //     headers: { "X-Auth-Token": "28d539fc326e418e930ef4221a051b1d" }
-        // })
     )
     .done(function (data_PL, data_BL, data_PD, data_SA, data_FL/*, data_CL*/) {
         //JSON取得後の処理
