@@ -170,8 +170,10 @@ $(function () {
                 if (game.season.id == '642') {
                     if (game.stage == 'GROUP_STAGE') {
                         return '󠁢󠁥󠁮󠁧󠁿第' + game.matchday + '節';
-                    } else {
+                    } else if (round_name[game.stage]) {
                         return round_name[game.stage]
+                    } else {
+                        return -1;
                     }
                 } else {
                     return '󠁢󠁥󠁮󠁧󠁿第' + game.matchday + '節';
