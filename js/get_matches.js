@@ -167,7 +167,7 @@ $(function () {
                     'FINAL': '決勝'
                 }
 
-                if (game.season.id == '642') {
+                if (game.season.id == '1491') { // UCL 22-23 season
                     if (game.stage == 'GROUP_STAGE') {
                         return '󠁢󠁥󠁮󠁧󠁿第' + game.matchday + '節';
                     } else if (round_name[game.stage]) {
