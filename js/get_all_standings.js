@@ -48,19 +48,19 @@ $(function () {
             'Tottenham Hotspur FC': 'トッテナム',
             'Chelsea FC': 'チェルシー',
             'Everton FC': 'エバートン',
-            'Leicester City FC': 'レスター',
             'West Ham United FC': 'ウェストハム',
-            'Southampton FC': 'サウサンプトン',
+            'Luton Town FC': 'ルートン・タウンFC',
             'Wolverhampton Wanderers FC': 'ウルブス',
             'Aston Villa FC': 'アストン・ヴィラ',
             'Newcastle United FC': 'ニューカッスル',
-            'Leeds United FC': 'リーズ ',
+            'Sheffield United FC': 'シェフィールド・U ',
             'Crystal Palace FC': 'クリスタル・パレス',
             'Brighton & Hove Albion FC': 'ブライトン',
             'Brentford FC': 'ブレントフォード',
-            'Nottingham Forest FC': 'ノッティンガム・フォレスト',
+            'Nottingham Forest FC': 'N・フォレスト',
             'Fulham FC': 'フラム',
-            'AFC Bournemouth': 'ボーンマス'
+            'AFC Bournemouth': 'ボーンマス',
+            'Burnley': 'バーンリー',
         };
 
         var club_list_pd = {
@@ -72,7 +72,7 @@ $(function () {
             'Cádiz CF': 'カディス',
             'Sevilla FC': 'セビージャ',
             'Athletic Club': 'アスレティック・ビルバオ',
-            'Elche CF': 'エルチェ',
+            'UD Las Palmas': 'ラス・パルマス',
             'Rayo Vallecano de Madrid': 'ラージョ・バジェカーノ',
             'Getafe CF': 'ヘタフェ',
             'RC Celta de Vigo': 'セルタ',
@@ -82,8 +82,8 @@ $(function () {
             'RCD Mallorca': 'マジョルカ',
             'Girona FC': 'ジローナ',
             'UD Almería': 'アルメリア',
-            'Real Valladolid CF': 'バジャドリード',
-            'RCD Espanyol de Barcelona': 'エスパニョール'
+            'Granada CF': 'グラナダ',
+            'Deportivo Alavés': 'アラベス'
         };
         
         var club_list_bl = {
@@ -97,14 +97,14 @@ $(function () {
             'Eintracht Frankfurt': 'フランクフルト',
             'FC Augsburg': 'アウクスブルク',
             'VfB Stuttgart': 'シュトゥットガルト',
-            'Hertha BSC': 'ヘルタ・ベルリン',
+            'SV Darmstadt 98': 'ダルムシュタット',
             'VfL Bochum 1848': 'ボーフム',
             'TSG 1899 Hoffenheim': 'ホッフェンハイム',
             'SC Freiburg': 'フライブルク',
             '1. FC Köln': 'ケルン',
             '1. FSV Mainz 05': 'マインツ',
             'SV Werder Bremen': 'ブレーメン',
-            'FC Schalke 04': 'シャルケ'
+            '1. FC Heidenheim 1846': 'ハイデンハイム'
         };
 
         var club_list_sa = {
@@ -118,13 +118,13 @@ $(function () {
             'Hellas Verona FC': 'ヴェローナ',
             'Atalanta BC': 'アタランタ',
             'Bologna FC 1909': 'ボローニャ',
-            'UC Sampdoria': 'サンプドリア',
-            'Spezia Calcio': 'スペツィア',
+            'Cagliari Calcio': 'カリアリ',
+            'Frosinone Calcio': 'フロジノーネ',
             'Udinese Calcio': 'ウディネーゼ',
             'US Salernitana 1919': 'サレルニターナ',
             'ACF Fiorentina': 'フィオレンティーナ',
             'Torino FC': 'トリノ',
-            'US Cremonese': 'クレモネーゼ',
+            'Genoa CFC': 'ジェノア',
             'US Lecce': 'レッチェ',
             'AC Monza': 'モンツァ',
             'Empoli FC': 'エンポリ'
@@ -139,18 +139,16 @@ $(function () {
             'Montpellier HSC': 'モンペリエ',
             'Racing Club de Lens': 'RCランス',
             'Stade Rennais FC 1901': 'レンヌ',
-            'Angers SCO': 'アンジェ',
             'Stade Brestois 29': 'ブレスト',
             'OGC Nice': 'ニース',
-            'AC Ajaccio': 'ACアジャクシオ',
-            'AJ Auxerre': 'オセール',
+            'Le Havre AC': 'ル・アーヴル',
             'FC Nantes': 'ナント',
             'Toulouse FC': 'トゥールーズ',
             'Clermont Foot 63': 'クレルモン',
             'Stade de Reims': 'スタッド・ランス',
             'FC Lorient': 'ロリアン',
             'RC Strasbourg Alsace': 'ストラスブール',
-            'ES Troyes AC': 'トロワ'
+            'FC Metz': 'メス'
         };
 
         // 順位表作成
@@ -159,7 +157,7 @@ $(function () {
                 '<tr align="center">'
                 + '<td><span style="font-size: 60%;">' + standing.position + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left"><div style="padding: 4px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
-                + standing.team.crestUrl + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
+                + standing.team.crest + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
                 + club_list_pl[standing.team.name] + '</div></div></span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.playedGames + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.won + '</span></td>'
@@ -177,7 +175,7 @@ $(function () {
                 '<tr align="center">'
                 + '<td><span style="font-size: 60%;">' + standing.position + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left"><div style="padding: 4px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
-                + standing.team.crestUrl + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
+                + standing.team.crest + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
                 + club_list_pd[standing.team.name] + '</div></div></span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.playedGames + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.won + '</span></td>'
@@ -195,7 +193,7 @@ $(function () {
                 '<tr align="center">'
                 + '<td><span style="font-size: 60%;">' + standing.position + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left"><div style="padding: 4px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
-                + standing.team.crestUrl + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
+                + standing.team.crest + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
                 + club_list_bl[standing.team.name] + '</div></div></span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.playedGames + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.won + '</span></td>'
@@ -213,7 +211,7 @@ $(function () {
                 '<tr align="center">'
                 + '<td><span style="font-size: 60%;">' + standing.position + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left"><div style="padding: 4px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
-                + standing.team.crestUrl + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
+                + standing.team.crest + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
                 + club_list_sa[standing.team.name] + '</div></div></span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.playedGames + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.won + '</span></td>'
@@ -230,7 +228,7 @@ $(function () {
                 '<tr align="center">'
                 + '<td><span style="font-size: 60%;">' + standing.position + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left"><div style="padding: 4px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
-                + standing.team.crestUrl + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
+                + standing.team.crest + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
                 + club_list_fl[standing.team.name] + '</div></div></span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.playedGames + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.won + '</span></td>'

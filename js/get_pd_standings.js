@@ -17,7 +17,7 @@ $(function () {
             'Cádiz CF': 'カディス',
             'Sevilla FC': 'セビージャ',
             'Athletic Club': 'アスレティック・ビルバオ',
-            'Elche CF': 'エルチェ',
+            'UD Las Palmas': 'ラス・パルマス',
             'Rayo Vallecano de Madrid': 'ラージョ・バジェカーノ',
             'Getafe CF': 'ヘタフェ',
             'RC Celta de Vigo': 'セルタ',
@@ -27,8 +27,8 @@ $(function () {
             'RCD Mallorca': 'マジョルカ',
             'Girona FC': 'ジローナ',
             'UD Almería': 'アルメリア',
-            'Real Valladolid CF': 'バジャドリード',
-            'RCD Espanyol de Barcelona': 'エスパニョール'
+            'Granada CF': 'グラナダ',
+            'Deportivo Alavés': 'アラベス'
         };
         // 順位表作成
         standings.forEach(function (standing) {
@@ -36,7 +36,7 @@ $(function () {
                 '<tr align="center">'
                 + '<td><span style="font-size: 60%;">' + standing.position + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left"><div style="padding: 4px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
-                + standing.team.crestUrl + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
+                + standing.team.crest + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
                 + club_list[standing.team.name] + '</div></div></span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.playedGames + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.won + '</span></td>'

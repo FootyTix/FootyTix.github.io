@@ -4,18 +4,18 @@ require_once( $parse_uri . 'wp-load.php' );
 $arg = $_POST['arg'];
 
 $url = ['https://api.football-data.org/v2/competitions/WC/matches',//0
-	   'https://api.football-data.org/v2/competitions/WC/standings?standingType=TOTAL',//1
-       'https://api.football-data.org/v2/competitions/SA/standings?standingType=TOTAL',//2
+	   'https://api.football-data.org/v4/competitions/WC/standings?standingType=TOTAL',//1
+       'https://api.football-data.org/v4/competitions/SA/standings?standingType=TOTAL',//2
        'https://api.football-data.org/v2/competitions/SA/matches',//3
-       'https://api.football-data.org/v2/competitions/PL/standings?standingType=TOTAL',//4
+       'https://api.football-data.org/v4/competitions/PL/standings?standingType=TOTAL',//4
        'https://api.football-data.org/v2/competitions/PL/matches',//5
-	   'https://api.football-data.org/v2/competitions/PD/standings?standingType=TOTAL',//6
+	   'https://api.football-data.org/v4/competitions/PD/standings?standingType=TOTAL',//6
 	   'https://api.football-data.org/v2/competitions/PD/matches',//7
-	   'https://api.football-data.org/v2/competitions/FL1/standings?standingType=TOTAL',//8
+	   'https://api.football-data.org/v4/competitions/FL1/standings?standingType=TOTAL',//8
 	   'https://api.football-data.org/v2/competitions/FL1/matches',//9
-	   'https://api.football-data.org/v2/competitions/CL/standings?standingType=TOTAL',//10
+	   'https://api.football-data.org/v4/competitions/CL/standings?standingType=TOTAL',//10
 	   'https://api.football-data.org/v2/competitions/CL/matches',//11
-	   'https://api.football-data.org/v2/competitions/BL1/standings?standingType=TOTAL',//12
+	   'https://api.football-data.org/v4/competitions/BL1/standings?standingType=TOTAL',//12
 	   'https://api.football-data.org/v2/competitions/BL1/matches',//13
 	   'https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED',//14
 	   'https://api.football-data.org/v2/competitions/BL1/matches?status=SCHEDULED',//15
@@ -23,11 +23,11 @@ $url = ['https://api.football-data.org/v2/competitions/WC/matches',//0
 	   'https://api.football-data.org/v2/competitions/SA/matches?status=SCHEDULED',//17
 	   'https://api.football-data.org/v2/competitions/FL1/matches?status=SCHEDULED',//18
 	   'https://api.football-data.org/v2/competitions/CL/matches?status=SCHEDULED',//19
-	   'https://api.football-data.org/v2/competitions/PL/standings?standingType=TOTAL',//20
-	   'https://api.football-data.org/v2/competitions/BL1/standings?standingType=TOTAL',//21
-	   'https://api.football-data.org/v2/competitions/PD/standings?standingType=TOTAL',//22
-	   'https://api.football-data.org/v2/competitions/SA/standings?standingType=TOTAL',//23
-	   'https://api.football-data.org/v2/competitions/FL1/standings?standingType=TOTAL'//24
+	   'https://api.football-data.org/v4/competitions/PL/standings?standingType=TOTAL',//20
+	   'https://api.football-data.org/v4/competitions/BL1/standings?standingType=TOTAL',//21
+	   'https://api.football-data.org/v4/competitions/PD/standings?standingType=TOTAL',//22
+	   'https://api.football-data.org/v4/competitions/SA/standings?standingType=TOTAL',//23
+	   'https://api.football-data.org/v4/competitions/FL1/standings?standingType=TOTAL'//24
     ];
 $headers = array(array("X-Auth-Token" => "988f0be1f26f481fae9b8b19d0327312"),//0
                 array("X-Auth-Token" => "ed51211801874c0d89f1d7269f7ee702"),//1

@@ -19,14 +19,14 @@ $(function () {
             'Eintracht Frankfurt': 'フランクフルト',
             'FC Augsburg': 'アウクスブルク',
             'VfB Stuttgart': 'シュトゥットガルト',
-            'Hertha BSC': 'ヘルタ・ベルリン',
+            'SV Darmstadt 98': 'ダルムシュタット',
             'VfL Bochum 1848': 'ボーフム',
             'TSG 1899 Hoffenheim': 'ホッフェンハイム',
             'SC Freiburg': 'フライブルク',
             '1. FC Köln': 'ケルン',
             '1. FSV Mainz 05': 'マインツ',
             'SV Werder Bremen': 'ブレーメン',
-            'FC Schalke 04': 'シャルケ'
+            '1. FC Heidenheim 1846': 'ハイデンハイム'
         };
         // 順位表作成
         standings.forEach(function (standing) {
@@ -34,7 +34,7 @@ $(function () {
                 '<tr align="center">'
                 + '<td><span style="font-size: 60%;">' + standing.position + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left"><div style="padding: 4px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
-                + standing.team.crestUrl + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
+                + standing.team.crest + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
                 + club_list[standing.team.name] + '</div></div></span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.playedGames + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.won + '</span></td>'

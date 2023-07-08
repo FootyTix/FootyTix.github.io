@@ -24,18 +24,16 @@ $(function () {
             'Montpellier HSC': 'モンペリエ',
             'Racing Club de Lens': 'RCランス',
             'Stade Rennais FC 1901': 'レンヌ',
-            'Angers SCO': 'アンジェ',
             'Stade Brestois 29': 'ブレスト',
             'OGC Nice': 'ニース',
-            'AC Ajaccio': 'ACアジャクシオ',
-            'AJ Auxerre': 'オセール',
+            'Le Havre AC': 'ル・アーヴル',
             'FC Nantes': 'ナント',
             'Toulouse FC': 'トゥールーズ',
             'Clermont Foot 63': 'クレルモン',
             'Stade de Reims': 'スタッド・ランス',
             'FC Lorient': 'ロリアン',
             'RC Strasbourg Alsace': 'ストラスブール',
-            'ES Troyes AC': 'トロワ'
+            'FC Metz': 'メス'
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];

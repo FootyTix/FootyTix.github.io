@@ -17,18 +17,16 @@ $(function () {
             'Montpellier HSC': 'モンペリエ',
             'Racing Club de Lens': 'RCランス',
             'Stade Rennais FC 1901': 'レンヌ',
-            'Angers SCO': 'アンジェ',
             'Stade Brestois 29': 'ブレスト',
             'OGC Nice': 'ニース',
-            'AC Ajaccio': 'ACアジャクシオ',
-            'AJ Auxerre': 'オセール',
+            'Le Havre AC': 'ル・アーヴル',
             'FC Nantes': 'ナント',
             'Toulouse FC': 'トゥールーズ',
             'Clermont Foot 63': 'クレルモン',
             'Stade de Reims': 'スタッド・ランス',
             'FC Lorient': 'ロリアン',
             'RC Strasbourg Alsace': 'ストラスブール',
-            'ES Troyes AC': 'トロワ'
+            'FC Metz': 'メス'
         };
         // 順位表作成
         standings.forEach(function (standing) {
@@ -36,7 +34,7 @@ $(function () {
                 '<tr align="center">'
                 + '<td><span style="font-size: 60%;">' + standing.position + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left"><div style="padding: 4px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
-                + standing.team.crestUrl + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
+                + standing.team.crest + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
                 + club_list[standing.team.name] + '</div></div></span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.playedGames + '</span></td>'
                 + '<td><span style="font-size: 60%;">' + standing.won + '</span></td>'

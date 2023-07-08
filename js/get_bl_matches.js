@@ -26,14 +26,14 @@ $(function () {
             'Eintracht Frankfurt': 'フランクフルト',
             'FC Augsburg': 'アウクスブルク',
             'VfB Stuttgart': 'シュトゥットガルト',
-            'Hertha BSC': 'ヘルタ・ベルリン',
+            'SV Darmstadt 98': 'ダルムシュタット',
             'VfL Bochum 1848': 'ボーフム',
             'TSG 1899 Hoffenheim': 'ホッフェンハイム',
             'SC Freiburg': 'フライブルク',
             '1. FC Köln': 'ケルン',
             '1. FSV Mainz 05': 'マインツ',
             'SV Werder Bremen': 'ブレーメン',
-            'FC Schalke 04': 'シャルケ'
+            '1. FC Heidenheim 1846': 'ハイデンハイム'
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];
