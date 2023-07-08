@@ -28,7 +28,7 @@ $(function () {
             'Nottingham Forest FC': 'N・フォレスト',
             'Fulham FC': 'フラム',
             'AFC Bournemouth': 'ボーンマス',
-            'Burnley': 'バーンリー',
+            'Burnley FC': 'バーンリー',
         };
         // 順位表作成
         standings.forEach(function (standing) {

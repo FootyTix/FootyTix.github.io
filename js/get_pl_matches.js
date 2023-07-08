@@ -35,7 +35,7 @@ $(function () {
             'Nottingham Forest FC': 'N・フォレスト',
             'Fulham FC': 'フラム',
             'AFC Bournemouth': 'ボーンマス',
-            'Burnley': 'バーンリー',
+            'Burnley FC': 'バーンリー',
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];

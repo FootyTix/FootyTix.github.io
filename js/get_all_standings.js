@@ -60,7 +60,7 @@ $(function () {
             'Nottingham Forest FC': 'N・フォレスト',
             'Fulham FC': 'フラム',
             'AFC Bournemouth': 'ボーンマス',
-            'Burnley': 'バーンリー',
+            'Burnley FC': 'バーンリー',
         };
 
         var club_list_pd = {
