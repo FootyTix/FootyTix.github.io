@@ -101,6 +101,28 @@ $(function () {
             }
         }
 
+        // ホームチーム名
+        function getHomeTeam (game) {
+            if (game.homeTeam.id == null) {
+                return '<td><span style="font-size: 70%;">' + '未定' + '</span></td>';
+            } else {
+                return '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game.homeTeam.id + '.svg" height="24" width="24">'
+                + '<br /><span style="font-size: 70%;">'
+                + club_list[game.homeTeam.name] + '</span></td>';
+            }
+        }
+
+        // アウェイチーム名
+        function getAwayTeam (game) {
+            if (game.awayTeam.id == null) {
+                return '<td><span style="font-size: 70%;">' + '未定' + '</span></td>';
+            } else {
+                return '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game.awayTeam.id + '.svg" height="24" width="24">'
+                + '<br /><span style="font-size: 70%;">'
+                + club_list[game.awayTeam.name] + '</span></td>';
+            }
+        }
+
         for (var i = 0; i < games_num; i++) {
             // 日時を日本時間に変換
             date = new Date(game_list[i].utcDate);
@@ -150,15 +172,11 @@ $(function () {
                 //テーブルに挿入
                 $("#matches-tbl").append(
                     '<tr align="center">'
-                    + '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg" height="24" width="24">'
-                    + '<br /><span style="font-size: 70%;">'
-                    + club_list[game_list[i].homeTeam.name] + '</span></td>'
+                    + getHomeTeam(game_list[i])
                     + '<td class="' + game_list[i].td_class + '"><span style="font-size: 65%; color: #454545;">'
                     + (jdate.getMonth() + 1) + '/' + jdate.getDate() + '(' + youbi[jdate.getDay()] + ')'
                     + '<br />' + jtime + '</span></td>'
-                    + '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg" height="24" width="24">'
-                    + '<br /><span style="font-size: 70%;">'
-                    + club_list[game_list[i].awayTeam.name] + '</span></td>'
+                    + getAwayTeam(game_list[i])
                     + '</tr>'
                 );
             }
