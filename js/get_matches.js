@@ -136,6 +136,7 @@ $(function () {
                 'Arsenal FC': 'アーセナル',
                 'Tottenham Hotspur FC': 'トッテナム',
                 'Chelsea FC': 'チェルシー',
+                'Brighton & Hove Albion FC': 'ブライトン',
                 'FC Bayern München': 'バイエルン',
                 'Borussia Dortmund': 'ドルトムント',
                 'RB Leipzig': 'ライプツィヒ',
@@ -149,6 +150,7 @@ $(function () {
                 'AS Roma': 'ローマ',
                 'FC Internazionale Milano': 'インテル',
                 'AC Milan': 'ACミラン',
+                'SS Lazio': 'ラツィオ',
                 'Paris Saint-Germain FC': 'PSG',
                 'Olympique de Marseille': 'マルセイユ',
                 'AS Monaco FC': 'モナコ'
