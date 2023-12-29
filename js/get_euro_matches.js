@@ -36,7 +36,7 @@ $(function () {
             "Austria": "オーストリア",
             "Hungary": "ハンガリー",
             "Netherlands": "オランダ",
-            "Scotland": "スコットランド",
+            "Scotland": "スコットランド"
         };
 
         var image_list = {
