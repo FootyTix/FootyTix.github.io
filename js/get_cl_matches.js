@@ -62,15 +62,21 @@ $(function () {
         function getMatchdayOrRound(game){
             var round_name = {
                 'LAST_16': 'ラウンド16',
-                'QUARTER_FINAL': '準々決勝',
+                'QUARTER_FINALS': '準々決勝',
                 'SEMI_FINALS': '準決勝',
                 'FINAL': '決勝'
+            }
+            var leg_name = {
+                1: '1stレグ',
+                2: '2ndレグ'
             }
 
             if (game.stage == 'GROUP_STAGE') {
                 return '󠁢󠁥󠁮󠁧󠁿第' + game.matchday + '節';
-            } else if (round_name[game.stage]) {
+            } else if (game.stage == 'FINAL') {
                 return round_name[game.stage]
+            } else if (round_name[game.stage]) {
+                return round_name[game.stage] + leg_name[game.matchday]
             } else {
                 return -1;
             }
