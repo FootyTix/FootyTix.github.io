@@ -76,7 +76,7 @@ $(function () {
             } else if (game.stage == 'FINAL') {
                 return round_name[game.stage]
             } else if (round_name[game.stage]) {
-                return round_name[game.stage] + leg_name[game.matchday]
+                return round_name[game.stage] + ' ' + leg_name[game.matchday]
             } else {
                 return -1;
             }
