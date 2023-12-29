@@ -1,10 +1,12 @@
 $(function () {
-    $.ajaxSetup({
-        headers: { "X-Auth-Token": "988f0be1f26f481fae9b8b19d0327312" }
-    });
-    $.getJSON('https://api.football-data.org/v2/competitions/EC/matches', function (data) {
-
+    $.ajax({
+        type: 'post',
+        url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+        data: {arg: 25},
+        dataType: 'json'
+        }).done (function(data){
         //JSON取得後の処理
+        console.log(data)
         matches = data.matches;
         matches.forEach(function (match) {
             match.competition = data.competition
@@ -18,33 +20,51 @@ $(function () {
             "Germany": "ドイツ",
             "Spain": "スペイン",
             "Portugal": "ポルトガル",
-            "Slovakia": "スロヴァキア",
+            "Slovakia": "スロバキア",
             "England": "イングランド",
             "France": "フランス",
             "Denmark": "デンマーク",
             "Italy": "イタリア",
             "Switzerland": "スイス",
-            "Ukraine": "ウクライナ",
-            "Sweden": "スウェーデン",
-            "Poland": "ポーランド",
+            "Albania": "アルバニア",
+            "Serbia": "セルビア",
+            "Romania": "ルーマニア",
             "Czech Republic": "チェコ",
             "Croatia": "クロアチア",
             "Turkey": "トルコ",
             "Belgium": "ベルギー",
-            "Russia": "ロシア",
             "Austria": "オーストリア",
             "Hungary": "ハンガリー",
-            "Wales": "ウェールズ",
-            "Finland": "フィンランド",
-            "North Macedonia": "北マケドニア",
             "Netherlands": "オランダ",
             "Scotland": "スコットランド",
+        };
+
+        var image_list = {
+        }
+
+        var group_list = {
+            "GROUP_A": "A組",
+            "GROUP_B": "B組",
+            "GROUP_C": "C組",
+            "GROUP_D": "D組",
+            "GROUP_E": "E組",
+            "GROUP_F": "F組"
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];
         var date, jdate;
         var jtime = "";
         var matchday_count = 0;
+        var tmp_stage = 'LAST_16';
+
+        // グループ名
+        function getGroup(game){
+            if (game.stage == 'GROUP_STAGE') {
+                return '<br />' + group_list[game.group] + '</span></td>'
+            } else {
+                return '</span></td>';
+            }
+        }
 
         // ラウンド名
         function getMatchdayOrRound(game){
@@ -52,6 +72,7 @@ $(function () {
                 'LAST_16': 'ラウンド16',
                 'QUARTER_FINALS': '準々決勝',
                 'SEMI_FINALS': '準決勝',
+                'THIRD_PLACE': '3位決定戦',
                 'FINAL': '決勝'
             }
 
@@ -89,7 +110,8 @@ $(function () {
             } else {
                 return '<td class="' + game.td_class + '"><span style="font-size: 65%;">'
                 + (game_jdate.getMonth() + 1) + '/' + game_jdate.getDate() + '(' + youbi[game_jdate.getDay()] + ')'
-                + '<br />' + game_jtime + '</span></td>';
+                + '<br />' + game_jtime
+                + getGroup(game);
             }
         }
 
@@ -98,7 +120,8 @@ $(function () {
             if (game.homeTeam.id == null) {
                 return '<td><span style="font-size: 70%;">' + '未定' + '</span></td>';
             } else {
-                return '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game.homeTeam.id + '.svg" height="15" width="15">'
+                return '<td><img src="https://crests.football-data.org/' + game.homeTeam.id + '.svg"'
+                + 'onerror="this.src=\'' + image_list[game.homeTeam.name] + '\'" height="20" width="20" style="box-shadow: 0 0 1px grey;">'
                 + '<br /><span style="font-size: 70%;">'
                 + club_list[game.homeTeam.name] + '</span></td>';
             }
@@ -109,7 +132,8 @@ $(function () {
             if (game.awayTeam.id == null) {
                 return '<td><span style="font-size: 70%;">' + '未定' + '</span></td>';
             } else {
-                return '<td style="padding-top: 6px;"><img src="https://crests.football-data.org/' + game.awayTeam.id + '.svg" height="15" width="15">'
+                return '<td><img src="https://crests.football-data.org/' + game.awayTeam.id + '.svg"'
+                + 'onerror="this.src=\'' + image_list[game.awayTeam.name] + '\'" height="20" width="20" style="box-shadow: 0 0 1px grey;">'
                 + '<br /><span style="font-size: 70%;">'
                 + club_list[game.awayTeam.name] + '</span></td>';
             }
@@ -123,8 +147,10 @@ $(function () {
             jtime = jdate.getHours() == 9 ? '未定' : (jdate.getHours() + ':' + ("0" + jdate.getMinutes()).slice(-2));
             
             //節を挿入
-            if (game_list[i].matchday != matchday_count) {
+            if (game_list[i].matchday != matchday_count
+                || game_list[i].stage != tmp_stage) {
                 matchday_count = game_list[i].matchday;
+                tmp_stage = game_list[i].stage;
                 $("#matches-tbl").append(
                     '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
                     + getMatchdayOrRound(game_list[i])
@@ -143,10 +169,12 @@ $(function () {
         }
         $('#loading-gif').remove();
     })
-        .error(function () {
+        .fail(function (jqXHR, textStatus, errorThrown) {
             // エラーがあった時
             $('#loading-gif').children().remove();
             $('#loading-gif').append('ページを更新してください');
+            console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
+            console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー
+            console.log("errorThrown    : " + errorThrown); // 例外情報
         });
 });
-
