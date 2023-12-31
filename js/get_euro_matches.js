@@ -157,7 +157,8 @@ $(function () {
                     + '</span></td></tr>'
                 );
             }
-
+            console.log(i)
+            console.log(game_list[i].homeTeam)
             //テーブルに挿入
             $("#matches-tbl").append(
                 '<tr align="center">'
