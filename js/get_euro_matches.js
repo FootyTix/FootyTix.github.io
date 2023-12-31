@@ -12,7 +12,7 @@ $(function () {
             match.competition = data.competition
             match.td_class = "td-cl"
         });
-        games_num = data.count;
+        games_num = data.resultSet.count;
 
         game_list = matches;
 
@@ -157,8 +157,7 @@ $(function () {
                     + '</span></td></tr>'
                 );
             }
-            console.log(i)
-            console.log(game_list[i].homeTeam)
+            
             //テーブルに挿入
             $("#matches-tbl").append(
                 '<tr align="center">'
