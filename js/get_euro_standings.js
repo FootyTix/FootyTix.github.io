@@ -33,13 +33,12 @@ $(function () {
 
         function getTeamName(team) {
             if (club_list[team]) {
-                return '<div style = "text-align: left"><div style="padding: 0px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
+                return '<div style="padding: 0px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
                 + standing.team.crest + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
-                + club_list[team] + '</div></div>';
+                + club_list[team] + '</div>';
             } else {
-                return '<div style = "text-align: left">' 
-                + '<div style="display: table-cell; vertical-align: middle;">' 
-                + '未定' + '</div></div>';
+                return '<div style="display: table-cell; vertical-align: middle;">' 
+                + '未定' + '</div>';
             }
         }
         
@@ -53,8 +52,8 @@ $(function () {
                 $(tbl_id).append(
                     '<tr align="center">'
                     + '<td><span style="font-size: 60%;">' + standing.position + '</span></td>'
-                    + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left"><div style="padding: 0px 4px 0 4px; display: table-cell; vertical-align: middle;">' 
-                    + getTeamName(standing.team.name) + '</span></td>'
+                    + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left">' 
+                    + getTeamName(standing.team.name) + '</div></span></td>'
                     + '<td><span style="font-size: 60%;">' + standing.playedGames + '</span></td>'
                     + '<td><span style="font-size: 60%;">' + standing.won + '</span></td>'
                     + '<td><span style="font-size: 60%;">' + standing.draw + '</span></td>'
