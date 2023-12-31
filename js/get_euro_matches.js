@@ -121,7 +121,7 @@ $(function () {
                 return '<td><span style="font-size: 70%;">' + '未定' + '</span></td>';
             } else {
                 return '<td><img src="' + game.homeTeam.crest
-                + 'onerror="this.src=\'' + image_list[game.homeTeam.name] + '\'" height="20" width="20" style="box-shadow: 0 0 1px grey;">'
+                + '" onerror="this.src=\'' + image_list[game.homeTeam.name] + '\'" height="20" width="20" style="box-shadow: 0 0 1px grey;">'
                 + '<br /><span style="font-size: 70%;">'
                 + club_list[game.homeTeam.name] + '</span></td>';
             }
@@ -133,7 +133,7 @@ $(function () {
                 return '<td><span style="font-size: 70%;">' + '未定' + '</span></td>';
             } else {
                 return '<td><img src="' + game.awayTeam.crest
-                + 'onerror="this.src=\'' + image_list[game.awayTeam.name] + '\'" height="20" width="20" style="box-shadow: 0 0 1px grey;">'
+                + '" onerror="this.src=\'' + image_list[game.awayTeam.name] + '\'" height="20" width="20" style="box-shadow: 0 0 1px grey;">'
                 + '<br /><span style="font-size: 70%;">'
                 + club_list[game.awayTeam.name] + '</span></td>';
             }
