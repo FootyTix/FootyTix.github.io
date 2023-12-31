@@ -13,6 +13,7 @@ $(function () {
             "Spain": "スペイン",
             "Portugal": "ポルトガル",
             "Slovakia": "スロバキア",
+            "Slovenia": "スロベニア",
             "England": "イングランド",
             "France": "フランス",
             "Denmark": "デンマーク",
