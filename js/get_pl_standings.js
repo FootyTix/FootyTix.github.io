@@ -9,6 +9,7 @@ $(function () {
         standings = data.standings[0].table;
 
         var club_list = {
+            'Liverpool FC': 'リ
             'Liverpool FC': 'リバプール',
             'Manchester City FC': 'マンチェスター・C',
             'Manchester United FC': 'マンチェスター・U',
@@ -17,18 +18,18 @@ $(function () {
             'Chelsea FC': 'チェルシー',
             'Everton FC': 'エバートン',
             'West Ham United FC': 'ウェストハム',
-            'Luton Town FC': 'ルートン・タウンFC',
+            'Ipswich Town FC': 'イプスウィッチ',
             'Wolverhampton Wanderers FC': 'ウルブス',
             'Aston Villa FC': 'アストン・ヴィラ',
             'Newcastle United FC': 'ニューカッスル',
-            'Sheffield United FC': 'シェフィールド・U ',
+            'Southampton FC': 'サウサンプトン',
             'Crystal Palace FC': 'クリスタル・パレス',
             'Brighton & Hove Albion FC': 'ブライトン',
             'Brentford FC': 'ブレントフォード',
             'Nottingham Forest FC': 'N・フォレスト',
             'Fulham FC': 'フラム',
             'AFC Bournemouth': 'ボーンマス',
-            'Burnley FC': 'バーンリー',
+            'Leicester City FC': 'レスター'
         };
         // 順位表作成
         standings.forEach(function (standing) {
