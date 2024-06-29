@@ -33,7 +33,7 @@ $(function () {
             'Stade de Reims': 'スタッド・ランス',
             'AS Saint-Étienne': 'サンテティエンヌ',
             'Angers SCO': 'アンジェ',
-            'FC AJ Auxerre': 'オセール'
+            'AJ Auxerre': 'オセール'
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];
