@@ -22,11 +22,11 @@ $(function () {
             'Le Havre AC': 'ル・アーヴル',
             'FC Nantes': 'ナント',
             'Toulouse FC': 'トゥールーズ',
-            'Clermont Foot 63': 'クレルモン',
-            'Stade de Reims': 'スタッド・ランス',
-            'FC Lorient': 'ロリアン',
             'RC Strasbourg Alsace': 'ストラスブール',
-            'FC Metz': 'メス'
+            'Stade de Reims': 'スタッド・ランス',
+            'AS Saint-Étienne': 'サンテティエンヌ',
+            'Angers SCO': 'アンジェ',
+            'FC AJ Auxerre': 'オセール'
         };
         // 順位表作成
         standings.forEach(function (standing) {
