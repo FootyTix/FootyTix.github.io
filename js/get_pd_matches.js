@@ -21,8 +21,7 @@ $(function () {
             'FC Barcelona': 'バルセロナ',
             'Real Sociedad de Fútbol': 'レアル・ソシエダ',
             'Villarreal CF': 'ビジャレアル',
-            'Cádiz CF': 'カディス',
-            'Sevilla FC': 'セビージャ',
+            'Deportivo Alavés': 'アラベス',
             'Athletic Club': 'アスレティック・ビルバオ',
             'UD Las Palmas': 'ラス・パルマス',
             'Rayo Vallecano de Madrid': 'ラージョ・バジェカーノ',
@@ -33,9 +32,9 @@ $(function () {
             'CA Osasuna': 'オサスナ',
             'RCD Mallorca': 'マジョルカ',
             'Girona FC': 'ジローナ',
-            'UD Almería': 'アルメリア',
-            'Granada CF': 'グラナダ',
-            'Deportivo Alavés': 'アラベス'
+            'CD Leganés': 'レガネス',
+            'Real Valladolid CF': 'バジャドリード',
+            'RCD Espanyol de Barcelona': 'エスパニョール'
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];
