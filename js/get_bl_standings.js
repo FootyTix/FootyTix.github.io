@@ -19,11 +19,11 @@ $(function () {
             'Eintracht Frankfurt': 'フランクフルト',
             'FC Augsburg': 'アウクスブルク',
             'VfB Stuttgart': 'シュトゥットガルト',
-            'SV Darmstadt 98': 'ダルムシュタット',
+            'FC St. Pauli 1910': 'ザンクト・パウリ',
             'VfL Bochum 1848': 'ボーフム',
             'TSG 1899 Hoffenheim': 'ホッフェンハイム',
             'SC Freiburg': 'フライブルク',
-            '1. FC Köln': 'ケルン',
+            'Holstein Kiel': 'キール',
             '1. FSV Mainz 05': 'マインツ',
             'SV Werder Bremen': 'ブレーメン',
             '1. FC Heidenheim 1846': 'ハイデンハイム'

@@ -10,9 +10,10 @@ $(function () {
 
         var club_list = {
             'AC Milan': 'ACミラン',
+            'AC Milan': 'ACミラン',
             'FC Internazionale Milano': 'インテル',
             'Juventus FC': 'ユベントス',
-            'US Sassuolo Calcio': 'サッスオーロ',
+            'Parma Calcio 1913': 'パルマ',
             'SSC Napoli': 'ナポリ',
             'SS Lazio': 'ラツィオ',
             'AS Roma': 'ローマ',
@@ -20,9 +21,9 @@ $(function () {
             'Atalanta BC': 'アタランタ',
             'Bologna FC 1909': 'ボローニャ',
             'Cagliari Calcio': 'カリアリ',
-            'Frosinone Calcio': 'フロジノーネ',
+            'Como 1907': 'コモ',
             'Udinese Calcio': 'ウディネーゼ',
-            'US Salernitana 1919': 'サレルニターナ',
+            'Venezia FC': 'ヴェネツィア',
             'ACF Fiorentina': 'フィオレンティーナ',
             'Torino FC': 'トリノ',
             'Genoa CFC': 'ジェノア',
