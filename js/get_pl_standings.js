@@ -9,7 +9,7 @@ $(function () {
         standings = data.standings[0].table;
 
         var club_list = {
-            'Liverpool FC': 'リバプール',
+            'Liverpool FC': 'リヴァプール',
             'Manchester City FC': 'マンチェスター・C',
             'Manchester United FC': 'マンチェスター・U',
             'Arsenal FC': 'アーセナル',

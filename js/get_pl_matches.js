@@ -16,7 +16,7 @@ $(function () {
         game_list = matches;
 
         var club_list = {
-            'Liverpool FC': 'リバプール',
+            'Liverpool FC': 'リヴァプール',
             'Manchester City FC': 'マンチェスター・C',
             'Manchester United FC': 'マンチェスター・U',
             'Arsenal FC': 'アーセナル',
