@@ -117,7 +117,7 @@ $(function () {
                 + data_PD[0].count
                 + data_SA[0].count
                 + data_FL[0].count
-                + data_CL[0].count;;
+                + data_CL[0].resultSet.count;
 
             game_list = PL.concat(BL, PD, SA, FL, CL)
 
