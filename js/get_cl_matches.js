@@ -117,7 +117,8 @@ $(function () {
             if (game.homeTeam.id == null) {
                 return '<td><span style="font-size: 70%;">' + '未定' + '</span></td>';
             } else {
-                return '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game.homeTeam.id + '.svg" height="24" width="24">'
+                return '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game.homeTeam.id + '.svg"' 
+                + 'onerror="this.src=' + '\'https://crests.football-data.org/' + game_list[i].homeTeam.id + '.png\'" height="24" width="24">'
                 + '<br /><span style="font-size: 70%;">'
                 + club_list[game.homeTeam.name] + '</span></td>';
             }
@@ -128,7 +129,8 @@ $(function () {
             if (game.awayTeam.id == null) {
                 return '<td><span style="font-size: 70%;">' + '未定' + '</span></td>';
             } else {
-                return '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game.awayTeam.id + '.svg" height="24" width="24">'
+                return '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game.awayTeam.id + '.svg"' 
+                + 'onerror="this.src=' + '\'https://crests.football-data.org/' + game_list[i].homeTeam.id + '.png\'" height="24" width="24">'
                 + '<br /><span style="font-size: 70%;">'
                 + club_list[game.awayTeam.name] + '</span></td>';
             }
