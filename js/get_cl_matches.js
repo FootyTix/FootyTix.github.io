@@ -65,6 +65,7 @@ $(function () {
         // ラウンド名
         function getMatchdayOrRound(game){
             var round_name = {
+                'PLAYOFFS': '決勝Tプレーオフ',
                 'LAST_16': 'ラウンド16',
                 'QUARTER_FINALS': '準々決勝',
                 'SEMI_FINALS': '準決勝',
@@ -75,7 +76,7 @@ $(function () {
                 2: '2ndレグ'
             }
 
-            if (game.stage == 'GROUP_STAGE') {
+            if (game.stage == 'LEAGUE_STAGE') {
                 return '󠁢󠁥󠁮󠁧󠁿第' + game.matchday + '節';
             } else if (game.stage == 'FINAL') {
                 return round_name[game.stage]
