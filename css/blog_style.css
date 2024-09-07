@@ -1000,7 +1000,10 @@ ul.foot-ul li:before {
 #standings-tbl-pd,
 #standings-tbl-bl,
 #standings-tbl-sa,
-#standings-tbl-fl {
+#standings-tbl-fl,
+#standings-tbl-ppl,
+#standings-tbl-ded,
+#standings-tbl-elc {
   font-weight: bold;
   border: solid 1px #656565;
   line-height: 1.0em;
@@ -1014,7 +1017,10 @@ ul.foot-ul li:before {
 #standings-tbl-pd td,
 #standings-tbl-bl td,
 #standings-tbl-sa td,
-#standings-tbl-fl td {
+#standings-tbl-fl td,
+#standings-tbl-ppl td,
+#standings-tbl-ded td,
+#standings-tbl-elc td {
   border: solid 1px #656565!important;
   line-height: 1.0em!important;
 }
