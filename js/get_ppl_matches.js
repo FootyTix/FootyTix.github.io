@@ -43,26 +43,34 @@ $(function () {
         var past_matchday_count = 1;
 
         // スコア計算
-        function getScore(score, fullScore, pkScore) {
+        function getScore(score, team) {
             if (score.duration == 'PENALTY_SHOOTOUT') {
-                return (fullScore - pkScore) + '(' + pkScore + ')';
+                if (team == 'home') {
+                    return score.regularTime.home + '(' + score.penalties.home + ')';
+                } else {
+                    return score.regularTime.away + '(' + score.penalties.away + ')';
+                }
             } else {
-                return fullScore;
+                if (team == 'home') {
+                    return score.fullTime.home;
+                } else {
+                    return score.fullTime.away;
+                }
             }
         }
         // スコアとキックオフ時間
         function getScoreOrDate(game, game_jdate, game_jtime) {
-            if (game.score.fullTime.homeTeam > game.score.fullTime.awayTeam) {
+            if (game.score.fullTime.home > game.score.fullTime.away) {
                 return '<td class="' + game.td_class + '"><span style="font-size: 80%; color: #ff0000;">'
-                + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + '</span><span style="font-size: 80%; color: #454545;"> - ' + getScore(game.score, game.score.fullTime.awayTeam, game.score.penalties.awayTeam) 
+                + getScore(game.score, 'home') + '</span><span style="font-size: 80%; color: #454545;"> - ' + getScore(game.score, 'away') 
                 + '</span></td>';
-            } else if (game.score.fullTime.homeTeam < game.score.fullTime.awayTeam) {
+            } else if (game.score.fullTime.home < game.score.fullTime.away) {
                 return '<td class="' + game.td_class + '"><span style="font-size: 80%; color: #454545;">'
-                + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + ' - </span><span style="font-size: 80%; color: #ff0000;">' + getScore(game.score, game.score.fullTime.awayTeam, game.score.penalties.awayTeam) 
+                + getScore(game.score, 'home') + ' - </span><span style="font-size: 80%; color: #ff0000;">' + getScore(game.score, 'away') 
                 + '</span></td>';
             } else {
                 return '<td class="' + game.td_class + '"><span style="font-size: 80%; color: #454545;">'
-                + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + ' - ' + getScore(game.score, game.score.fullTime.awayTeam, game.score.penalties.awayTeam) 
+                + getScore(game.score, 'home') + ' - ' + getScore(game.score, 'away') 
                 + '</span></td>';
             }
         }
