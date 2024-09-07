@@ -33,19 +33,19 @@ $(function () {
         $.ajax({
             type: 'post',
             url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 27},
+            data: {arg: 28},
             dataType: 'json'
         }),
         $.ajax({
             type: 'post',
             url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 29},
+            data: {arg: 30},
             dataType: 'json'
         }),
         $.ajax({
             type: 'post',
             url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 31},
+            data: {arg: 32},
             dataType: 'json'
         })
     )
