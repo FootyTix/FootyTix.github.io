@@ -26,7 +26,7 @@ $(function () {
             'Stade de Reims': 'スタッド・ランス',
             'AS Saint-Étienne': 'サンテティエンヌ',
             'Angers SCO': 'アンジェ',
-            'FC AJ Auxerre': 'オセール'
+            'AJ Auxerre': 'オセール'
         };
         // 順位表作成
         standings.forEach(function (standing) {
