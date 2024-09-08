@@ -17,7 +17,7 @@ $(function () {
 
         var club_list = {
             'AC Milan': 'ACミラン',
-            'AC Sparta Praha': 'ACスパルタ・プラハ',
+            'AC Sparta Praha': 'スパルタ・プラハ',
             'Arsenal FC': 'アーセナル',
             'AS Monaco FC': 'ASモナコ',
             'Aston Villa FC': 'アストン・ヴィラ',
