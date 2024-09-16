@@ -196,7 +196,7 @@ $(function () {
                         + 'onerror="this.src=' + '\'https://crests.football-data.org/' + game_list[i].homeTeam.id + '.png\'" height="24" width="24">'
                         + '<br /><span style="font-size: 70%;">'
                         + club_list[game_list[i].homeTeam.name] + '</span></td>'
-                        + '<td class="' + game_list[i].td_class + '"><span style="font-size: 65%;">'
+                        + '<td style="padding: 6px;" class="' + game_list[i].td_class + '"><span style="font-size: 65%;">'
                         + (jdate.getMonth() + 1) + '/' + jdate.getDate() + '(' + youbi[jdate.getDay()] + ')'
                         + '<br />' + jtime + '</span><br /><span style="font-size: 55%;">'
                         + game_list[i].competition.img
