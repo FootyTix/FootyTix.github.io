@@ -151,6 +151,7 @@ $(function () {
                 'AS Roma': 'ローマ',
                 'FC Internazionale Milano': 'インテル',
                 'AC Milan': 'ACミラン',
+                'Atalanta BC': 'アタランタ',
                 // 'SS Lazio': 'ラツィオ',
                 'Paris Saint-Germain FC': 'PSG',
                 'Olympique de Marseille': 'マルセイユ',
