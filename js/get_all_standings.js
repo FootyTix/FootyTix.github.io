@@ -47,9 +47,15 @@ $(function () {
             url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
             data: {arg: 32},
             dataType: 'json'
+        }),
+        $.ajax({
+            type: 'post',
+            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+            data: {arg: 10},
+            dataType: 'json'
         })
     )
-    .done(function (data_PL, data_BL, data_PD, data_SA, data_FL, data_PPL, data_DED, data_ELC/*, data_CL*/) {
+    .done(function (data_PL, data_BL, data_PD, data_SA, data_FL, data_PPL, data_DED, data_ELC, data_CL) {
         //JSON取得後の処理
         //上位4クラブを抽出
         standings_pl = data_PL[0].standings[0].table.slice(0,5);
@@ -60,7 +66,7 @@ $(function () {
         standings_ppl = data_PPL[0].standings[0].table.slice(0,5);
         standings_ded = data_DED[0].standings[0].table.slice(0,5);
         standings_elc = data_ELC[0].standings[0].table.slice(0,5);
-        // standings_cl = data_CL[0].standings[0].table.slice(0,5);
+        standings_cl = data_CL[0].standings[0].table.slice(0,5);
         var club_list_pl = {
             'Liverpool FC': 'リバプール',
             'Manchester City FC': 'マンチェスター・C',
@@ -240,8 +246,62 @@ $(function () {
             'Luton Town FC': 'ルートン',
             'Cardiff City FC': 'カーディフ'
         };
-
+        var club_list_cl = {
+            'AC Milan': 'ACミラン',
+            'AC Sparta Praha': 'スパルタ・プラハ',
+            'Arsenal FC': 'アーセナル',
+            'AS Monaco FC': 'ASモナコ',
+            'Aston Villa FC': 'アストン・ヴィラ',
+            'Atalanta BC': 'アタランタ',
+            'Club Atlético de Madrid': 'アトレティコ',
+            'Bayer 04 Leverkusen': 'レバークーゼン',
+            'FC Bayern München': 'バイエルン',
+            'Borussia Dortmund': 'ドルトムント',
+            'BSC Young Boys': 'ヤングボーイズ',
+            'Bologna FC 1909': 'ボローニャ',
+            'Celtic FC': 'セルティック',
+            'Club Brugge KV': 'クラブ・ブルージュ',
+            'FK Crvena Zvezda': 'ツルヴェナ・ズヴェズダ',
+            'GNK Dinamo Zagreb': 'ディナモ・ザグレブ',
+            'FC Barcelona': 'バルセロナ',
+            'Feyenoord Rotterdam': 'フェイエノールト',
+            'Girona FC': 'ジローナ',
+            'FC Internazionale Milano': 'インテル',
+            'Juventus FC': 'ユヴェントス',
+            'Lille OSC': 'リール',
+            'Liverpool FC': 'リヴァプール',
+            'Manchester City FC': 'マンチェスター・C',
+            'Paris Saint-Germain FC': 'PSG',
+            'PSV': 'PSV',
+            'RB Leipzig': 'ライプツィヒ',
+            'FC Red Bull Salzburg': 'ザルツブルク',
+            'Real Madrid CF': 'レアル・マドリー',
+            'FK Shakhtar Donetsk': 'シャフタール・ドネツク',
+            'Sport Lisboa e Benfica': 'ベンフィカ',
+            'ŠK Slovan Bratislava': 'スロヴァン・ブラチスラヴァ',
+            'Sporting Clube de Portugal': 'スポルティングCP',
+            'Stade Brestois 29': 'ブレスト',
+            'SK Sturm Graz': 'グラーツ',
+            'VfB Stuttgart': 'シュトゥットガルト'
+        };
         // 順位表作成
+        standings_cl.forEach(function (standing) {
+            $("#standings-tbl-cl").append(
+                '<tr align="center">'
+                + '<td><span style="font-size: 70%;">' + standing.position + '</span></td>'
+                + '<td style="padding: 4px;"><span style="font-size: 70%;">' + '<div style = "text-align: left"><div style="padding: 4px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="'                 + standing.team.crest + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
+                + club_list_cl[standing.team.name] + '</div></div></span></td>'
+                + '<td><span style="font-size: 70%; font-weight: bolder;"><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-vivid-red-color">' + standing.points + '</mark></span></td>'
+                + '<td><span style="font-size: 70%;">' + standing.playedGames + '</span></td>'
+                + '<td><span style="font-size: 70%;">' + standing.won + '</span></td>'
+                + '<td><span style="font-size: 70%;">' + standing.draw + '</span></td>'
+                + '<td><span style="font-size: 70%;">' + standing.lost + '</span></td>'
+                + '<td><span style="font-size: 70%;">' + ['','+'][+(standing.goalDifference > 0)] + standing.goalDifference + '</span></td>'
+                + '</tr>'
+            )
+        });
+        $('#loading-gif-cl').remove();
+
         standings_pl.forEach(function (standing) {
             $("#standings-tbl-pl").append(
                 '<tr align="center">'
@@ -376,6 +436,8 @@ $(function () {
     })
     .fail(function () {
         // エラーがあった時
+        $('#loading-gif-cl').children().remove();
+        $('#loading-gif-cl').append('ページを更新してください');
         $('#loading-gif-pl').children().remove();
         $('#loading-gif-pl').append('ページを更新してください');
         $('#loading-gif-pd').children().remove();
