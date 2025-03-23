@@ -165,14 +165,15 @@ $(function () {
 
             function getMatchdayOrRound(game){
                 var round_name = {
+                    'PLAYOFFS': '決勝Tプレーオフ',
                     'LAST_16': 'ラウンド16',
-                    'QUARTER_FINAL': '準々決勝',
+                    'QUARTER_FINALS': '準々決勝',
                     'SEMI_FINALS': '準決勝',
                     'FINAL': '決勝'
                 }
 
-                if (game.season.id == '1491') { // UCL 22-23 season
-                    if (game.stage == 'GROUP_STAGE') {
+                if (game.season.id == '2350') { // UCL 22-23 season
+                    if (game.stage == 'LEAGUE_STAGE') {
                         return '󠁢󠁥󠁮󠁧󠁿第' + game.matchday + '節';
                     } else if (round_name[game.stage]) {
                         return round_name[game.stage]
