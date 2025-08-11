@@ -9,24 +9,24 @@ $(function () {
         standings = data.standings[0].table;
 
         var club_list = {
-            'Sporting Clube de Portugal': 'スポルティングCP',
             'FC Famalicão': 'ファマリカン',
-            'FC Porto': 'ポルト',
-            'CD Santa Clara': 'サンタクララ',
-            'Vitória SC': 'ヴィトーリアSC',
             'Sporting Clube de Braga': 'ブラガ',
-            'Sport Lisboa e Benfica': 'ベンフィカ',
-            'Moreirense FC': 'モレイレンセ',
-            'Rio Ave FC': 'リオ・アヴェ',
-            'Gil Vicente FC': 'ジル・ヴィセンテ',
-            'Boavista FC': 'ボアヴィスタ',
-            'AVS': 'AVS',
-            'CD Nacional': 'CDナシオナル',
             'FC Arouca': 'アロウカ',
-            'Casa Pia AC': 'カーザ・ピア',
-            'GD Estoril Praia': 'エストリル・プライア',
+            'Gil Vicente FC': 'ジル・ヴィセンテ',
+            'Sporting Clube de Portugal': 'スポルティングCP',
+            'Moreirense FC': 'モレイレンセ',
             'CF Estrela da Amadora': 'エストレラ・ダ・アマドーラ',
-            'SC Farense': 'ファレンセ'
+            'FC Porto': 'ポルト',
+            'GD Estoril Praia': 'エストリル・プライア',
+            'Rio Ave FC': 'リオ・アヴェ',
+            'Sport Lisboa e Benfica': 'ベンフィカ',
+            'Vitória SC': 'ヴィトーリアSC',
+            'FC Alverca': 'アルヴェルカ',
+            'AVS': 'AVS',
+            'Casa Pia AC': 'カーザ・ピア',
+            'CD Nacional': 'CDナシオナル',
+            'CD Santa Clara': 'サンタクララ',
+            'CD Tondela': 'トンデラ'
         };
         // 順位表作成
         standings.forEach(function (standing) {

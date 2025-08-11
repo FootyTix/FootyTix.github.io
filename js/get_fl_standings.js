@@ -14,7 +14,6 @@ $(function () {
             'Lille OSC': 'リール',
             'Olympique Lyonnais': 'リヨン',
             'AS Monaco FC': 'モナコ',
-            'Montpellier HSC': 'モンペリエ',
             'Racing Club de Lens': 'RCランス',
             'Stade Rennais FC 1901': 'レンヌ',
             'Stade Brestois 29': 'ブレスト',
@@ -23,10 +22,11 @@ $(function () {
             'FC Nantes': 'ナント',
             'Toulouse FC': 'トゥールーズ',
             'RC Strasbourg Alsace': 'ストラスブール',
-            'Stade de Reims': 'スタッド・ランス',
-            'AS Saint-Étienne': 'サンテティエンヌ',
             'Angers SCO': 'アンジェ',
-            'AJ Auxerre': 'オセール'
+            'AJ Auxerre': 'オセール',
+            'FC Lorient': 'ロリアン',
+            'FC Metz': 'メス',
+            'Paris FC': 'パリFC'
         };
         // 順位表作成
         standings.forEach(function (standing) {

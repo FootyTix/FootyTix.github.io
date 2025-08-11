@@ -10,23 +10,23 @@ $(function () {
 
         var club_list = {
             'PSV': 'PSV',
-            'AZ': 'AZ',
-            'FC Utrecht': 'ユトレヒト',
-            'FC Groningen': 'フローニンゲン',
-            'Fortuna Sittard': 'シッタート',
             'NEC': 'NEC',
-            'Sparta Rotterdam': 'スパルタ・ロッテルダム',
+            'FC Utrecht': 'ユトレヒト',
+            'AZ': 'AZ',
+            'AFC Ajax': 'アヤックス',
             'Feyenoord Rotterdam': 'フェイエノールト',
-            'Willem II Tilburg': 'ヴィレムII',
+            'PEC Zwolle': 'ズウォレ',
+            'Fortuna Sittard': 'シッタート',
+            'Go Ahead Eagles': 'ゴー・アヘッド・イーグルス',
             'SC Heerenveen': 'ヘーレンフェーン',
             "FC Twente '65": 'トゥウェンテ',
-            'AFC Ajax': 'アヤックス',
-            'PEC Zwolle': 'ズウォレ',
-            'Go Ahead Eagles': 'ゴー・アヘッド・イーグルス',
             'NAC Breda': 'NACブレダ',
+            'FC Groningen': 'フローニンゲン',
             'Heracles Almelo': 'ヘラクレス・アルメロ',
-            'Almere City FC': 'アルメレ・シティ',
-            'RKC Waalwijk': 'RKCワールワイク'
+            'Sparta Rotterdam': 'スパルタ・ロッテルダム',
+            'FC Volendam': 'フォレンダム',
+            'Telstar 1963': 'テルスター',
+            'SBV Excelsior': 'エクセルシオール'
         };
         // 順位表作成
         standings.forEach(function (standing) {

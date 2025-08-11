@@ -10,7 +10,6 @@ $(function () {
 
         var club_list = {
             'AC Milan': 'ACミラン',
-            'AC Milan': 'ACミラン',
             'FC Internazionale Milano': 'インテル',
             'Juventus FC': 'ユベントス',
             'Parma Calcio 1913': 'パルマ',
@@ -23,13 +22,13 @@ $(function () {
             'Cagliari Calcio': 'カリアリ',
             'Como 1907': 'コモ',
             'Udinese Calcio': 'ウディネーゼ',
-            'Venezia FC': 'ヴェネツィア',
             'ACF Fiorentina': 'フィオレンティーナ',
             'Torino FC': 'トリノ',
             'Genoa CFC': 'ジェノア',
             'US Lecce': 'レッチェ',
-            'AC Monza': 'モンツァ',
-            'Empoli FC': 'エンポリ'
+            'AC Pisa 1909': 'ピサ',
+            'US Sassuolo Calcio': 'サッスオーロ',
+            'US Cremonese': 'クレモネーゼ'
         };
         // 順位表作成
         standings.forEach(function (standing) {
