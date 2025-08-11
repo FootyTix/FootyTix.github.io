@@ -17,18 +17,18 @@ $(function () {
             'Chelsea FC': 'チェルシー',
             'Everton FC': 'エバートン',
             'West Ham United FC': 'ウェストハム',
-            'Ipswich Town FC': 'イプスウィッチ',
             'Wolverhampton Wanderers FC': 'ウルブス',
             'Aston Villa FC': 'アストン・ヴィラ',
             'Newcastle United FC': 'ニューカッスル',
-            'Southampton FC': 'サウサンプトン',
             'Crystal Palace FC': 'クリスタル・パレス',
             'Brighton & Hove Albion FC': 'ブライトン',
             'Brentford FC': 'ブレントフォード',
             'Nottingham Forest FC': 'N・フォレスト',
             'Fulham FC': 'フラム',
             'AFC Bournemouth': 'ボーンマス',
-            'Leicester City FC': 'レスター'
+            'Burnley FC': 'バーンリー',
+            'Leeds United FC': 'リーズ',
+            'Sunderland AFC': 'サンダーランド'
         };
         // 順位表作成
         standings.forEach(function (standing) {
