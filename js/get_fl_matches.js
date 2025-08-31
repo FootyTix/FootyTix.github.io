@@ -5,7 +5,7 @@ $(function () {
     //     data: {arg: 9},
     //     dataType: 'json'
     //     }).done (function(data){
-    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/fl_matches.json')
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/fl1_matches.json')
     .then(response => response.json())
     .then(data => {
         //JSON取得後の処理

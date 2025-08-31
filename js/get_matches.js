@@ -76,12 +76,12 @@ $(function () {
     // )
     //     .done(function (data_PL, data_BL, data_PD, data_SA, data_FL, data_CL) {
     Promise.all([
-    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/pl_matches.json').then(res => res.json()),
-    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/bl1_matches.json').then(res => res.json()),
-    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/pd_matches.json').then(res => res.json()),
-    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/sa_matches.json').then(res => res.json()),
-    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/fl1_matches.json').then(res => res.json()),
-    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/cl_matches.json').then(res => res.json())
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/pl_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/bl1_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/pd_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/sa_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/fl1_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/cl_matches.json').then(res => res.json())
     ])
     .then(([data_PL, data_BL, data_PD, data_SA, data_FL, data_CL]) => {
             PL = data_PL[0].matches;
