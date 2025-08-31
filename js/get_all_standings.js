@@ -70,15 +70,15 @@ $(function () {
     .then(([data_PL, data_BL, data_PD, data_SA, data_FL, data_PPL, data_DED, data_ELC, data_CL]) => {
             //JSON取得後の処理
         //上位4クラブを抽出
-        standings_pl = data_PL[0].standings[0].table.slice(0,5);
-        standings_bl = data_BL[0].standings[0].table.slice(0,5);
-        standings_pd = data_PD[0].standings[0].table.slice(0,5);
-        standings_sa = data_SA[0].standings[0].table.slice(0,5);
-        standings_fl = data_FL[0].standings[0].table.slice(0,5);
-        standings_ppl = data_PPL[0].standings[0].table.slice(0,5);
-        standings_ded = data_DED[0].standings[0].table.slice(0,5);
-        standings_elc = data_ELC[0].standings[0].table.slice(0,5);
-        standings_cl = data_CL[0].standings[0].table.slice(0,5);
+        standings_pl = data_PL.standings[0].table.slice(0,5);
+        standings_bl = data_BL.standings[0].table.slice(0,5);
+        standings_pd = data_PD.standings[0].table.slice(0,5);
+        standings_sa = data_SA.standings[0].table.slice(0,5);
+        standings_fl = data_FL.standings[0].table.slice(0,5);
+        standings_ppl = data_PPL.standings[0].table.slice(0,5);
+        standings_ded = data_DED.standings[0].table.slice(0,5);
+        standings_elc = data_ELC.standings[0].table.slice(0,5);
+        standings_cl = data_CL.standings[0].table.slice(0,5);
         var club_list_pl = {
             'Liverpool FC': 'リヴァプール',
             'Manchester City FC': 'マンチェスター・C',

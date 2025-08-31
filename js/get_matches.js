@@ -86,37 +86,37 @@ $(function () {
     .then(([data_PL, data_BL, data_PD, data_SA, data_FL, data_CL]) => {
             PL = data_PL.matches;
             PL.forEach(function (match) {
-                match.competition = data_PL[0].competition
+                match.competition = data_PL.competition
                 match.competition.img = "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
                 match.td_class = "td-pl"
             });
             BL = data_BL.matches;
             BL.forEach(function (match) {
-                match.competition = data_BL[0].competition
+                match.competition = data_BL.competition
                 match.competition.img = "🇩🇪"
                 match.td_class = "td-bl"
             });
             PD = data_PD.matches;
             PD.forEach(function (match) {
-                match.competition = data_PD[0].competition
+                match.competition = data_PD.competition
                 match.competition.img = "🇪🇸"
                 match.td_class = "td-pd"
             });
             SA = data_SA.matches;
             SA.forEach(function (match) {
-                match.competition = data_SA[0].competition
+                match.competition = data_SA.competition
                 match.competition.img = "🇮🇹"
                 match.td_class = "td-sa"
             });
             FL = data_FL.matches;
             FL.forEach(function (match) {
-                match.competition = data_FL[0].competition
+                match.competition = data_FL.competition
                 match.competition.img = "🇫🇷"
                 match.td_class = "td-fl"
             });
             CL = data_CL.matches;
             CL.forEach(function (match) {
-                match.competition = data_CL[0].competition
+                match.competition = data_CL.competition
                 match.competition.img = '<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/k/ktakumi11/20201004/20201004184003.png" alt="20201004184003">'
                 match.td_class = "td-cl"
             });
