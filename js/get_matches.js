@@ -84,49 +84,49 @@ $(function () {
     fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/cl_scheduled_matches.json').then(res => res.json())
     ])
     .then(([data_PL, data_BL, data_PD, data_SA, data_FL, data_CL]) => {
-            PL = data_PL[0].matches;
+            PL = data_PL.matches;
             PL.forEach(function (match) {
                 match.competition = data_PL[0].competition
                 match.competition.img = "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
                 match.td_class = "td-pl"
             });
-            BL = data_BL[0].matches;
+            BL = data_BL.matches;
             BL.forEach(function (match) {
                 match.competition = data_BL[0].competition
                 match.competition.img = "🇩🇪"
                 match.td_class = "td-bl"
             });
-            PD = data_PD[0].matches;
+            PD = data_PD.matches;
             PD.forEach(function (match) {
                 match.competition = data_PD[0].competition
                 match.competition.img = "🇪🇸"
                 match.td_class = "td-pd"
             });
-            SA = data_SA[0].matches;
+            SA = data_SA.matches;
             SA.forEach(function (match) {
                 match.competition = data_SA[0].competition
                 match.competition.img = "🇮🇹"
                 match.td_class = "td-sa"
             });
-            FL = data_FL[0].matches;
+            FL = data_FL.matches;
             FL.forEach(function (match) {
                 match.competition = data_FL[0].competition
                 match.competition.img = "🇫🇷"
                 match.td_class = "td-fl"
             });
-            CL = data_CL[0].matches;
+            CL = data_CL.matches;
             CL.forEach(function (match) {
                 match.competition = data_CL[0].competition
                 match.competition.img = '<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/k/ktakumi11/20201004/20201004184003.png" alt="20201004184003">'
                 match.td_class = "td-cl"
             });
 
-            games_num = data_PL[0].count
-                + data_BL[0].count
-                + data_PD[0].count
-                + data_SA[0].count
-                + data_FL[0].count
-                + data_CL[0].resultSet.count;
+            games_num = data_PL.resultSet.count
+                + data_BL.resultSet.count
+                + data_PD.resultSet.count
+                + data_SA.resultSet.count
+                + data_FL.resultSet.count
+                + data_CL.resultSet.count;
 
             game_list = PL.concat(BL, PD, SA, FL, CL)
 
