@@ -1,10 +1,13 @@
 $(function () {
-    $.ajax({
-        type: 'post',
-        url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-        data: {arg: 8},
-        dataType: 'json'
-        }).done (function(data){
+    // $.ajax({
+    //     type: 'post',
+    //     url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //     data: {arg: 8},
+    //     dataType: 'json'
+    //     }).done (function(data){
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/fl_standings.json')
+    .then(response => response.json())
+    .then(data => {
         //JSON取得後の処理    
         standings = data.standings[0].table;
 
