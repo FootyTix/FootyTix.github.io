@@ -11,7 +11,7 @@ $(function () {
             match.competition = data.competition
             match.td_class = "td-cl"
         });
-        games_num = data.count;
+        games_num = data.resultSet.count; //v4
 
         game_list = matches;
 
