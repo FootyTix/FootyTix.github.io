@@ -36,45 +36,54 @@ $(function () {
     // $.ajaxSetup({
     //     headers: { "X-Auth-Token": "28fcc697165249959737b7f980aeefd2" }
     // });
-    $.when(
-        $.ajax({
-            type: 'post',
-            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 14},
-            dataType: 'json'
-        }),
-        $.ajax({
-            type: 'post',
-            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 15},
-            dataType: 'json'
-        }),
-        $.ajax({
-            type: 'post',
-            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 16},
-            dataType: 'json'
-        }),
-        $.ajax({
-            type: 'post',
-            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 17},
-            dataType: 'json'
-        }),
-        $.ajax({
-            type: 'post',
-            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 18},
-            dataType: 'json'
-        }),
-        $.ajax({
-            type: 'post',
-            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 19},
-            dataType: 'json'
-        })
-    )
-        .done(function (data_PL, data_BL, data_PD, data_SA, data_FL, data_CL) {
+    // $.when(
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //         data: {arg: 14},
+    //         dataType: 'json'
+    //     }),
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //         data: {arg: 15},
+    //         dataType: 'json'
+    //     }),
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //         data: {arg: 16},
+    //         dataType: 'json'
+    //     }),
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //         data: {arg: 17},
+    //         dataType: 'json'
+    //     }),
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //         data: {arg: 18},
+    //         dataType: 'json'
+    //     }),
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //         data: {arg: 19},
+    //         dataType: 'json'
+    //     })
+    // )
+    //     .done(function (data_PL, data_BL, data_PD, data_SA, data_FL, data_CL) {
+    Promise.all([
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/pl_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/bl1_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/pd_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/sa_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/fl1_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/cl_matches.json').then(res => res.json())
+    ])
+    .then(([data_PL, data_BL, data_PD, data_SA, data_FL, data_CL]) => {
             PL = data_PL[0].matches;
             PL.forEach(function (match) {
                 match.competition = data_PL[0].competition

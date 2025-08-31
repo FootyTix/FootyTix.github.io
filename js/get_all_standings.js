@@ -1,62 +1,74 @@
 $(function () {
-    $.when(
-        $.ajax({
-            type: 'post',
-            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 20},
-            dataType: 'json'
-        }),
-        $.ajax({
-            type: 'post',
-            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 21},
-            dataType: 'json'
-        }),
-        $.ajax({
-            type: 'post',
-            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 22},
-            dataType: 'json'
-        }),
-        $.ajax({
-            type: 'post',
-            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 23},
-            dataType: 'json'
-        }),
-        $.ajax({
-            type: 'post',
-            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 24},
-            dataType: 'json'
-        }),
-        $.ajax({
-            type: 'post',
-            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 28},
-            dataType: 'json'
-        }),
-        $.ajax({
-            type: 'post',
-            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 30},
-            dataType: 'json'
-        }),
-        $.ajax({
-            type: 'post',
-            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 32},
-            dataType: 'json'
-        }),
-        $.ajax({
-            type: 'post',
-            url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-            data: {arg: 10},
-            dataType: 'json'
-        })
-    )
-    .done(function (data_PL, data_BL, data_PD, data_SA, data_FL, data_PPL, data_DED, data_ELC, data_CL) {
-        //JSON取得後の処理
+    // $.when(
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //         data: {arg: 20},
+    //         dataType: 'json'
+    //     }),
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //         data: {arg: 21},
+    //         dataType: 'json'
+    //     }),
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //         data: {arg: 22},
+    //         dataType: 'json'
+    //     }),
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //         data: {arg: 23},
+    //         dataType: 'json'
+    //     }),
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //         data: {arg: 24},
+    //         dataType: 'json'
+    //     }),
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //         data: {arg: 28},
+    //         dataType: 'json'
+    //     }),
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //         data: {arg: 30},
+    //         dataType: 'json'
+    //     }),
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //         data: {arg: 32},
+    //         dataType: 'json'
+    //     }),
+    //     $.ajax({
+    //         type: 'post',
+    //         url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //         data: {arg: 10},
+    //         dataType: 'json'
+    //     })
+    // )
+    // .done(function (data_PL, data_BL, data_PD, data_SA, data_FL, data_PPL, data_DED, data_ELC, data_CL) {
+    Promise.all([
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/pl_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/bl1_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/pd_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/sa_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/fl1_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/ppl_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/ded_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/elc_matches.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/json/cl_matches.json').then(res => res.json())
+    ])
+    .then(([data_PL, data_BL, data_PD, data_SA, data_FL, data_PPL, data_DED, data_ELC, data_CL]) => {
+            //JSON取得後の処理
         //上位4クラブを抽出
         standings_pl = data_PL[0].standings[0].table.slice(0,5);
         standings_bl = data_BL[0].standings[0].table.slice(0,5);
@@ -248,42 +260,42 @@ $(function () {
         };
         
         var club_list_cl = {
-            'AC Milan': 'ACミラン',
-            'AC Sparta Praha': 'スパルタ・プラハ',
+            'AFC Ajax': 'アヤックス',
             'Arsenal FC': 'アーセナル',
-            'AS Monaco FC': 'ASモナコ',
-            'Aston Villa FC': 'アストン・ヴィラ',
+            'AS Monaco FC': 'モナコ',
             'Atalanta BC': 'アタランタ',
-            'Club Atlético de Madrid': 'アトレティコ',
-            'Bayer 04 Leverkusen': 'レバークーゼン',
+            'Athletic Club': 'アスレティック・ビルバオ',
+            'Club Atlético de Madrid': 'アトレティコ・マドリード',
+            'Bayer 04 Leverkusen': 'レヴァークーゼン',
             'FC Bayern München': 'バイエルン',
             'Borussia Dortmund': 'ドルトムント',
-            'BSC Young Boys': 'ヤングボーイズ',
-            'Bologna FC 1909': 'ボローニャ',
-            'Celtic FC': 'セルティック',
-            'Club Brugge KV': 'クラブ・ブルージュ',
-            'FK Crvena Zvezda': 'ツルヴェナ・ズヴェズダ',
-            'GNK Dinamo Zagreb': 'ディナモ・ザグレブ',
+            'Chelsea FC': 'チェルシー',
+            'Club Brugge KV': 'クラブ・ブルッヘ',
+            'Eintracht Frankfurt': 'フランクフルト',
             'FC Barcelona': 'バルセロナ',
-            'Feyenoord Rotterdam': 'フェイエノールト',
-            'Girona FC': 'ジローナ',
+            'FC København': 'コペンハーゲン',
+            'FK Bodø/Glimt': 'ボーデ／グリムト',
+            'FK Kairat': 'カイラト',
+            'Galatasaray SK': 'ガラタサライ',
             'FC Internazionale Milano': 'インテル',
             'Juventus FC': 'ユヴェントス',
-            'Lille OSC': 'リール',
             'Liverpool FC': 'リヴァプール',
             'Manchester City FC': 'マンチェスター・C',
+            'Newcastle United FC': 'ニューカッスル',
+            'PAE Olympiakos SFP': 'オリンピアコス',
+            'Olympique de Marseille': 'マルセイユ',
+            'Paphos FC': 'パフォス',
             'Paris Saint-Germain FC': 'PSG',
             'PSV': 'PSV',
-            'RB Leipzig': 'ライプツィヒ',
-            'FC Red Bull Salzburg': 'ザルツブルク',
-            'Real Madrid CF': 'レアル・マドリー',
-            'FK Shakhtar Donetsk': 'シャフタール・ドネツク',
+            'Qarabağ Ağdam FK': 'カラバフ',
+            'Real Madrid CF': 'レアル・マドリード',
             'Sport Lisboa e Benfica': 'ベンフィカ',
-            'ŠK Slovan Bratislava': 'スロヴァン・ブラチスラヴァ',
-            'Sporting Clube de Portugal': 'スポルティングCP',
-            'Stade Brestois 29': 'ブレスト',
-            'SK Sturm Graz': 'グラーツ',
-            'VfB Stuttgart': 'シュトゥットガルト'
+            'SK Slavia Praha': 'スラヴィア・プラハ',
+            'Sporting Clube de Portugal': 'スポルティング',
+            'SSC Napoli': 'ナポリ',
+            'Tottenham Hotspur FC': 'トッテナム',
+            'Royale Union Saint-Gilloise': 'ユニオンSG',
+            'Villarreal CF': 'ビジャレアル'
         };
         // 順位表作成
         standings_cl.forEach(function (standing) {
