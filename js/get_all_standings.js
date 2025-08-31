@@ -58,7 +58,7 @@ $(function () {
     // .done(function (data_PL, data_BL, data_PD, data_SA, data_FL, data_PPL, data_DED, data_ELC, data_CL) {
     Promise.all([
     fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/pl_standings.json').then(res => res.json()),
-    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/bl1_standing.json').then(res => res.json()),
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/bl1_standings.json').then(res => res.json()),
     fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/pd_standings.json').then(res => res.json()),
     fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/sa_standings.json').then(res => res.json()),
     fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/fl1_standings.json').then(res => res.json()),
