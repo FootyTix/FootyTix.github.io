@@ -45,26 +45,34 @@ $(function () {
         var past_matchday_count = 1;
 
         // スコア計算
-        function getScore(score, fullScore, pkScore) {
+        function getScore(score, team) {
             if (score.duration == 'PENALTY_SHOOTOUT') {
-                return (fullScore - pkScore) + '(' + pkScore + ')';
+                if (team == 'home') {
+                    return score.regularTime.home + '(' + score.penalties.home + ')';
+                } else {
+                    return score.regularTime.away + '(' + score.penalties.away + ')';
+                }
             } else {
-                return fullScore;
+                if (team == 'home') {
+                    return score.fullTime.home;
+                } else {
+                    return score.fullTime.away;
+                }
             }
         }
         // スコアとキックオフ時間
         function getScoreOrDate(game, game_jdate, game_jtime) {
-            if (game.score.fullTime.homeTeam > game.score.fullTime.awayTeam) {
+            if (game.score.fullTime.home > game.score.fullTime.away) {
                 return '<td class="' + game.td_class + '"><span style="font-size: 80%; color: #ff0000;">'
-                + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + '</span><span style="font-size: 80%; color: #454545;"> - ' + getScore(game.score, game.score.fullTime.awayTeam, game.score.penalties.awayTeam) 
+                + getScore(game.score, 'home') + '</span><span style="font-size: 80%; color: #454545;"> - ' + getScore(game.score, 'away') 
                 + '</span></td>';
-            } else if (game.score.fullTime.homeTeam < game.score.fullTime.awayTeam) {
+            } else if (game.score.fullTime.home < game.score.fullTime.away) {
                 return '<td class="' + game.td_class + '"><span style="font-size: 80%; color: #454545;">'
-                + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + ' - </span><span style="font-size: 80%; color: #ff0000;">' + getScore(game.score, game.score.fullTime.awayTeam, game.score.penalties.awayTeam) 
+                + getScore(game.score, 'home') + ' - </span><span style="font-size: 80%; color: #ff0000;">' + getScore(game.score, 'away') 
                 + '</span></td>';
             } else {
                 return '<td class="' + game.td_class + '"><span style="font-size: 80%; color: #454545;">'
-                + getScore(game.score, game.score.fullTime.homeTeam, game.score.penalties.homeTeam) + ' - ' + getScore(game.score, game.score.fullTime.awayTeam, game.score.penalties.awayTeam) 
+                + getScore(game.score, 'home') + ' - ' + getScore(game.score, 'away') 
                 + '</span></td>';
             }
         }
@@ -89,11 +97,13 @@ $(function () {
                 //テーブルに挿入
                 $("#results-tbl").prepend(
                     '<tr align="center">'
-                    + '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.png" height="24" width="24">'
+                    + '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg"' 
+                    + 'onerror="this.src=' + '\'https://crests.football-data.org/' + game_list[i].homeTeam.id + '.png\'" height="24" width="24">'
                     + '<br /><span style="font-size: 70%;">'
                     + club_list[game_list[i].homeTeam.name] + '</span></td>'
                     + getScoreOrDate(game_list[i], jdate, jtime)
-                    + '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.png" height="24" width="24">'
+                    + '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg"' 
+                    + 'onerror="this.src=' + '\'https://crests.football-data.org/' + game_list[i].awayTeam.id + '.png\'" height="24" width="24">'
                     + '<br /><span style="font-size: 70%;">'
                     + club_list[game_list[i].awayTeam.name] + '</span></td>'
                     + '</tr>'
@@ -112,19 +122,22 @@ $(function () {
                 //テーブルに挿入
                 $("#matches-tbl").append(
                     '<tr align="center">'
-                    + '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.png" height="24" width="24">'
+                    + '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game_list[i].homeTeam.id + '.svg"' 
+                    + 'onerror="this.src=' + '\'https://crests.football-data.org/' + game_list[i].homeTeam.id + '.png\'" height="24" width="24">'
                     + '<br /><span style="font-size: 70%;">'
                     + club_list[game_list[i].homeTeam.name] + '</span></td>'
                     + '<td class="' + game_list[i].td_class + '"><span style="font-size: 65%; color: #454545;">'
                     + (jdate.getMonth() + 1) + '/' + jdate.getDate() + '(' + youbi[jdate.getDay()] + ')'
                     + '<br />' + jtime + '</span></td>'
-                    + '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.png" height="24" width="24">'
+                    + '<td style="padding: 6px;"><img src="https://crests.football-data.org/' + game_list[i].awayTeam.id + '.svg"' 
+                    + 'onerror="this.src=' + '\'https://crests.football-data.org/' + game_list[i].awayTeam.id + '.png\'" height="24" width="24">'
                     + '<br /><span style="font-size: 70%;">'
                     + club_list[game_list[i].awayTeam.name] + '</span></td>'
                     + '</tr>'
                 );
             }
         }
+
         $("#results-tbl").prepend(
             '<tr><td style="background-color: #1464b3; color: #ffffff;" colspan="3" align="center"><span style="font-size: 80%;">'
             + '󠁢󠁥󠁮󠁧󠁿第' + past_matchday_count + '節'
@@ -133,13 +146,13 @@ $(function () {
         $('#loading-gif').remove();
         $('#results-loading-gif').remove();
     })
-    .fail(function (jqXHR, textStatus, errorThrown) {
-        // エラーがあった時
-        $('#loading-gif').children().remove();
-        $('#loading-gif').append('ページを更新してください');
-        console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
-        console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー
-        console.log("errorThrown    : " + errorThrown); // 例外情報
-    });
+        .fail(function (jqXHR, textStatus, errorThrown) {
+            // エラーがあった時
+            $('#loading-gif').children().remove();
+            $('#loading-gif').append('ページを更新してください');
+            console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
+            console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー
+            console.log("errorThrown    : " + errorThrown); // 例外情報
+        });
 });
 
