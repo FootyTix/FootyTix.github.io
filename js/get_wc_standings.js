@@ -12,42 +12,48 @@ $(function () {
         standings_list = data.standings;
 
         var club_list = {
-            "Qatar": "カタール",
-            "Germany": "ドイツ",
-            "Spain": "スペイン",
-            "Portugal": "ポルトガル",
-            "England": "イングランド",
-            "France": "フランス",
-            "Denmark": "デンマーク",
-            "Italy": "イタリア",
-            "Switzerland": "スイス",
-            "Ukraine": "ウクライナ",
-            "Poland": "ポーランド",
-            "Croatia": "クロアチア",
-            "Belgium": "ベルギー",
-            "Wales": "ウェールズ",
-            "Netherlands": "オランダ",
-            "Serbia": "セルビア",
-            "Scotland": "スコットランド",
-            "Brazil": "ブラジル",
-            "Argentina": "アルゼンチン",
-            "Uruguay": "ウルグアイ",
-            "Ecuador": "エクアドル",
-            "Japan": "日本",
-            "Saudi Arabia": "サウジアラビア",
-            "Iran": "イラン",
-            "South Korea": "韓国",
-            "Senegal": "セネガル",
-            "Morocco": "モロッコ",
-            "Cameroon": "カメルーン",
-            "Tunisia": "チュニジア",
-            "Ghana": "ガーナ",
-            "United States": "アメリカ",
             "Mexico": "メキシコ",
+            "South Africa": "南アフリカ",
+            "South Korea": "韓国",
             "Canada": "カナダ",
+            "Qatar": "カタール",
+            "Switzerland": "スイス",
+            "Brazil": "ブラジル",
+            "Morocco": "モロッコ",
+            "Haiti": "ハイチ",
+            "Scotland": "スコットランド",
+            "United States": "アメリカ",
+            "Paraguay": "パラグアイ",
             "Australia": "オーストラリア",
-            "Costa Rica": "コスタリカ",
-            "Wales": "ウェールズ"
+            "Germany": "ドイツ",
+            "Curaçao": "キュラソー",
+            "Côte d'Ivoire": "コートジボワール",
+            "Ecuador": "エクアドル",
+            "Netherlands": "オランダ",
+            "Japan": "日本",
+            "Tunisia": "チュニジア",
+            "Belgium": "ベルギー",
+            "Egypt": "エジプト",
+            "Iran": "イラン",
+            "New Zealand": "ニュージーランド",
+            "Spain": "スペイン",
+            "Cape Verde Islands": "カーボベルデ",
+            "Saudi Arabia": "サウジアラビア",
+            "Uruguay": "ウルグアイ",
+            "France": "フランス",
+            "Senegal": "セネガル",
+            "Norway": "ノルウェー",
+            "Argentina": "アルゼンチン",
+            "Algeria": "アルジェリア",
+            "Austria": "オーストリア",
+            "Jordan": "ヨルダン",
+            "Portugal": "ポルトガル",
+            "Uzbekistan": "ウズベキスタン",
+            "Colombia": "コロンビア",
+            "England": "イングランド",
+            "Croatia": "クロアチア",
+            "Ghana": "ガーナ",
+            "Panama": "パナマ"
         };
         
         var clone_tbl = document.getElementById("standings-tbl");
@@ -61,7 +67,7 @@ $(function () {
                     '<tr align="center">'
                     + '<td><span style="font-size: 60%;">' + standing.position + '</span></td>'
                     + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left"><div style="padding: 0px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
-                    + standing.team.crestUrl + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
+                    + standing.team.crest + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
                     + club_list[standing.team.name] + '</div></div></span></td>'
                     + '<td><span style="font-size: 60%;">' + standing.playedGames + '</span></td>'
                     + '<td><span style="font-size: 60%;">' + standing.won + '</span></td>'

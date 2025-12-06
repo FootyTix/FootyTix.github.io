@@ -20,42 +20,48 @@ $(function () {
         game_list = matches;
 
         var club_list = {
-            "Qatar": "カタール",
-            "Germany": "ドイツ",
-            "Spain": "スペイン",
-            "Portugal": "ポルトガル",
-            "England": "イングランド",
-            "France": "フランス",
-            "Denmark": "デンマーク",
-            "Italy": "イタリア",
-            "Switzerland": "スイス",
-            "Ukraine": "ウクライナ",
-            "Poland": "ポーランド",
-            "Croatia": "クロアチア",
-            "Belgium": "ベルギー",
-            "Wales": "ウェールズ",
-            "Netherlands": "オランダ",
-            "Serbia": "セルビア",
-            "Scotland": "スコットランド",
-            "Brazil": "ブラジル",
-            "Argentina": "アルゼンチン",
-            "Uruguay": "ウルグアイ",
-            "Ecuador": "エクアドル",
-            "Japan": "日本",
-            "Saudi Arabia": "サウジアラビア",
-            "Iran": "イラン",
-            "South Korea": "韓国",
-            "Senegal": "セネガル",
-            "Morocco": "モロッコ",
-            "Cameroon": "カメルーン",
-            "Tunisia": "チュニジア",
-            "Ghana": "ガーナ",
-            "United States": "アメリカ",
             "Mexico": "メキシコ",
+            "South Africa": "南アフリカ",
+            "South Korea": "韓国",
             "Canada": "カナダ",
+            "Qatar": "カタール",
+            "Switzerland": "スイス",
+            "Brazil": "ブラジル",
+            "Morocco": "モロッコ",
+            "Haiti": "ハイチ",
+            "Scotland": "スコットランド",
+            "United States": "アメリカ",
+            "Paraguay": "パラグアイ",
             "Australia": "オーストラリア",
-            "Costa Rica": "コスタリカ",
-            "Wales": "ウェールズ"
+            "Germany": "ドイツ",
+            "Curaçao": "キュラソー",
+            "Côte d'Ivoire": "コートジボワール",
+            "Ecuador": "エクアドル",
+            "Netherlands": "オランダ",
+            "Japan": "日本",
+            "Tunisia": "チュニジア",
+            "Belgium": "ベルギー",
+            "Egypt": "エジプト",
+            "Iran": "イラン",
+            "New Zealand": "ニュージーランド",
+            "Spain": "スペイン",
+            "Cape Verde Islands": "カーボベルデ",
+            "Saudi Arabia": "サウジアラビア",
+            "Uruguay": "ウルグアイ",
+            "France": "フランス",
+            "Senegal": "セネガル",
+            "Norway": "ノルウェー",
+            "Argentina": "アルゼンチン",
+            "Algeria": "アルジェリア",
+            "Austria": "オーストリア",
+            "Jordan": "ヨルダン",
+            "Portugal": "ポルトガル",
+            "Uzbekistan": "ウズベキスタン",
+            "Colombia": "コロンビア",
+            "England": "イングランド",
+            "Croatia": "クロアチア",
+            "Ghana": "ガーナ",
+            "Panama": "パナマ"
         };
 
         var image_list = {
@@ -156,8 +162,9 @@ $(function () {
             if (game.homeTeam.id == null) {
                 return '<td><span style="font-size: 70%;">' + '未定' + '</span></td>';
             } else {
-                return '<td><img src="https://crests.football-data.org/' + game.homeTeam.id + '.svg"'
-                + 'onerror="this.src=\'' + image_list[game.homeTeam.name] + '\'" height="20" width="20" style="box-shadow: 0 0 1px grey;">'
+                // return '<td><img src="https://crests.football-data.org/' + game.homeTeam.id + '.svg"'
+                // + 'onerror="this.src=\'' + image_list[game.homeTeam.name] + '\'" height="20" width="20" style="box-shadow: 0 0 1px grey;">'
+                return '<td><img src="' + game.homeTeam.crest + '" height="20" width="20" style="box-shadow: 0 0 1px grey;">'
                 + '<br /><span style="font-size: 70%;">'
                 + club_list[game.homeTeam.name] + '</span></td>';
             }
@@ -168,8 +175,9 @@ $(function () {
             if (game.awayTeam.id == null) {
                 return '<td><span style="font-size: 70%;">' + '未定' + '</span></td>';
             } else {
-                return '<td><img src="https://crests.football-data.org/' + game.awayTeam.id + '.svg"'
-                + 'onerror="this.src=\'' + image_list[game.awayTeam.name] + '\'" height="20" width="20" style="box-shadow: 0 0 1px grey;">'
+                // return '<td><img src="https://crests.football-data.org/' + game.awayTeam.id + '.svg"'
+                // + 'onerror="this.src=\'' + image_list[game.awayTeam.name] + '\'" height="20" width="20" style="box-shadow: 0 0 1px grey;">'
+                return '<td><img src="' + game.awayTeam.crest + '" height="20" width="20" style="box-shadow: 0 0 1px grey;">'
                 + '<br /><span style="font-size: 70%;">'
                 + club_list[game.awayTeam.name] + '</span></td>';
             }
