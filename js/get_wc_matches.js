@@ -1,10 +1,13 @@
 $(function () {
-    $.ajax({
-        type: 'post',
-        url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-        data: {arg: 0},
-        dataType: 'json'
-        }).done (function(data){
+    // $.ajax({
+    //     type: 'post',
+    //     url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
+    //     data: {arg: 0},
+    //     dataType: 'json'
+    //     }).done (function(data){
+    fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/wc_matches.json')
+    .then(response => response.json())
+    .then(data => {
         //JSON取得後の処理
         console.log(data)
         matches = data.matches;
@@ -12,7 +15,7 @@ $(function () {
             match.competition = data.competition
             match.td_class = "td-cl"
         });
-        games_num = data.count;
+        games_num = data.resultSet.count;;
 
         game_list = matches;
 
@@ -78,6 +81,9 @@ $(function () {
             "GROUP_F": "F組",
             "GROUP_G": "G組",
             "GROUP_H": "H組",
+            "GROUP_I": "I組",
+            "GROUP_J": "J組",
+            "GROUP_K": "K組",
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];
@@ -98,6 +104,7 @@ $(function () {
         // ラウンド名
         function getMatchdayOrRound(game){
             var round_name = {
+                'LAST_32': 'ラウンド32',
                 'LAST_16': 'ラウンド16',
                 'QUARTER_FINALS': '準々決勝',
                 'SEMI_FINALS': '準決勝',
