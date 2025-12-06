@@ -55,7 +55,18 @@ $(function () {
             "Ghana": "ガーナ",
             "Panama": "パナマ"
         };
-        
+
+        function getTeamName(team) {
+            if (club_list[team.name]) {
+                return '<div style="padding: 0px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
+                + team.crest + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
+                + club_list[team.name] + '</div>';
+            } else {
+                return '<div style="display: table-cell; vertical-align: middle;">' 
+                + '未定' + '</div>';
+            }
+        }
+                
         var clone_tbl = document.getElementById("standings-tbl");
         var i = 1;
         // 順位表作成
@@ -66,9 +77,8 @@ $(function () {
                 $(tbl_id).append(
                     '<tr align="center">'
                     + '<td><span style="font-size: 60%;">' + standing.position + '</span></td>'
-                    + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left"><div style="padding: 0px 4px 0 4px; display: table-cell; vertical-align: middle;"><img src="' 
-                    + standing.team.crest + '" height="24" width="24"></div><div style="display: table-cell; vertical-align: middle;">' 
-                    + club_list[standing.team.name] + '</div></div></span></td>'
+                    + '<td><span style="font-size: 60%;">' + '<div style = "text-align: left">' 
+                    + getTeamName(standing.team) + '</div></span></td>'
                     + '<td><span style="font-size: 60%;">' + standing.playedGames + '</span></td>'
                     + '<td><span style="font-size: 60%;">' + standing.won + '</span></td>'
                     + '<td><span style="font-size: 60%;">' + standing.draw + '</span></td>'
