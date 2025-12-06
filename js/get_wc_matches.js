@@ -90,6 +90,7 @@ $(function () {
             "GROUP_I": "I組",
             "GROUP_J": "J組",
             "GROUP_K": "K組",
+            "GROUP_L": "L組"
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];
