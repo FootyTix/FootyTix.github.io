@@ -189,8 +189,8 @@ $(function () {
             date = new Date(game_list[i].utcDate);
             date = date.toLocaleString("ja-JP");
             jdate = new Date(date);
-            jtime = jdate.getHours() == 9 ? '未定' : (jdate.getHours() + ':' + ("0" + jdate.getMinutes()).slice(-2));
-            
+            //jtime = jdate.getHours() == 9 ? '未定' : (jdate.getHours() + ':' + ("0" + jdate.getMinutes()).slice(-2));
+            jtime = jdate.getHours() + ':' + ("0" + jdate.getMinutes()).slice(-2);
             //節を挿入
             if (game_list[i].matchday != matchday_count
                 || game_list[i].stage != tmp_stage) {
