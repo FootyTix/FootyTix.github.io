@@ -53,7 +53,13 @@ $(function () {
             "England": "イングランド",
             "Croatia": "クロアチア",
             "Ghana": "ガーナ",
-            "Panama": "パナマ"
+            "Panama": "パナマ",
+            "Czechia": "チェコ",
+            "Bosnia-Herzegovina": "ボスニア・ヘルツェゴビナ",
+            "Turkey": "トルコ",
+            "Tunisia": "チュニジア",
+            "Iraq": "イラク",
+            "Congo DR": "コンゴ民主共和国"
         };
 
         function getTeamName(team) {
