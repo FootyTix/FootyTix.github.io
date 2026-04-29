@@ -57,8 +57,9 @@ $(function () {
             "Czechia": "チェコ",
             "Bosnia-Herzegovina": "ボスニア・ヘルツェゴビナ",
             "Turkey": "トルコ",
-            "Tunisia": "チュニジア",
+            "Sweden": "スウェーデン",
             "Iraq": "イラク",
+            "Ivory Coast": "コートジボワール",
             "Congo DR": "コンゴ民主共和国"
         };
 
