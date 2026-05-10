@@ -1,10 +1,4 @@
 $(function () {
-    // $.ajax({
-    //     type: 'post',
-    //     url: "https://footballtickets-by-gakuseimiler.com/wp-content/themes/stile-child/get-football-data.php",
-    //     data: {arg: 0},
-    //     dataType: 'json'
-    //     }).done (function(data){
     fetch('https://footballtickets-by-gakuseimiler.com/wp-content/football-data/json/wc_matches.json')
     .then(response => response.json())
     .then(data => {
