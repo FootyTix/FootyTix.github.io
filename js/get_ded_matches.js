@@ -19,24 +19,24 @@ $(function () {
         game_list = matches;
 
         var club_list = {
-            'PSV': 'PSV',
+            'Telstar 1963': 'テルスター',
+            'SBV Excelsior': 'エクセルシオール',
+            'Feyenoord Rotterdam': 'フェイエノールト',
+            'FC Groningen': 'フローニンゲン',
+            'PEC Zwolle': 'ズウォレ',
+            "FC Twente '65": 'トゥウェンテ',
+            'SC Cambuur-Leeuwarden': 'カンブール',
+            'AFC Ajax': 'アヤックス',
             'NEC': 'NEC',
             'FC Utrecht': 'ユトレヒト',
-            'AZ': 'AZ',
-            'AFC Ajax': 'アヤックス',
-            'Feyenoord Rotterdam': 'フェイエノールト',
-            'PEC Zwolle': 'ズウォレ',
-            'Fortuna Sittard': 'シッタート',
-            'Go Ahead Eagles': 'ゴー・アヘッド・イーグルス',
-            'SC Heerenveen': 'ヘーレンフェーン',
-            "FC Twente '65": 'トゥウェンテ',
-            'NAC Breda': 'NACブレダ',
-            'FC Groningen': 'フローニンゲン',
-            'Heracles Almelo': 'ヘラクレス・アルメロ',
             'Sparta Rotterdam': 'スパルタ・ロッテルダム',
-            'FC Volendam': 'フォレンダム',
-            'Telstar 1963': 'テルスター',
-            'SBV Excelsior': 'エクセルシオール'
+            'Fortuna Sittard': 'シッタート',
+            'SC Heerenveen': 'ヘーレンフェーン',
+            'PSV': 'PSV',
+            'Willem II Tilburg': 'ヴィレムII',
+            'Go Ahead Eagles': 'ゴー・アヘッド・イーグルス',
+            'ADO Den Haag': 'ADOデン・ハーグ',
+            'AZ': 'AZ'
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];

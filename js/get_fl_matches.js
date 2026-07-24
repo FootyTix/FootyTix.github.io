@@ -19,24 +19,24 @@ $(function () {
         game_list = matches;
 
         var club_list = {
-            'Paris Saint-Germain FC': 'PSG',
-            'Olympique de Marseille': 'マルセイユ',
             'Lille OSC': 'リール',
-            'Olympique Lyonnais': 'リヨン',
-            'AS Monaco FC': 'モナコ',
+            'Le Mans FC': 'ル・マン',
+            'Olympique de Marseille': 'マルセイユ',
+            'FC Lorient': 'ロリアン',
+            'Stade Brestois 29': 'ブレスト',
             'Racing Club de Lens': 'RCランス',
             'Stade Rennais FC 1901': 'レンヌ',
-            'Stade Brestois 29': 'ブレスト',
-            'OGC Nice': 'ニース',
-            'Le Havre AC': 'ル・アーヴル',
-            'FC Nantes': 'ナント',
-            'Toulouse FC': 'トゥールーズ',
-            'RC Strasbourg Alsace': 'ストラスブール',
             'Angers SCO': 'アンジェ',
             'AJ Auxerre': 'オセール',
-            'FC Lorient': 'ロリアン',
-            'FC Metz': 'メス',
-            'Paris FC': 'パリFC'
+            'Le Havre AC': 'ル・アーヴル',
+            'RC Strasbourg Alsace': 'ストラスブール',
+            'OGC Nice': 'ニース',
+            'Paris Saint-Germain FC': 'PSG',
+            'Toulouse FC': 'トゥールーズ',
+            'Olympique Lyonnais': 'リヨン',
+            'Paris FC': 'パリFC',
+            'AS Monaco FC': 'モナコ',
+            'ES Troyes AC': 'トロワ'
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];

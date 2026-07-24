@@ -12,26 +12,26 @@ $(function () {
         standings = data.standings[0].table;
 
         var club_list = {
-            'AC Milan': 'ACミラン',
-            'FC Internazionale Milano': 'インテル',
-            'Juventus FC': 'ユベントス',
-            'Parma Calcio 1913': 'パルマ',
-            'SSC Napoli': 'ナポリ',
-            'SS Lazio': 'ラツィオ',
-            'AS Roma': 'ローマ',
-            'Hellas Verona FC': 'ヴェローナ',
-            'Atalanta BC': 'アタランタ',
-            'Bologna FC 1909': 'ボローニャ',
-            'Cagliari Calcio': 'カリアリ',
-            'Como 1907': 'コモ',
-            'Udinese Calcio': 'ウディネーゼ',
-            'ACF Fiorentina': 'フィオレンティーナ',
+            'AC Monza': 'モンツァ',
             'Torino FC': 'トリノ',
+            'AC Milan': 'ACミラン',
+            'Udinese Calcio': 'ウディネーゼ',
+            'Como 1907': 'コモ',
             'Genoa CFC': 'ジェノア',
+            'Bologna FC 1909': 'ボローニャ',
+            'Parma Calcio 1913': 'パルマ',
+            'Cagliari Calcio': 'カリアリ',
+            'AS Roma': 'ローマ',
             'US Lecce': 'レッチェ',
-            'AC Pisa 1909': 'ピサ',
+            'Venezia FC': 'ヴェネツィア',
             'US Sassuolo Calcio': 'サッスオーロ',
-            'US Cremonese': 'クレモネーゼ'
+            'FC Internazionale Milano': 'インテル',
+            'SSC Napoli': 'ナポリ',
+            'Atalanta BC': 'アタランタ',
+            'Juventus FC': 'ユベントス',
+            'Frosinone Calcio': 'フロジノーネ',
+            'SS Lazio': 'ラツィオ',
+            'ACF Fiorentina': 'フィオレンティーナ'
         };
         // 順位表作成
         standings.forEach(function (standing) {
