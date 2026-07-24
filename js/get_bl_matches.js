@@ -23,20 +23,20 @@ $(function () {
             'RB Leipzig': 'ライプツィヒ',
             'Borussia Dortmund': 'ドルトムント',
             'Bayer 04 Leverkusen': 'レヴァークーゼン',
-            'VfL Wolfsburg': 'ヴォルフスブルク',
             '1. FC Union Berlin': 'ウニオン・ベルリン',
             'Borussia Mönchengladbach': 'ボルシアMG',
             'Eintracht Frankfurt': 'フランクフルト',
             'FC Augsburg': 'アウクスブルク',
             'VfB Stuttgart': 'シュトゥットガルト',
-            'FC St. Pauli 1910': 'ザンクト・パウリ',
             'TSG 1899 Hoffenheim': 'ホッフェンハイム',
             'SC Freiburg': 'フライブルク',
             '1. FSV Mainz 05': 'マインツ',
             'SV Werder Bremen': 'ブレーメン',
-            '1. FC Heidenheim 1846': 'ハイデンハイム',
             '1. FC Köln': 'ケルン',
-            'Hamburger SV': 'ハンブルガーSV'
+            'Hamburger SV': 'ハンブルガーSV',
+            'SC Paderborn 07': 'パーダーボルン',
+            'SV 07 Elversberg': 'エルフェアスベルク',
+            'FC Schalke 04': 'シャルケ'
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];

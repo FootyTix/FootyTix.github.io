@@ -33,12 +33,12 @@ $(function () {
             'Valencia CF': 'バレンシア',
             'Real Betis Balompié': 'ベティス',
             'CA Osasuna': 'オサスナ',
-            'RCD Mallorca': 'マジョルカ',
-            'Girona FC': 'ジローナ',
             'RCD Espanyol de Barcelona': 'エスパニョール',
             'Elche CF': 'エルチェ',
             'Levante UD': 'レバンテ',
-            'Real Oviedo': 'レアル・オビエド'
+            'Real Racing Club de Santander': 'ラシン・サンタンデール',
+            'RC Deportivo La Coruña': 'デポルティーボ・ラ・コルーニャ',
+            'Málaga CF': 'マラガ'
         };
 
         var youbi = ["日", "月", "火", "水", "木", "金", "土"];
