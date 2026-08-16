@@ -25,11 +25,11 @@ $(function () {
             'Sport Lisboa e Benfica': 'ベンフィカ',
             'Vitória SC': 'ヴィトーリアSC',
             'FC Alverca': 'アルヴェルカ',
-            'AVS': 'AVS',
             'Casa Pia AC': 'カーザ・ピア',
             'CD Nacional': 'CDナシオナル',
             'CD Santa Clara': 'サンタクララ',
-            'CD Tondela': 'トンデラ'
+            'CS Marítimo': 'マリティモ',
+            'Académico de Viseu FC': 'アカデミコ・デ・ヴィゼウ'
         };
         // 順位表作成
         standings.forEach(function (standing) {
