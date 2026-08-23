@@ -63,7 +63,7 @@
 
 
   /* =====================================================
-     日程 or 順位
+     日程 / 順位表
      ===================================================== */
 
   var mode = path.indexOf('/standings') === 0
@@ -95,7 +95,7 @@
 
 
   /* =====================================================
-     DOM
+     DOM取得
      ===================================================== */
 
   var fixturesTab =
@@ -113,6 +113,12 @@
   var leagueGrid =
     document.getElementById('ftx-league-grid');
 
+  var allLeaguesLink =
+    document.getElementById('ftx-all-leagues');
+
+  var allLeaguesLabel =
+    document.getElementById('ftx-all-leagues-label');
+
 
   if (
     !fixturesTab ||
@@ -126,7 +132,10 @@
 
 
   /* =====================================================
-     日程 / 順位リンク
+     日程 / 順位表タブ
+
+     個別リーグでは同リーグの
+     日程 ⇔ 順位表を維持
      ===================================================== */
 
   if (currentLeague) {
@@ -146,7 +155,7 @@
 
 
   /* =====================================================
-     現在のタブ
+     現在タブ
      ===================================================== */
 
   if (mode === 'standings') {
@@ -171,9 +180,40 @@
 
 
   /* =====================================================
-     視聴方法CTA
-     個別リーグのみ表示
+     全リーグ一覧への導線
      ===================================================== */
+
+  if (
+    allLeaguesLink &&
+    allLeaguesLabel
+  ) {
+
+    if (mode === 'standings') {
+
+      allLeaguesLink.href =
+        '/standings';
+
+      allLeaguesLabel.textContent =
+        '全リーグの順位表';
+
+    } else {
+
+      allLeaguesLink.href =
+        '/fixtures';
+
+      allLeaguesLabel.textContent =
+        '全リーグの日程';
+
+    }
+
+  }
+
+
+  /* =====================================================
+     視聴方法CTA
+     ===================================================== */
+
+  var watchUrl = null;
 
   if (
     currentLeague &&
@@ -181,10 +221,23 @@
     leagues[currentLeague].watch
   ) {
 
-    watchTab.href =
+    watchUrl =
       leagues[currentLeague].watch;
 
-    watchTab.hidden = false;
+    /*
+     * hrefを明示的に設定
+     */
+    watchTab.setAttribute(
+      'href',
+      watchUrl
+    );
+
+    /*
+     * hiddenを完全に削除
+     */
+    watchTab.removeAttribute(
+      'hidden'
+    );
 
     watchTab.dataset.league =
       currentLeague;
@@ -208,12 +261,12 @@
 
   leagueLinks.forEach(function (link) {
 
-    var slug = link.dataset.league;
+    var slug =
+      link.dataset.league;
 
 
     /*
-     * 日程なら日程、
-     * 順位表なら順位表の状態を維持
+     * 現在の日程/順位表モードを維持
      */
     link.href =
       '/' + mode + '/' + slug;
@@ -221,7 +274,9 @@
 
     if (slug === currentLeague) {
 
-      link.classList.add('is-active');
+      link.classList.add(
+        'is-active'
+      );
 
       link.setAttribute(
         'aria-current',
@@ -234,53 +289,33 @@
 
 
   /* =====================================================
-     GA4
+     視聴方法クリック
+
+     テーマや他JSに影響されても
+     確実にリンク先へ移動させる
      ===================================================== */
 
   watchTab.addEventListener(
     'click',
-    function () {
+    function (event) {
 
-      if (!currentLeague) {
+      if (!watchUrl) {
         return;
       }
 
 
-      var params = {
-
-        league:
-          currentLeague,
-
-        source_page:
-          mode,
-
-        placement:
-          'shared_nav_1165',
-
-        link_url:
-          watchTab.href
-
-      };
+      /*
+       * 通常リンク処理を一旦止める
+       */
+      event.preventDefault();
 
 
-      if (
-        typeof window.gtag === 'function'
-      ) {
+      try {
 
-        window.gtag(
-          'event',
-          'viewing_guide_click',
-          params
-        );
-
-      }
-
-      else if (window.dataLayer) {
-
-        window.dataLayer.push({
-
-          event:
-            'viewing_guide_click',
+        /*
+         * GA4
+         */
+        var params = {
 
           league:
             currentLeague,
@@ -292,9 +327,72 @@
             'shared_nav_1165',
 
           link_url:
-            watchTab.href
+            watchUrl
 
-        });
+        };
+
+
+        if (
+          typeof window.gtag ===
+          'function'
+        ) {
+
+          window.gtag(
+            'event',
+            'viewing_guide_click',
+            params
+          );
+
+        }
+
+        else if (
+          window.dataLayer
+        ) {
+
+          window.dataLayer.push({
+
+            event:
+              'viewing_guide_click',
+
+            league:
+              currentLeague,
+
+            source_page:
+              mode,
+
+            placement:
+              'shared_nav_1165',
+
+            link_url:
+              watchUrl
+
+          });
+
+        }
+
+      }
+
+      catch (error) {
+
+        /*
+         * 計測失敗しても
+         * ページ遷移には影響させない
+         */
+        console.warn(
+          'viewing_guide_click tracking failed',
+          error
+        );
+
+      }
+
+      finally {
+
+        /*
+         * 必ず視聴方法ページへ移動
+         */
+        window.location.assign(
+          watchUrl
+        );
 
       }
 
