@@ -56,6 +56,32 @@
                 iconClass: 'fas fa-fire',
                 url: ROOT + '/entry/bigmatch-fixtures'
             }
+
+        },
+
+        bl: {
+            key: 'bl',
+            nameJa: 'ブンデスリーガ',
+            matchesDataUrl: DATA_ROOT + '/bl1_matches.json',
+            standingsDataUrl: DATA_ROOT + '/bl1_standings.json',
+            ticketGuideUrl: ROOT + '/entry/2018/12/06/2018%E5%B9%B4%E6%9C%80%E6%96%B0%E7%89%88%E3%83%96%E3%83%B3%E3%83%87%E3%82%B9%E3%83%AA%E3%83%BC%E3%82%AC%E3%81%AE%E3%83%81%E3%82%B1%E3%83%83%E3%83%88%E3%82%92%E5%AE%9A',
+            broadcastUrl: ROOT + '/entry/bundesliga-broadcast',
+            schedulePageUrl: ROOT + '/fixtures/bundesliga',
+            standingsPageUrl: ROOT + '/standings/bundesliga',
+            footyboxCompetitionUrl: 'https://footybox-app.com/ja/competitions/bundesliga',
+            utmCampaign: 'bundesliga_schedule',
+            featured: {
+                mode: 'teams',
+                teams: [
+                    'FC Bayern München',
+                    'Borussia Dortmund',
+                    'RB Leipzig',
+                    'Bayer 04 Leverkusen'
+                ],
+                label: '注目カード',
+                iconClass: 'fas fa-fire',
+                url: ROOT + '/entry/bigmatch-fixtures'
+            }
         }
     };
 })(window);
