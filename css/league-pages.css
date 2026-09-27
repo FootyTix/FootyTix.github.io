@@ -369,79 +369,33 @@
 /* =========================================================
  * Standings overview page only
  * Scope: #league-standings-overview
+ * Keep table spacing identical to individual standings pages.
  * ======================================================= */
 
 #league-standings-overview .league-overview-section {
   margin: 0 0 2em;
 }
 
-#league-standings-overview .league-overview-section h2 {
-  margin-bottom: .65em;
-}
-
-#league-standings-overview .league-overview-table {
-  width: 100% !important;
-  border-collapse: collapse;
+/* Individual standings pages get these rules from #standings-tbl.
+   The overview uses different tbody IDs, so only the missing rules are added here. */
+#league-standings-overview .league-overview-table tbody {
   font-weight: bold;
+  border: solid 1px #656565;
   line-height: 1.0em;
 }
 
-#league-standings-overview .league-overview-table th,
 #league-standings-overview .league-overview-table td {
   border: solid 1px #656565 !important;
   line-height: 1.0em !important;
 }
 
-#league-standings-overview .league-overview-table th {
-  padding: 8px 4px !important;
-}
-
-#league-standings-overview .league-overview-table td {
-  padding: 6px 4px !important;
-}
-
-#league-standings-overview .league-overview-table .league-standing-club {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  min-width: 0;
-  text-align: left;
-}
-
-#league-standings-overview .league-overview-table .league-standing-club img {
-  flex: 0 0 24px;
-  width: 24px !important;
-  height: 24px !important;
-  margin: 0 !important;
-  object-fit: contain;
-}
-
-#league-standings-overview .league-overview-table .league-standing-club__name {
-  min-width: 0;
-  line-height: 1.25;
-}
-
+/* Overview-only navigation below each TOP5 table. */
 #league-standings-overview .league-overview-section .league-page-links {
   margin-top: 9px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 @media screen and (max-width: 767px) {
-  #league-standings-overview .league-overview-table th,
-  #league-standings-overview .league-overview-table td {
-    padding: 5px 2px !important;
-  }
-
-  #league-standings-overview .league-overview-table .league-standing-club {
-    gap: 4px;
-  }
-
-  #league-standings-overview .league-overview-table .league-standing-club img {
-    flex-basis: 20px;
-    width: 20px !important;
-    height: 20px !important;
-  }
-
   #league-standings-overview .league-overview-section .league-page-links {
     grid-template-columns: 1fr;
   }
