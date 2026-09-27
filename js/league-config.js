@@ -173,6 +173,21 @@
             standingsPageUrl: ROOT + '/standings/efl-championship',
             footyboxCompetitionUrl: 'https://footybox-app.com/ja/competitions/efl-championship',
             utmCampaign: 'efl_championship_schedule'
+
+        },
+
+        cl: {
+            key: 'cl',
+            nameJa: 'UEFAチャンピオンズリーグ',
+            matchesDataUrl: DATA_ROOT + '/cl_matches.json',
+            standingsDataUrl: DATA_ROOT + '/cl_standings.json',
+            ticketGuideUrl: 'https://footballtickets-by-gakuseimiler.com/entry/2018/08/08/%E3%80%902018%E5%B9%B4%E6%9C%80%E6%96%B0%E7%89%88%E3%80%91uefa%E3%83%81%E3%83%A3%E3%83%B3%E3%83%94%E3%82%AA%E3%83%B3%E3%82%BA%E3%83%AA%E3%83%BC%E3%82%B0%E3%81%AE%E3%83%81%E3%82%B1',
+            broadcastUrl: ROOT + '/entry/ucl-wowow-broadcast',
+            schedulePageUrl: ROOT + '/fixtures/uefa-champions-league',
+            standingsPageUrl: ROOT + '/standings/uefa-champions-league',
+            footyboxCompetitionUrl: 'https://footybox-app.com/ja/schedule',
+            utmCampaign: 'champions_league_schedule',
+            scheduleFormat: 'uefa_cl'
         }
     };
 })(window);

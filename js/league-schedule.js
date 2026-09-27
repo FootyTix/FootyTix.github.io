@@ -18,9 +18,16 @@
 
     function getClub(team) {
         var master = window.FootyTixClubMaster || {};
+        if (!team || (!team.id && !team.name)) {
+            return {
+                nameJa: '未定',
+                ticketUrl: null
+            };
+        }
+
         var meta = master[team.name] || {};
         return {
-            nameJa: meta.nameJa || team.shortName || team.name,
+            nameJa: meta.nameJa || team.shortName || team.name || '未定',
             ticketUrl: meta.ticketUrl || null
         };
     }
@@ -54,7 +61,7 @@
 
     function isFeatured(game, config) {
         var featured = config.featured;
-        if (!featured) return false;
+        if (!featured || !game.homeTeam || !game.awayTeam || !game.homeTeam.name || !game.awayTeam.name) return false;
 
         if (featured.mode === 'matches' && Array.isArray(featured.matches)) {
             return featured.matches.some(function (pair) {
@@ -74,15 +81,20 @@
 
     function renderTeamCell(team) {
         var club = getClub(team);
-        var crest = escapeHtml(team.crest || ('https://crests.football-data.org/' + team.id + '.png'));
         var label = escapeHtml(club.nameJa);
         var nameHtml = club.ticketUrl
             ? '<a class="league-team-link js-league-link" href="' + escapeHtml(club.ticketUrl) + '" data-link-type="club_ticket" data-destination="footytix" aria-label="' + label + 'のチケット購入ガイドを見る">' + label + '<span class="league-team-link__icon fas fa-chevron-right" aria-hidden="true"></span></a>'
             : '<span class="league-team-name">' + label + '</span>';
 
+        var crestHtml = '';
+        if (team && (team.crest || team.id)) {
+            var crest = escapeHtml(team.crest || ('https://crests.football-data.org/' + team.id + '.png'));
+            crestHtml = '<img class="league-team-crest" src="' + crest + '" alt="" width="24" height="24" loading="lazy"><br>';
+        }
+
         return '<td class="league-team-cell">'
-            + '<img class="league-team-crest" src="' + crest + '" alt="" width="24" height="24" loading="lazy">'
-            + '<br><span class="league-team-label">' + nameHtml + '</span>'
+            + crestHtml
+            + '<span class="league-team-label">' + nameHtml + '</span>'
             + '</td>';
     }
 
@@ -265,27 +277,89 @@
         }
     }
 
-    function groupMatches(matches, finished) {
+    function getGroupMeta(game, config) {
+        if (config.scheduleFormat === 'uefa_cl') {
+            var stageOrder = {
+                'LEAGUE_STAGE': 100,
+                'PLAYOFFS': 200,
+                'LAST_16': 300,
+                'QUARTER_FINALS': 400,
+                'SEMI_FINALS': 500,
+                'FINAL': 600
+            };
+            var stageLabel = {
+                'PLAYOFFS': '決勝Tプレーオフ',
+                'LAST_16': 'ラウンド16',
+                'QUARTER_FINALS': '準々決勝',
+                'SEMI_FINALS': '準決勝',
+                'FINAL': '決勝'
+            };
+            var matchday = game.matchday == null ? null : Number(game.matchday);
+
+            if (game.stage === 'LEAGUE_STAGE') {
+                return {
+                    key: 'LEAGUE_STAGE_' + String(matchday == null ? 'other' : matchday),
+                    label: matchday == null ? 'リーグフェーズ' : '第' + matchday + '節',
+                    order: 100 + (matchday || 0)
+                };
+            }
+
+            if (game.stage === 'FINAL') {
+                return {
+                    key: 'FINAL',
+                    label: '決勝',
+                    order: 600
+                };
+            }
+
+            if (stageLabel[game.stage]) {
+                var leg = matchday === 1 ? '1stレグ' : (matchday === 2 ? '2ndレグ' : '');
+                return {
+                    key: game.stage + '_' + String(matchday == null ? 'other' : matchday),
+                    label: stageLabel[game.stage] + (leg ? ' ' + leg : ''),
+                    order: (stageOrder[game.stage] || 900) + (matchday || 0)
+                };
+            }
+
+            return {
+                key: String(game.stage || 'other') + '_' + String(matchday == null ? 'other' : matchday),
+                label: matchday == null ? (game.stage || 'その他') : '第' + matchday + '節',
+                order: 900 + (matchday || 0)
+            };
+        }
+
+        return {
+            key: String(game.matchday == null ? 'other' : game.matchday),
+            label: game.matchday == null ? '' : '第' + game.matchday + '節',
+            order: game.matchday == null ? 9999 : Number(game.matchday)
+        };
+    }
+
+    function groupMatches(matches, finished, config) {
         var filtered = matches.filter(function (game) {
             return finished ? game.status === 'FINISHED' : game.status !== 'FINISHED';
         });
 
         var groups = [];
-        var byMatchday = {};
+        var byKey = {};
 
         filtered.forEach(function (game) {
-            var key = String(game.matchday == null ? 'other' : game.matchday);
-            if (!byMatchday[key]) {
-                byMatchday[key] = [];
-                groups.push({ key: key, matchday: game.matchday, games: byMatchday[key] });
+            var meta = getGroupMeta(game, config);
+
+            if (!byKey[meta.key]) {
+                byKey[meta.key] = [];
+                groups.push({
+                    key: meta.key,
+                    label: meta.label,
+                    order: meta.order,
+                    games: byKey[meta.key]
+                });
             }
-            byMatchday[key].push(game);
+            byKey[meta.key].push(game);
         });
 
         groups.sort(function (a, b) {
-            var av = a.matchday == null ? 9999 : Number(a.matchday);
-            var bv = b.matchday == null ? 9999 : Number(b.matchday);
-            return finished ? bv - av : av - bv;
+            return finished ? b.order - a.order : a.order - b.order;
         });
 
         groups.forEach(function (group) {
@@ -301,8 +375,8 @@
         var html = '';
 
         groups.forEach(function (group) {
-            if (group.matchday != null) {
-                html += '<tr class="league-matchday-row"><td colspan="3" align="center"><span>第' + escapeHtml(group.matchday) + '節</span></td></tr>';
+            if (group.label) {
+                html += '<tr class="league-matchday-row"><td colspan="3" align="center"><span>' + escapeHtml(group.label) + '</span></td></tr>';
             }
 
             group.games.forEach(function (game) {
@@ -355,8 +429,8 @@
                     matchById[String(game.id)] = game;
                 });
 
-                renderGroups(matchesBody, groupMatches(matches, false), config, false);
-                renderGroups(resultsBody, groupMatches(matches, true), config, true);
+                renderGroups(matchesBody, groupMatches(matches, false, config), config, false);
+                renderGroups(resultsBody, groupMatches(matches, true, config), config, true);
                 renderScheduleFooter(config);
                 wireInteractions(config, options, matchById);
             })
