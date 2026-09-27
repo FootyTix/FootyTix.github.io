@@ -220,6 +220,19 @@
         'Wrexham AFC': { nameJa: 'レクサム' },
         'Bristol City FC': { nameJa: 'ブリストル' },
         'Millwall FC': { nameJa: 'ミルウォール' },
-        'Stoke City FC': { nameJa: 'ストーク' }
+        'Stoke City FC': { nameJa: 'ストーク' },
+
+        // UEFA Champions League 2026-27 / clubs outside the 8 domestic league masters
+        'PAE AEK': { nameJa: 'AEKアテネ' },
+        'LASK Linz': { nameJa: 'LASKリンツ' },
+        'Club Brugge KV': { nameJa: 'クラブ・ブルッヘ' },
+        'FK Bodø/Glimt': { nameJa: 'ボーデ／グリムト' },
+        'Fenerbahçe SK': { nameJa: 'フェネルバフチェ' },
+        'Galatasaray SK': { nameJa: 'ガラタサライ' },
+        'Sabah FK': { nameJa: 'サバフ' },
+        'FK Shakhtar Donetsk': { nameJa: 'シャフタール・ドネツク' },
+        'SK Slavia Praha': { nameJa: 'スラヴィア・プラハ' },
+        'ŠK Slovan Bratislava': { nameJa: 'スロヴァン・ブラチスラヴァ' },
+        'Viking FK': { nameJa: 'バイキングFK' }
     };
 })(window);
